@@ -29,9 +29,9 @@ Using datasets such as **squat.mat** and **cutting.mat**, I implemented scripts 
 
 - Load and parse motion-capture data  
 - Extract joint variables including:  
-  - Knee angle  
-  - Hip and ankle angles  
+  - Knee, hip, and ankle angles  
   - Pelvis kinematics  
+  - Additional biomechanical variables available in the .mat datasets (e.g., GRF, marker trajectories, etc.) 
 - Identify key movement phases (squat cycles, cutting phases)
 
 I also reconstructed 3D marker trajectories and generated **3D motion GIFs**, enabling intuitive visualization of the movements.
