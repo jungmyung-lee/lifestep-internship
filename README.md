@@ -1,2 +1,62 @@
 # lifestep-internship
-Python implementations from my LifeStep biomechanics internship, including: 1) Processing and analyzing squat.mat and cutting.mat data, 2) Extracting joint variables (knee angle, hip angle, etc.) from .mat files and visualizing key patterns such as gait cycles, 3) EMG signal processing: filtering, rectification, envelope, RMS... etc.
+
+This repository contains Python implementations from my biomechanics internship at **LifeStep**, focusing on three core areas:  
+(1) joint-angle extraction & 3D visualization,  
+(2) EMG preprocessing,  
+(3) machine-learning model development for prosthetic control.
+
+---
+
+1.
+
+
+
+2.
+
+<img width="1318" height="567" alt="image" src="https://github.com/user-attachments/assets/a443c098-5c91-4777-b735-19c2ebebfd08" />
+<img width="1331" height="456" alt="image" src="https://github.com/user-attachments/assets/b79e7c8a-4ef5-4955-8591-e73f3559c136" />
+<img width="1335" height="477" alt="image" src="https://github.com/user-attachments/assets/53bdab7d-8e23-41cc-a973-8ca8cc5f83cf" />
+
+
+
+## 1. Joint Angle Extraction & 3D Motion Visualization
+
+Using datasets such as **squat.mat** and **cutting.mat**, I implemented scripts to:
+
+- Load and parse motion-capture data  
+- Extract joint variables including:  
+  - Knee angle  
+  - Hip and ankle angles  
+  - Pelvis kinematics  
+- Identify key movement phases (squat cycles, cutting phases)
+
+I also reconstructed 3D marker trajectories and generated **3D motion GIFs**, enabling intuitive visualization of the movements.
+
+---
+
+## 2. EMG Signal Pre-processing
+
+I processed **five channels of raw EMG** using a complete preprocessing pipeline:
+
+- Band-pass filtering  
+- Rectification  
+- RMS and envelope extraction  
+- Visualization of raw vs. processed EMG signals  
+
+These processed signals provide clean, model-ready features.
+
+---
+
+## 3. TD + CNN + TCN AI Model Design & Training
+
+I developed a lightweight real-time regression model for prosthetic control using:
+
+- Time-Domain (TD) features  
+- 1D CNN layers for spatial feature extraction  
+- TCN layers for temporal modeling  
+
+This includes **full model construction and training code**, using EMG data collected directly from the company to predict continuous joint angles for AI-driven prosthetic applications.
+
+---
+
+This repository demonstrates an end-to-end workflow from biomechanics data processing to EMG feature extraction and real-time machine-learning modeling.
