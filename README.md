@@ -1,17 +1,17 @@
-# lifestep-internship
+# 🧠 lifestep-internship
 
 This repository contains Python implementations from my biomechanics internship at **LifeStep**, focusing on three core areas:  
-(1) joint-angle extraction & 3D visualization,  
-(2) EMG preprocessing,  
-(3) AI model development for prosthetic control.
+1️⃣ joint-angle extraction & 3D visualization,  
+2️⃣  EMG preprocessing,  
+3️⃣ AI model development for prosthetic control.
 
 ---
 
-### 1.3D visualization (GIF)
-## 3D Cutting Motion Visualization
+### 1.🎥  3D visualization (GIF)
+## 🔹3D Cutting Motion Visualization
 ![Cutting Motion](./cutting.gif)
 
-## 3D Squat Motion Visualization
+## 🔹3D Squat Motion Visualization
 ![Squat Motion](./squat.gif)
 
 
