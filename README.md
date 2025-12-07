@@ -19,8 +19,9 @@ This repository contains Python implementations from my biomechanics internship 
 
 <img width="1333" height="553" alt="image" src="https://github.com/user-attachments/assets/11eca52d-4899-48cb-92c9-5cdaf817dd56" />
 <img width="1311" height="502" alt="image" src="https://github.com/user-attachments/assets/29089095-18b1-455c-9403-2072dba75b19" />
-<img width="1331" height="456" alt="image" src="https://github.com/user-attachments/assets/b79e7c8a-4ef5-4955-8591-e73f3559c136" />
-<img width="1335" height="477" alt="image" src="https://github.com/user-attachments/assets/53bdab7d-8e23-41cc-a973-8ca8cc5f83cf" />
+<img width="1315" height="484" alt="image" src="https://github.com/user-attachments/assets/15c20aab-99d1-4b9c-9c16-c84bafeafc66" />
+<img width="1298" height="495" alt="image" src="https://github.com/user-attachments/assets/f7e61767-b803-46bb-8333-bee8784bcae4" />
+
 
 
 
