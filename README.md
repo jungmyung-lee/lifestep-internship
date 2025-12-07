@@ -48,16 +48,18 @@ These processed signals provide clean, model-ready features.
 
 ---
 
-## 3. TD + CNN + TCN AI Model Design & Training
+## 3. TD + CNN + TCN Real-Time Model (17-Angle Output)
 
-I developed a lightweight real-time regression model for prosthetic control using:
+I developed a lightweight real-time regression model using:
 
 - Time-Domain (TD) features  
-- 1D CNN layers for spatial feature extraction  
-- TCN layers for temporal modeling  
+- 1D CNN layers for spatial pattern extraction  
+- TCN layers with dilation for temporal modeling  
 
-This includes **full model construction and training code**, using EMG data collected directly from the company to predict continuous joint angles for AI-driven prosthetic applications.
+The model processes **EMG signals as input** and performs inference every **0.01 seconds (100 Hz)**, enabling real-time operation.  
+The final output consists of **17 joint angles**, representing multi-DOF finger and wrist movements.
 
----
+This repository includes the full model architecture and training code used to build the prosthetic control system.
+
 
 This repository demonstrates an end-to-end workflow from biomechanics data processing to EMG feature extraction and real-time machine-learning modeling.
