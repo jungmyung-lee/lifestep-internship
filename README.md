@@ -12,7 +12,7 @@ This repository contains Python implementations from my biomechanics internship 
 ![Cutting Motion](./cutting.gif)
 
 ### 3D Squat Motion Visualization
-![Squat Motion](./squat_20.gif)
+![Squat Motion](./squat.gif)
 
 
 2.
