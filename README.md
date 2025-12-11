@@ -2,7 +2,7 @@
 
 This repository contains Python implementations from my biomechanics internship at **LifeStep**, focusing on three core areas:  
 1️⃣ joint-angle extraction (inculding other biomechanical variables) & 3D visualization,  
-2️⃣ EMG preprocessing,  
+2️⃣ EMG preprocessing & Motion Synchronization
 3️⃣ AI model development for prosthetic control.
 
 ---
