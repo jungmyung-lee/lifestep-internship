@@ -51,7 +51,7 @@ These processed signals provide clean, model-ready features.
 
 ---
 
-✨ 2. EMG Signal Pre-processing & Motion Synchronization
+## ✨ 2. EMG Signal Pre-processing & Motion Synchronization
 
 This module performs full EMG preprocessing and synchronizes the processed signals with 3D marker-based motion data collected during squat and cutting tasks.
 
@@ -59,36 +59,27 @@ This module performs full EMG preprocessing and synchronizes the processed signa
 
 Five raw EMG channels are processed using:
 
-DC offset removal
+-DC offset removal
+-60 Hz notch filtering
+-Band-pass filtering (physiological EMG range)
+-Full-wave rectification
+-RMS + envelope extraction
+-These steps produce clean, analysis-ready activation signals.
 
-60 Hz notch filtering
-
-Band-pass filtering (physiological EMG range)
-
-Full-wave rectification
-
-RMS + envelope extraction
-
-These steps produce clean, analysis-ready activation signals.
-
-🎯 EMG–Motion Synchronization
+### 🎯 EMG–Motion Synchronization
 
 Processed EMG envelopes are time-aligned with 3D marker trajectories (barbell markers + lower-body markers).
 This makes it possible to compare muscle activation with movement phases.
 
 Example observations:
-
 Quadriceps activation peaks consistently at the bottom of each squat cycle.
 
 From this synchronized analysis, users can examine:
+-Muscle activation timing
+-Left–right asymmetry or compensation patterns
+-Movement efficiency
 
-Muscle activation timing
-
-Left–right asymmetry or compensation patterns
-
-Movement efficiency
-
-🏃‍♂️ Cutting Movement Analysis
+### 🏃‍♂️ Cutting Movement Analysis
 
 Although the repository currently shows squat examples,
 the same EMG–motion synchronization workflow was applied to cutting tasks to analyze activation strategies in more dynamic movements.
