@@ -62,6 +62,7 @@ Five raw EMG channels are processed using:
 ### 🎯 EMG–Motion Synchronization
 
 Processed EMG envelopes are time-aligned with 3D marker trajectories (barbell markers + lower-body markers).
+
 This makes it possible to compare muscle activation with movement phases.
 
 Example observations:
