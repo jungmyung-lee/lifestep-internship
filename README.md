@@ -38,18 +38,6 @@ I also reconstructed 3D marker trajectories and generated **3D motion GIFs**, en
 
 ---
 
-## 2. EMG Signal Pre-processing
-
-I processed **five channels of raw EMG** using a complete preprocessing pipeline:
-
-- Band-pass filtering  
-- Rectification  
-- RMS and envelope extraction  
-- Visualization of raw vs. processed EMG signals  
-
-These processed signals provide clean, model-ready features.
-
----
 
 ## ✨ 2. EMG Signal Pre-processing & Motion Synchronization
 
@@ -60,10 +48,15 @@ This module performs full EMG preprocessing and synchronizes the processed signa
 Five raw EMG channels are processed using:
 
 -DC offset removal
+
 -60 Hz notch filtering
+
 -Band-pass filtering (physiological EMG range)
+
 -Full-wave rectification
+
 -RMS + envelope extraction
+
 -These steps produce clean, analysis-ready activation signals.
 
 ### 🎯 EMG–Motion Synchronization
