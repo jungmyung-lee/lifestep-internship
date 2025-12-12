@@ -21,10 +21,7 @@ This repository contains Python implementations from my biomechanics internship 
 <img width="1264" height="394" alt="image" src="https://github.com/user-attachments/assets/892f01f8-bb38-48e2-896f-f14cc3e7974c" />
 
 
-
-
-
-### 3.EMG preprocessing (IMG)
+### 3.EMG preprocessing
 
 <img width="1333" height="553" alt="image" src="https://github.com/user-attachments/assets/11eca52d-4899-48cb-92c9-5cdaf817dd56" />
 <img width="1311" height="502" alt="image" src="https://github.com/user-attachments/assets/29089095-18b1-455c-9403-2072dba75b19" />
@@ -32,7 +29,7 @@ This repository contains Python implementations from my biomechanics internship 
 <img width="1298" height="495" alt="image" src="https://github.com/user-attachments/assets/f7e61767-b803-46bb-8333-bee8784bcae4" />
 
 
-## 1. Joint Angle Extraction & 3D Motion Visualization
+## 2. Joint Angle Extraction & 3D Motion Visualization
 
 Using datasets such as **squat.mat** and **cutting.mat**, I implemented scripts to:
 
@@ -48,7 +45,7 @@ I also reconstructed 3D marker trajectories and generated **3D motion GIFs**, en
 ---
 
 
-## ✨ 2. EMG Signal Pre-processing & Motion Synchronization
+## ✨ 3. EMG Signal Pre-processing & Motion Synchronization
 
 This module performs full EMG preprocessing and synchronizes the processed signals with 3D marker-based motion data collected during squat and cutting tasks.
 
@@ -87,7 +84,7 @@ From this synchronized analysis, users can examine:
 Although the repository currently shows squat examples,
 the same EMG–motion synchronization workflow was applied to cutting tasks to analyze activation strategies in more dynamic movements.
 
-## 3. TD + CNN + TCN Real-Time Model (17-Angle Output)
+## 4. TD + CNN + TCN Real-Time Model (17-Angle Output)
 
 I developed a lightweight real-time regression model using:
 
