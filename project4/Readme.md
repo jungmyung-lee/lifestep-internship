@@ -13,7 +13,7 @@ Among them, three papers played a central role:
 1. **Real-Time EMG Based Pattern Recognition Control for Hand Prostheses (2019)**  
    – guidance on real-time processing and system design.
 
-2. **A Review of Myoelectric Control for Prosthetic Hand Manipulation (2023) **  
+2. **A Review of Myoelectric Control for Prosthetic Hand Manipulation (2023)**  
    – insights into modern myoelectric control strategies.
 
 3. **A New Strategy for Multifunction Myoelectric Control (1993)**  
