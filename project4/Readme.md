@@ -1,9 +1,18 @@
-### Readme 다 이거야
-
-
+### Readme
 
 📄 **Project4 Presentation (PDF)**  
 👉 [Open PDF](Project4_presentation.pdf)
+
+---
+
+
+
+This project is informed by five key research papers on EMG-based pattern recognition and prosthetic control. Among them, three papers played a central role: 1. **Real-Time EMG Based Pattern Recognition Control for Hand Prostheses** – guidance on real-time processing and system design. 2. **A Review of Myoelectric Control for Prosthetic Hand Manipulation** – insights into modern myoelectric control strategies. 3. **A New Strategy for Multifunction Myoelectric Control (Hudgins et al., 1993)** – foundation for selecting the TD feature set (MAV, RMS, WL, ZC, SSC). Two additional papers were used for supplementary background. Full references are listed at the bottom of this README (APA Style)
+
+
+
+
+
 
 ### References
 
