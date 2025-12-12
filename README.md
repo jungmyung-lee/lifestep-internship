@@ -7,15 +7,24 @@ This repository contains Python implementations from my biomechanics internship 
 
 ---
 
-### 1.🎥  3D visualization (GIF)
+### 1.🎥  3D visualization (GIF) 
+
 ## 🔹3D Cutting Motion Visualization
 ![Cutting Motion](./cutting.gif)
 
 ## 🔹3D Squat Motion Visualization
 ![Squat Motion](./squat.gif)
 
+### 2. joing-angle extraction (inculding other biomechanical variables)
 
-### 2.EMG preprocessing (IMG)
+<img width="408" height="308" alt="image" src="https://github.com/user-attachments/assets/d2fe5268-e0c3-48a4-9d00-997ba2707545" />
+<img width="1264" height="394" alt="image" src="https://github.com/user-attachments/assets/892f01f8-bb38-48e2-896f-f14cc3e7974c" />
+
+
+
+
+
+### 3.EMG preprocessing (IMG)
 
 <img width="1333" height="553" alt="image" src="https://github.com/user-attachments/assets/11eca52d-4899-48cb-92c9-5cdaf817dd56" />
 <img width="1311" height="502" alt="image" src="https://github.com/user-attachments/assets/29089095-18b1-455c-9403-2072dba75b19" />
