@@ -1,4 +1,4 @@
-# 🧠 lifestep-internship
+# lifestep-internship
 
 This repository presents end-to-end human motion analysis projects,
 ranging from **3D biomechanical visualization** and **EMG signal processing**
@@ -14,12 +14,12 @@ to deep learning- and machine-learning–based **basketball Shooting Form classi
 
 ---
 
-### 1.🎥  3D visualization 
+### 1.3D visualization 
 
-## 🔹3D Cutting Motion Visualization
+## 3D Cutting Motion Visualization
 ![Cutting Motion](./cutting.gif)
 
-## 🔹3D Squat Motion Visualization
+## 3D Squat Motion Visualization
 ![Squat Motion](./squat.gif)
 
 ### 2. joing-angle extraction (inculding other biomechanical variables)
@@ -38,7 +38,7 @@ to deep learning- and machine-learning–based **basketball Shooting Form classi
 ## 5,6. Basketball Shooting Form Classification (GOOD / BAD) & AI Basketball Shooting Coach
 **Data sourced from the LJM Basketball Academy (founded and operated by the author)**
 
-### 🎥 YOLOv8 Pose Estimation
+### YOLOv8 Pose Estimation
 <p align="center">
   <img src="./yolov8.gif" width="300">
   <img src="./yolov8_2.gif" width="300">
@@ -46,10 +46,10 @@ to deep learning- and machine-learning–based **basketball Shooting Form classi
 </p>
 
 
-## 🔹Basketball Shooting Form Classification (GOOD / BAD) User Interface
+## Basketball Shooting Form Classification (GOOD / BAD) User Interface
 ![Cutting Motion](./movie1-.gif)
 
-## 🔹AI Basketball Shooting Coach Program User Interface
+## AI Basketball Shooting Coach Program User Interface
 ![Cutting Motion](./movie2-.gif)
 
 ## 1. 3D Motion Visualization & Skeleton Reconstruction
@@ -74,7 +74,7 @@ Using datasets such as **squat.mat** and **cutting.mat**, I implemented scripts 
 ---
 
 
-## ✨ 3. EMG Signal Pre-processing & Motion Synchronization
+## 3. EMG Signal Pre-processing & Motion Synchronization
 
 This module performs full EMG preprocessing and synchronizes the processed signals with 3D marker-based motion data collected during squat and cutting tasks.
 
@@ -94,7 +94,7 @@ Five raw EMG channels are processed using:
 
 -These steps produce clean, analysis-ready activation signals.
 
-### 🎯 EMG–Motion Synchronization
+### EMG–Motion Synchronization
 
 Processed EMG envelopes are time-aligned with 3D marker trajectories (barbell markers + lower-body markers).
 
@@ -108,7 +108,7 @@ From this synchronized analysis, users can examine:
 -Left–right asymmetry or compensation patterns
 -Movement efficiency
 
-### 🏃‍♂️ Cutting Movement Analysis
+### Cutting Movement Analysis
 
 Although the repository currently shows squat examples,
 the same EMG–motion synchronization workflow was applied to cutting tasks to analyze activation strategies in more dynamic movements.
