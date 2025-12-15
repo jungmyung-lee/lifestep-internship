@@ -63,7 +63,7 @@ if uploaded_file is not None:
             result = infer(video_path)
 
         # -------------------------------
-        # temp file cleanup (안정화)
+        # Temporary file cleanup (stability safeguard)
         # -------------------------------
         try:
             os.remove(video_path)
@@ -77,7 +77,7 @@ if uploaded_file is not None:
             st.error(result["error"])
         else:
             # -------------------------------
-            # 안전한 key 접근 (방어 코드)
+            # Defensive code for safe key access
             # -------------------------------
             score = result.get("score", None)
             details = result.get("details", {})
