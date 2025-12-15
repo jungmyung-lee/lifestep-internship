@@ -115,7 +115,7 @@ the same EMG–motion synchronization workflow was applied to cutting tasks to a
 
 ---
 
-## 4. TD + CNN + TCN Real-Time Model (prosthetic control system)
+## 4. TD + CNN + TCN Real-Time AI Model (prosthetic control system)
 
 I developed a lightweight real-time regression model using:
 
@@ -130,7 +130,7 @@ This repository includes the full model architecture and training code used to b
 
 ---
 
-## 5. Basketball Shooting Form Classification (GOOD / BAD) 
+## 5. Basketball Shooting Form Classification (GOOD / BAD) (CNN + LSTM vs XGBoost)
 
 I independently built **a basketball shooting-form classification** pipeline using **YOLOv8-Pose** during my internship at LifeStep.
 From each shooting video, I extracted 2D keypoints and derived interpretable time-series features
@@ -156,7 +156,7 @@ when training temporal deep models with **small labeled datasets**.
 
 ---
 
-## 6. AI Basketball Shooting Coach 
+## 6. AI Basketball Shooting Coach (XGBOOST Learning machine)
 
 Building upon the pose-based shooting analysis developed in Project 5,
 I implemented an end-to-end **AI basketball shooting coach** that predicts
