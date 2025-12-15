@@ -1,10 +1,15 @@
 # 🧠 lifestep-internship
 
-This repository contains Python implementations from my biomechanics internship at **LifeStep**, focusing on three core areas:  
+This repository contains Python implementations developed during my biomechanics internship
+at **LifeStep**, focusing on **human motion analysis and biosignal-driven modeling** across
+multiple application domains.
+
 1️⃣ 3D Visualization  
 2️⃣ Joint-angle extraction (including other biomechanical variables)  
 3️⃣ EMG preprocessing & Motion Synchronization  
-4️⃣ AI model development for prosthetic control  
+4️⃣ AI model development for prosthetic control
+5️⃣ Pose-Based Basketball Shooting Form Classification (GOOD / BAD)
+
 
 
 ---
@@ -100,5 +105,28 @@ The final output consists of **17 joint angles**, representing multi-DOF finger 
 
 This repository includes the full model architecture and training code used to build the **prosthetic control system**.
 
+## 5. Pose-Based Basketball Shooting Form Classification (GOOD / BAD)
 
-This repository demonstrates an end-to-end workflow from biomechanics data processing to EMG feature extraction and real-time machine-learning modeling.
+I independently built **a basketball shooting-form classification** pipeline using **YOLOv8-Pose** during my internship at LifeStep.
+From each shooting video, I extracted 2D keypoints and derived interpretable time-series features
+(e.g., elbow angle trajectory and normalized wrist height). Each sequence was resampled to a fixed
+length and normalized.
+
+To evaluate modeling choices under a small annotated dataset setting **(N = 107)**,
+I compared two approaches:
+
+- **CNN + LSTM**: temporal deep model to learn motion dynamics directly from the resampled sequences  
+- **XGBoost**: tree-based classifier trained on flattened pose-derived feature vectors  
+
+### Results (Stratified 5-Fold Cross-Validation, N = 107)
+
+| Model      | Accuracy (mean ± std) | F1-score (mean ± std) |
+|------------|------------------------|------------------------|
+| CNN + LSTM | 0.66 ± 0.07             | 0.64 ± 0.08            |
+| XGBoost    | **0.74 ± 0.04**         | **0.73 ± 0.05**        |​
+
+In this limited-data regime, **XGBoost showed more stable generalization across folds**,
+while the CNN+LSTM model exhibited higher variance, suggesting sensitivity to overfitting
+when training temporal deep models with small labeled datasets.
+
+
