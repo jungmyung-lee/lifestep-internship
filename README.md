@@ -127,46 +127,25 @@ I compared two approaches:
 
 In this limited-data regime, **XGBoost showed more stable generalization across folds**,
 while the CNN+LSTM model exhibited higher variance, suggesting sensitivity to overfitting
-when training temporal deep models with small labeled datasets.
+when training temporal deep models with **small labeled datasets**.
 
 ## 6. Explainable AI Basketball Shooting Coach (End-to-End System)
 
-Building upon the pose-based shooting analysis developed in Project 6,
+Building upon the pose-based shooting analysis developed in Project 5,
 I implemented an end-to-end **AI basketball shooting coach** that predicts
-a numeric shooting-form score and provides **explainable, body-part-level feedback**.
+a continuous shooting-form score and provides **explainable, body-part-level feedback**.
 
-### System Overview
+From each shooting video, pose-based features were extracted using **YOLOv8-Pose**
+and used to train an **XGBoost regression model** that predicts a numeric
+shooting-form score on a 0–100 scale.
+To improve interpretability, **SHAP** was applied to estimate the relative
+importance of different body components (elbow, wrist, lower body) for each prediction.
 
-The system consists of four main components:
+A lightweight **Streamlit-based web interface** was implemented to allow users
+to upload a shooting video and receive a score along with interpretable,
+coach-style feedback.
 
-- **Feature extraction**  
-  Shooting videos are processed using **YOLOv8-Pose** to extract 2D body keypoints.
-  Interpretable biomechanical features—such as elbow joint angles and normalized
-  wrist height—are computed, resampled to a fixed temporal length, and z-score normalized.
-
-- **Regression model**  
-  An **XGBoost regressor** is trained to predict a continuous shooting-form score
-  on a 0–100 scale using pose-derived feature vectors.
-  Model performance is evaluated using **5-fold cross-validation**, and a final
-  model is trained on the full dataset and saved for inference.
-
-- **Explainable AI (SHAP)**  
-  SHAP TreeExplainer is applied to estimate the relative contribution of different
-  body components (elbow, wrist, lower body) to the predicted score.
-  These contributions are aggregated across time to enable stable,
-  component-level interpretation.
-
-- **Interactive web interface**  
-  A **Streamlit-based web application** allows users to upload a shooting video,
-  run the full analysis pipeline, and receive:
-  - An overall shooting-form score  
-  - A joint-level contribution breakdown  
-  - Natural-language feedback generated from SHAP-based importance ratios  
-
-### Results (5-Fold Cross-Validation, N ≈ 107)
-
-The regression model was evaluated using 5-fold cross-validation.
-Performance was measured using **Mean Absolute Error (MAE)** and **R² score**.
+### Results (5-Fold Cross-Validation, N = 107)
 
 | Metric | Value (mean ± std) |
 |------|---------------------|
@@ -175,15 +154,9 @@ Performance was measured using **Mean Absolute Error (MAE)** and **R² score**.
 
 On average, the model predicts shooting-form scores within approximately
 ±7 points of the ground-truth labels and explains around 60% of the variance
-in shooting-form quality.
+in shooting-form quality, demonstrating the feasibility of pose-based,
+explainable scoring under a small-data setting.
 
-### Key Characteristics
-
-- End-to-end pipeline from **raw video → score prediction → explainable feedback**
-- Explicit separation between **prediction** and **interpretation**
-- Designed for **small annotated datasets**, emphasizing robustness and interpretability
-- Demonstrates how biomechanics-inspired features can support
-  **explainable AI systems** for sports performance analysis
 
 
 
