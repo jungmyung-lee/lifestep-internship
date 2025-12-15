@@ -37,6 +37,7 @@ multiple application domains.
 <img width="1298" height="495" alt="image" src="https://github.com/user-attachments/assets/f7e61767-b803-46bb-8333-bee8784bcae4" />
 
 ## 5. Basketball Shooting Form Classification (GOOD / BAD) & AI Basketball Shooting Coach
+**Data sourced from the LJM Basketball Academy (founded and operated by the author)**
 
 ### 🎥 YOLOv8 Pose Estimation
 <p align="center">
