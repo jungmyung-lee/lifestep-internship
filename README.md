@@ -36,6 +36,12 @@ multiple application domains.
 <img width="1315" height="484" alt="image" src="https://github.com/user-attachments/assets/15c20aab-99d1-4b9c-9c16-c84bafeafc66" />
 <img width="1298" height="495" alt="image" src="https://github.com/user-attachments/assets/f7e61767-b803-46bb-8333-bee8784bcae4" />
 
+## 5. Basketball Shooting Form Classification (GOOD / BAD) & AI Basketball Shooting Coach
+
+### 🎥 YOLOv8 Pose Estimation Demo
+<video src="yolov8.mp4" controls width="600"></video>
+
+
 
 ## 2. Joint Angle Extraction & 3D Motion Visualization
 
