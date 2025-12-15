@@ -50,7 +50,7 @@ to deep learning- and machine-learning–based **basketball shooting form classi
 
 
 ## Basketball Shooting Form Classification (GOOD / BAD) User Interface
-![Cutting Motion](./12.gif)
+![Cutting Motion](./.gif)
 
 ## AI Basketball Shooting Coach Program User Interface
 ![Cutting Motion](./22.gif)
