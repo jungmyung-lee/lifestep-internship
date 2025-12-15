@@ -2,9 +2,9 @@
 
 ## Overview 
 
-This repository presents end-to-end human motion analysis projects,
+This repository presents human motion analysis projects,
 ranging from **3D biomechanical visualization** and **EMG signal processing**
-to deep learning- and machine-learning–based **basketball Shooting Form classification** and **AI basketball coach systems.**
+to deep learning- and machine-learning–based **basketball shooting form classification** and **AI basketball coach systems.**
 
 1️⃣ 3D Motion Visualization & Skeleton Reconstruction  
 2️⃣ Joint-angle extraction (including other biomechanical variables)  
@@ -15,6 +15,7 @@ to deep learning- and machine-learning–based **basketball Shooting Form classi
 
 
 ---
+## Image & GIF
 
 ### 1.3D visualization 
 
@@ -24,7 +25,7 @@ to deep learning- and machine-learning–based **basketball Shooting Form classi
 ## 3D Squat Motion Visualization
 ![Squat Motion](./squat.gif)
 
-### 2. joing-angle extraction (inculding other biomechanical variables)
+### 2. joint-angle extraction (including other biomechanical variables)
 
 <img width="408" height="308" alt="image" src="https://github.com/user-attachments/assets/d2fe5268-e0c3-48a4-9d00-997ba2707545" />
 <img width="996" height="361" alt="image" src="https://github.com/user-attachments/assets/6b47925e-caa9-41be-ab00-43c0fe728bf4" />
@@ -54,13 +55,17 @@ to deep learning- and machine-learning–based **basketball Shooting Form classi
 ## AI Basketball Shooting Coach Program User Interface
 ![Cutting Motion](./22.gif)
 
+---
+
+## Description
+
+
 ## 1. 3D Motion Visualization & Skeleton Reconstruction
 This module focuses on 3D marker-based motion-capture visualization using Qualisys-style .mat datasets (e.g., squat.mat, cutting.mat).
 The goal is to transform raw marker trajectories into interpretable **3D skeletal representations**, 
 enabling visual inspection of human movement patterns before downstream biomechanical or machine-learning analysis.
 
 ---
-
 
 ## 2. Joint-angle extraction (including other biomechanical variables) 
 
@@ -70,7 +75,7 @@ Using datasets such as **squat.mat** and **cutting.mat**, I implemented scripts 
 - Extract joint variables including:  
   - **Knee, hip, and ankle angles  **
   - Pelvis kinematics  
-  - Additional biomechanical variables available in the .mat datasets **(e.g., GRF(Ground Reaction Force), marker trajectories, etc.c)** 
+  - Additional biomechanical variables available in the .mat datasets **(e.g., GRF(Ground Reaction Force), marker trajectories, etc.)** 
 - Identify key movement phases (squat cycles, cutting phases)
 
 ---
@@ -158,7 +163,7 @@ when training temporal deep models with **small labeled datasets**.
 
 ---
 
-## 6. AI Basketball Shooting Coach (XGBOOST Learning machine)
+## 6. AI Basketball Shooting Coach (XGBoost Regression + SHAP)
 
 Building upon the pose-based shooting analysis developed in Project 5,
 I implemented an end-to-end **AI basketball shooting coach** that predicts
