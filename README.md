@@ -7,8 +7,8 @@ to deep learning- and machine-learning–based **basketball Shooting Form classi
 1️⃣ 3D Motion Visualization & Skeleton Reconstruction  
 2️⃣ Joint-angle extraction (including other biomechanical variables)  
 3️⃣ EMG preprocessing & Motion Synchronization  
-4️⃣ Real-Time EMG-Based Prosthetic Hand Control
-5️⃣ Basketball Shooting Form Classification (GOOD / BAD)  
+4️⃣ Real-Time EMG-Based Prosthetic Hand Control  
+5️⃣ Basketball Shooting Form Classification (GOOD / BAD)    
 6️⃣ AI Basketball Shooting Coach
 
 
