@@ -42,9 +42,9 @@ to deep learning- and machine-learning–based **basketball Shooting Form classi
 
 ### YOLOv8 Pose Estimation
 <p align="center">
-  <img src="./yolov8.gif" width="300">
-  <img src="./yolov8_2.gif" width="300">
-  <img src="./yolov8_3.gif" width="300">
+  <img src="./yolov8.gif" width="290">
+  <img src="./yolov8_2.gif" width="290">
+  <img src="./yolov8_3.gif" width="290">
 </p>
 
 
