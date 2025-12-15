@@ -39,9 +39,8 @@ multiple application domains.
 ## 5. Basketball Shooting Form Classification (GOOD / BAD) & AI Basketball Shooting Coach
 
 ### 🎥 YOLOv8 Pose Estimation Demo
-![Yolov8 motion](./yolov8.gif)
-
-
+<img src="./yolov8.gif" width="600">
+<img src="./yolov8_2.gif" width="600">
 
 ## 2. Joint Angle Extraction & 3D Motion Visualization
 
