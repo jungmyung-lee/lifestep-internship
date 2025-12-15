@@ -7,7 +7,7 @@ to deep learning- and machine-learning–based **basketball Shooting Form classi
 1️⃣ 3D Motion Visualization & Skeleton Reconstruction  
 2️⃣ Joint-angle extraction (including other biomechanical variables)  
 3️⃣ EMG preprocessing & Motion Synchronization  
-4️⃣ AI model development for prosthetic control  
+4️⃣ Real-Time EMG-Based Prosthetic Hand Control
 5️⃣ Basketball Shooting Form Classification (GOOD / BAD)  
 6️⃣ AI Basketball Shooting Coach
 
@@ -115,7 +115,7 @@ the same EMG–motion synchronization workflow was applied to cutting tasks to a
 
 ---
 
-## 4. TD + CNN + TCN Real-Time AI Model (prosthetic control system)
+## 4. Real-Time EMG-Based Prosthetic Hand Control (TD + CNN + TCN)
 
 I developed a lightweight real-time regression model using:
 
