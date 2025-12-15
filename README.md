@@ -39,7 +39,12 @@ multiple application domains.
 ## 5. Basketball Shooting Form Classification (GOOD / BAD) & AI Basketball Shooting Coach
 
 ### 🎥 YOLOv8 Pose Estimation Demo
-<video src="yolov8.mp4" controls width="600"></video>
+<video controls width="600">
+  <source src="https://raw.githubusercontent.com/jungmyung-lee/lifestep-internship/main/yolov8.mp4" type="video/mp4">
+</video>
+
+If the video does not render above, you can watch it here:  
+[▶️ Open video](https://github.com/jungmyung-lee/lifestep-internship/blob/main/yolov8.mp4)
 
 
 
