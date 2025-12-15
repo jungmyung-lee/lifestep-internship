@@ -111,15 +111,15 @@ if uploaded_file is not None:
 
             st.write("**Elbow Contribution**")
             st.progress(float(elbow_ratio))
-            st.caption(f"{elbow_ratio * 100:.1f}% of total performance penalty")
+            st.caption(f"{elbow_ratio * 100:.1f}% of total performance influence")
 
             st.write("**Wrist Contribution**")
             st.progress(float(wrist_ratio))
-            st.caption(f"{wrist_ratio * 100:.1f}% of total performance penalty")
+            st.caption(f"{wrist_ratio * 100:.1f}% of total performance influence")
 
             st.write("**Lower-body Contribution**")
             st.progress(float(hip_ratio))
-            st.caption(f"{hip_ratio * 100:.1f}% of total performance penalty")
+            st.caption(f"{hip_ratio * 100:.1f}% of total performance influence")
 
             st.divider()
 
