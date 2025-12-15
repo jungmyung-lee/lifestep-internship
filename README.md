@@ -47,10 +47,10 @@ multiple application domains.
 </p>
 
 
-## 🔹Basketball Shooting Form Classification (GOOD / BAD)
+## 🔹Basketball Shooting Form Classification (GOOD / BAD) User Interface
 ![Cutting Motion](./movie1-.gif)
 
-## 🔹AI Basketball Shooting Coach Program
+## 🔹AI Basketball Shooting Coach Program User Interface
 ![Cutting Motion](./movie2-.gif)
 
 
@@ -123,7 +123,7 @@ The final output consists of **17 joint angles**, representing multi-DOF finger 
 
 This repository includes the full model architecture and training code used to build the **prosthetic control system**.
 
-## 5. Pose-Based Basketball Shooting Form Classification (GOOD / BAD)
+## 5. Pose-Based Basketball Shooting Form Classification (GOOD / BAD) 
 
 I independently built **a basketball shooting-form classification** pipeline using **YOLOv8-Pose** during my internship at LifeStep.
 From each shooting video, I extracted 2D keypoints and derived interpretable time-series features
