@@ -42,6 +42,7 @@ multiple application domains.
 <p align="center">
   <img src="./yolov8.gif" width="400">
   <img src="./yolov8_2.gif" width="400">
+  <img src="./yolov8_3.gif" width="400">
 </p>
 
 ## 2. Joint Angle Extraction & 3D Motion Visualization
