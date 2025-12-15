@@ -1,8 +1,8 @@
 # 🧠 lifestep-internship
 
-This repository contains Python implementations developed during my biomechanics internship
-at **LifeStep**, focusing on **human motion analysis and biosignal-driven modeling** across
-multiple application domains.
+This repository presents end-to-end human motion analysis projects,
+ranging from **3D biomechanical visualization** and **EMG signal processing**
+to deep learning- and machine-learning–based **basketball Shooting Form classification** and **AI basketball coach systems.**
 
 1️⃣ 3D Motion Visualization & Skeleton Reconstruction  
 2️⃣ Joint-angle extraction (including other biomechanical variables)  
