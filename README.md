@@ -49,10 +49,10 @@ to deep learning- and machine-learning–based **basketball Shooting Form classi
 
 
 ## Basketball Shooting Form Classification (GOOD / BAD) User Interface
-![Cutting Motion](./movie1-.gif)
+![Cutting Motion](./11.gif)
 
 ## AI Basketball Shooting Coach Program User Interface
-![Cutting Motion](./movie2-.gif)
+![Cutting Motion](./22.gif)
 
 ## 1. 3D Motion Visualization & Skeleton Reconstruction
 This module focuses on 3D marker-based motion-capture visualization using Qualisys-style .mat datasets (e.g., squat.mat, cutting.mat).
