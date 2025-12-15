@@ -1,4 +1,4 @@
-# lifestep-internship
+# Lifestep-Internship
 
 This repository presents end-to-end human motion analysis projects,
 ranging from **3D biomechanical visualization** and **EMG signal processing**
