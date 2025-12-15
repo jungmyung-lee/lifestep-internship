@@ -46,6 +46,7 @@ multiple application domains.
   <img src="./yolov8_3.gif" width="300">
 </p>
 
+
 ## 🔹Basketball Shooting Form Classification (GOOD / BAD)
 ![Cutting Motion](./movie1-.gif)
 
