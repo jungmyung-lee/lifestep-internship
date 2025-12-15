@@ -87,7 +87,7 @@ From this synchronized analysis, users can examine:
 Although the repository currently shows squat examples,
 the same EMG–motion synchronization workflow was applied to cutting tasks to analyze activation strategies in more dynamic movements.
 
-## 4. TD + CNN + TCN Real-Time Model (17-Angle Output)
+## 4. TD + CNN + TCN Real-Time Model (prosthetic control system)
 
 I developed a lightweight real-time regression model using:
 
@@ -98,7 +98,7 @@ I developed a lightweight real-time regression model using:
 The model processes **EMG signals as input** and performs inference every **0.01 seconds (100 Hz)**, enabling real-time operation.  
 The final output consists of **17 joint angles**, representing multi-DOF finger and wrist movements.
 
-This repository includes the full model architecture and training code used to build the prosthetic control system.
+This repository includes the full model architecture and training code used to build the **prosthetic control system**.
 
 
 This repository demonstrates an end-to-end workflow from biomechanics data processing to EMG feature extraction and real-time machine-learning modeling.
