@@ -4,11 +4,11 @@ This repository contains Python implementations developed during my biomechanics
 at **LifeStep**, focusing on **human motion analysis and biosignal-driven modeling** across
 multiple application domains.
 
-1️⃣ 3D Visualization  
+1️⃣ 3D Motion Visualization & Skeleton Reconstruction  
 2️⃣ Joint-angle extraction (including other biomechanical variables)  
 3️⃣ EMG preprocessing & Motion Synchronization  
-4️⃣ AI model development for prosthetic control
-5️⃣ Pose-Based Basketball Shooting Form Classification (GOOD / BAD)
+4️⃣ AI model development for prosthetic control  
+5️⃣ Pose-Based Basketball Shooting Form Classification (GOOD / BAD)  
 6️⃣ Explainable AI Basketball Shooting Coach
 
 
@@ -53,20 +53,24 @@ multiple application domains.
 ## 🔹AI Basketball Shooting Coach Program User Interface
 ![Cutting Motion](./movie2-.gif)
 
+## 1. 3D Motion Visualization & Skeleton Reconstruction
+This module focuses on 3D marker-based motion-capture visualization using Qualisys-style .mat datasets (e.g., squat.mat, cutting.mat).
+The goal is to transform raw marker trajectories into interpretable **3D skeletal representations**, 
+enabling visual inspection of human movement patterns before downstream biomechanical or machine-learning analysis.
+
+---
 
 
-## 2. Joint Angle Extraction & 3D Motion Visualization
+## 2. Joint-angle extraction (including other biomechanical variables) 
 
 Using datasets such as **squat.mat** and **cutting.mat**, I implemented scripts to:
 
 - Load and parse motion-capture data  
 - Extract joint variables including:  
-  - Knee, hip, and ankle angles  
+  - **Knee, hip, and ankle angles  **
   - Pelvis kinematics  
-  - Additional biomechanical variables available in the .mat datasets (e.g., GRF, marker trajectories, etc.) 
+  - Additional biomechanical variables available in the .mat datasets **(e.g., GRF(Ground Reaction Force), marker trajectories, etc.c)** 
 - Identify key movement phases (squat cycles, cutting phases)
-
-I also reconstructed 3D marker trajectories and generated **3D motion GIFs**, enabling intuitive visualization of the movements.
 
 ---
 
@@ -110,6 +114,8 @@ From this synchronized analysis, users can examine:
 Although the repository currently shows squat examples,
 the same EMG–motion synchronization workflow was applied to cutting tasks to analyze activation strategies in more dynamic movements.
 
+---
+
 ## 4. TD + CNN + TCN Real-Time Model (prosthetic control system)
 
 I developed a lightweight real-time regression model using:
@@ -122,6 +128,8 @@ The model processes **EMG signals as input** and performs inference every **0.01
 The final output consists of **17 joint angles**, representing multi-DOF finger and wrist movements.
 
 This repository includes the full model architecture and training code used to build the **prosthetic control system**.
+
+---
 
 ## 5. Pose-Based Basketball Shooting Form Classification (GOOD / BAD) 
 
@@ -146,6 +154,8 @@ I compared two approaches:
 In this limited-data regime, **XGBoost showed more stable generalization across folds**,
 while the CNN+LSTM model exhibited higher variance, suggesting sensitivity to overfitting
 when training temporal deep models with **small labeled datasets**.
+
+---
 
 ## 6. Explainable AI Basketball Shooting Coach (End-to-End System)
 
