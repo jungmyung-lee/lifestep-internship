@@ -8,8 +8,8 @@ multiple application domains.
 2️⃣ Joint-angle extraction (including other biomechanical variables)  
 3️⃣ EMG preprocessing & Motion Synchronization  
 4️⃣ AI model development for prosthetic control  
-5️⃣ Pose-Based Basketball Shooting Form Classification (GOOD / BAD)  
-6️⃣ Explainable AI Basketball Shooting Coach
+5️⃣ Basketball Shooting Form Classification (GOOD / BAD)  
+6️⃣ AI Basketball Shooting Coach
 
 
 ---
@@ -131,7 +131,7 @@ This repository includes the full model architecture and training code used to b
 
 ---
 
-## 5. Pose-Based Basketball Shooting Form Classification (GOOD / BAD) 
+## 5. Basketball Shooting Form Classification (GOOD / BAD) 
 
 I independently built **a basketball shooting-form classification** pipeline using **YOLOv8-Pose** during my internship at LifeStep.
 From each shooting video, I extracted 2D keypoints and derived interpretable time-series features
@@ -157,7 +157,7 @@ when training temporal deep models with **small labeled datasets**.
 
 ---
 
-## 6. Explainable AI Basketball Shooting Coach (End-to-End System)
+## 6. AI Basketball Shooting Coach 
 
 Building upon the pose-based shooting analysis developed in Project 5,
 I implemented an end-to-end **AI basketball shooting coach** that predicts
