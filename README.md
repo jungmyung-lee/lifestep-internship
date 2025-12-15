@@ -78,7 +78,7 @@ Using datasets such as **squat.mat** and **cutting.mat**, I implemented scripts 
 
 This module performs full EMG preprocessing and synchronizes the processed signals with 3D marker-based motion data collected during squat and cutting tasks.
 
-⚙️ Pre-processing Pipeline
+**Pre-processing Pipeline**
 
 Five raw EMG channels are processed using:
 
