@@ -14,7 +14,7 @@ multiple application domains.
 
 ---
 
-### 1.🎥  3D visualization (GIF) 
+### 1.🎥  3D visualization 
 
 ## 🔹3D Cutting Motion Visualization
 ![Cutting Motion](./cutting.gif)
@@ -26,7 +26,6 @@ multiple application domains.
 
 <img width="408" height="308" alt="image" src="https://github.com/user-attachments/assets/d2fe5268-e0c3-48a4-9d00-997ba2707545" />
 <img width="996" height="361" alt="image" src="https://github.com/user-attachments/assets/6b47925e-caa9-41be-ab00-43c0fe728bf4" />
-
 
 
 ### 3.EMG preprocessing
