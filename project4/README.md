@@ -1,7 +1,7 @@
 ### Readme
 
-📄 **Project4 Presentation (PDF)**  
-👉 [Open PDF](Project4_presentation.pdf)
+**Project4 Presentation (PDF)**  
+->[Open PDF](Project4_presentation.pdf)
 
 ---
 
