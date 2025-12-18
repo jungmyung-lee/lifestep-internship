@@ -67,6 +67,8 @@ https://www.sciencedirect.com/topics/veterinary-science-and-veterinary-medicine/
 https://www.slideserve.com/chet/12-muscles-1-anconeus-2-brachioradialis-br
 
 ### Output(Raw EMG 8 Channels of Muscles)
+<img width="824" height="1158" alt="손" src="https://github.com/user-attachments/assets/d713ca33-b9ff-4edd-a9d8-0212755719da" />
+![손2](https://github.com/user-attachments/assets/b458ed84-9bcd-417f-8bd6-8a2d20b5b7d5)
 
 
 
