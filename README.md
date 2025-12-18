@@ -38,6 +38,9 @@ to deep learning- and machine-learning–based **basketball shooting form classi
 <img width="1315" height="484" alt="image" src="https://github.com/user-attachments/assets/15c20aab-99d1-4b9c-9c16-c84bafeafc66" />
 <img width="1298" height="495" alt="image" src="https://github.com/user-attachments/assets/f7e61767-b803-46bb-8333-bee8784bcae4" />
 
+## 4. Real-Time EMG-Based Prosthetic Hand Control (TD + CNN + TCN)
+<img width="700" height="900" alt="outline_4" src="https://github.com/user-attachments/assets/e381f0c5-e681-44cc-837a-a7c65b6090ef" />
+
 ## 5,6. Basketball Shooting Form Classification (GOOD / BAD) & AI Basketball Shooting Coach
 **Data sourced from the LJM Basketball Academy (founded and operated by the author)**
 
@@ -123,7 +126,7 @@ the same EMG–motion synchronization workflow was applied to cutting tasks to a
 
 ---
 
-<img width="800" height="1000" alt="outline_4" src="https://github.com/user-attachments/assets/e381f0c5-e681-44cc-837a-a7c65b6090ef" />
+
 
 
 
