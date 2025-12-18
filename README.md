@@ -120,17 +120,18 @@ From this synchronized analysis, users can examine:
 Although the repository currently shows squat examples,
 the same EMG–motion synchronization workflow was applied to cutting tasks to analyze activation strategies in more dynamic movements.
 
+
 ---
 
-<img width="557" height="657" alt="image" src="https://github.com/user-attachments/assets/5682bfee-a0d4-445e-818c-9505edb03d57" />
 
+<img width="919" height="1176" alt="Real-Time EMG-Based Prosthetic Hand Control (TD + CNN + TCN) - visual selection (1)" src="https://github.com/user-attachments/assets/332822eb-8487-470c-bf6a-8885389230be" />
 
 ## 4. Real-Time EMG-Based Prosthetic Hand Control (TD + CNN + TCN)
 
 I developed a lightweight real-time regression model using:
 
-- Time-Domain (TD) features  
-- 1D CNN layers for spatial pattern extraction  
+- Time-Domain (TD) features (MAV, WL, ZC, SSC, RMS)
+- 1D CNN layers for spatial pattern extraction
 - TCN layers with dilation for temporal modeling  
 
 The model processes **EMG signals as input** and performs inference every **0.01 seconds (100 Hz)**, enabling real-time operation.  
