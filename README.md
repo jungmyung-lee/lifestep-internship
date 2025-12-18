@@ -51,6 +51,15 @@ to deep learning- and machine-learning–based **basketball shooting form classi
 
 
 ### Features of Muscles in EMG 8 Channels
+Flexor Digitorum Superficialis (FDS) 
+Flexor Digitorum Profundus (FDP) 
+Flexor Carpi Radialis (FCR) 
+Flexor Carpi Ulnaris (FCU) 
+Extensor Digitorum (ED) 
+Extensor Carpi Radialis Longus (ECRL) 
+Extensor Carpi Ulnaris (ECU) 
+Pronator Teres (PT) 
+
 <img width="792" height="702" alt="Forearm Muscles_ A Concise Overview - visual selection" src="https://github.com/user-attachments/assets/987b4bc5-b222-42f9-ad0e-f2f54b0364b0" />
 
 
