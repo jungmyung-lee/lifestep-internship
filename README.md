@@ -123,8 +123,9 @@ the same EMG–motion synchronization workflow was applied to cutting tasks to a
 
 ---
 
+<img width="918" height="1111" alt="outline_4" src="https://github.com/user-attachments/assets/e381f0c5-e681-44cc-837a-a7c65b6090ef" />
 
-<img width="919" height="1176" alt="Real-Time EMG-Based Prosthetic Hand Control (TD + CNN + TCN) - visual selection (1)" src="https://github.com/user-attachments/assets/332822eb-8487-470c-bf6a-8885389230be" />
+
 
 ## 4. Real-Time EMG-Based Prosthetic Hand Control (TD + CNN + TCN)
 
