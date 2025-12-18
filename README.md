@@ -122,6 +122,9 @@ the same EMG–motion synchronization workflow was applied to cutting tasks to a
 
 ---
 
+<img width="557" height="657" alt="image" src="https://github.com/user-attachments/assets/5682bfee-a0d4-445e-818c-9505edb03d57" />
+
+
 ## 4. Real-Time EMG-Based Prosthetic Hand Control (TD + CNN + TCN)
 
 I developed a lightweight real-time regression model using:
