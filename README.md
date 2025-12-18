@@ -76,7 +76,7 @@ https://www.slideserve.com/chet/12-muscles-1-anconeus-2-brachioradialis-br
   <img 
     src="https://github.com/user-attachments/assets/d5cab7fa-3413-4a60-a790-70c4a76d2cb8" 
     alt="Wrist anatomy diagram"
-    width="400"
+    width="550"
   />
 </div>
 
