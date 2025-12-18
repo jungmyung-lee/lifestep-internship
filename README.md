@@ -122,6 +122,9 @@ This module focuses on 3D marker-based motion-capture visualization using Qualis
 The goal is to transform raw marker trajectories into interpretable **3D skeletal representations**, 
 enabling visual inspection of human movement patterns before downstream biomechanical or machine-learning analysis.
 
+🔍 **Detailed Information**  
+👉 [Click here to view Project 1 detailed README](./project1/README.md)
+
 ---
 
 ## 2. Joint-angle extraction (including other biomechanical variables) 
@@ -134,6 +137,9 @@ Using datasets such as **squat.mat** and **cutting.mat**, I implemented scripts 
   - Pelvis kinematics  
   - Additional biomechanical variables available in the .mat datasets **(e.g., GRF(Ground Reaction Force), marker trajectories, etc.)** 
 - Identify key movement phases (squat cycles, cutting phases)
+
+- 🔍 **Detailed Information**  
+👉 [Click here to view Project 2 detailed README](./project2/README.md)
 
 ---
 
@@ -177,6 +183,9 @@ From this synchronized analysis, users can examine:
 Although the repository currently shows squat examples,
 the same EMG–motion synchronization workflow was applied to cutting tasks to analyze activation strategies in more dynamic movements.
 
+🔍 **Detailed Information**  
+👉 [Click here to view Project 3 detailed README](./project3/README.md)
+
 
 ---
 
@@ -197,7 +206,7 @@ The final output consists of **17 joint angles**, representing multi-DOF finger 
 
 This repository includes the full model architecture and training code used to build the **prosthetic control system**.
 
-🔍 **Detailed Design & Model Rationale**  
+🔍 **Detailed Information**  
 👉 [Click here to view Project 4 detailed README](./project4/README.md)
 
 
@@ -226,6 +235,9 @@ I compared two approaches:
 In this limited-data regime, **XGBoost showed more stable generalization across folds**,
 while the CNN+LSTM model exhibited higher variance, suggesting sensitivity to overfitting
 when training temporal deep models with **small labeled datasets**.
+
+🔍 **Detailed Information**  
+👉 [Click here to view Project 5 detailed README](./project5/README.md)
 
 ---
 
@@ -256,6 +268,9 @@ On average, the model predicts shooting-form scores within approximately
 ±7 points of the ground-truth labels and explains around 60% of the variance
 in shooting-form quality, demonstrating the feasibility of pose-based,
 explainable scoring under a small-data setting.
+
+🔍 **Detailed Information**  
+👉 [Click here to view Project 6 detailed README](./project6/README.md)
 
 
 
