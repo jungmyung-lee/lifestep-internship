@@ -68,7 +68,7 @@ https://www.slideserve.com/chet/12-muscles-1-anconeus-2-brachioradialis-br
 
 ### Output(Raw EMG 8 Channels of Muscles)
 
-<img width="256" height="304" alt="image" src="https://github.com/user-attachments/assets/d3627966-c3eb-4683-95cf-80dd70ecfe2e" />
+<img width="456" height="504" alt="image" src="https://github.com/user-attachments/assets/d3627966-c3eb-4683-95cf-80dd70ecfe2e" />
 
 <div style="display: flex; gap: 16px; align-items: flex-start;">
   <img 
