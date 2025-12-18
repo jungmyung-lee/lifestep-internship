@@ -69,10 +69,6 @@ https://www.slideserve.com/chet/12-muscles-1-anconeus-2-brachioradialis-br
 ### Output(Raw EMG 8 Channels of Muscles)
 
 
-### Features of Muscles in EMG 8 Channels
-
-
-<img width="792" height="702" alt="Forearm Muscles_ A Concise Overview - visual selection" src="https://github.com/user-attachments/assets/987b4bc5-b222-42f9-ad0e-f2f54b0364b0" />
 
 
 ## 5,6. Basketball Shooting Form Classification (GOOD / BAD) & AI Basketball Shooting Coach
