@@ -67,9 +67,25 @@ https://www.sciencedirect.com/topics/veterinary-science-and-veterinary-medicine/
 https://www.slideserve.com/chet/12-muscles-1-anconeus-2-brachioradialis-br
 
 ### Output(Raw EMG 8 Channels of Muscles)
-<img width="824" height="1158" alt="손" src="https://github.com/user-attachments/assets/d713ca33-b9ff-4edd-a9d8-0212755719da" />
-![손2](https://github.com/user-attachments/assets/d5cab7fa-3413-4a60-a790-70c4a76d2cb8)
+<div style="display: flex; gap: 16px; align-items: flex-start;">
+  <img 
+    src="https://github.com/user-attachments/assets/d713ca33-b9ff-4edd-a9d8-0212755719da" 
+    alt="Hand anatomy model"
+    width="400"
+  />
+  <img 
+    src="https://github.com/user-attachments/assets/d5cab7fa-3413-4a60-a790-70c4a76d2cb8" 
+    alt="Wrist anatomy diagram"
+    width="400"
+  />
+</div>
 
+
+(Left) Cayman Yoga Club – *3Gear Hand Model (Hand Anatomy & DOF)*  
+https://www.caymanyogaclub.com/latest/doc/handModel.html  
+
+(Right) Musculoskeletal Key – *Structure and Function of the Wrist*  
+https://musculoskeletalkey.com/structure-and-function-of-the-wrist/
 
 
 
