@@ -197,6 +197,10 @@ The final output consists of **17 joint angles**, representing multi-DOF finger 
 
 This repository includes the full model architecture and training code used to build the **prosthetic control system**.
 
+🔍 **Detailed Design & Model Rationale**  
+👉 [Click here to view Project 4 detailed README](./project4/README.md)
+
+
 ---
 
 ## 5. Basketball Shooting Form Classification (GOOD / BAD) (CNN + LSTM vs XGBoost)
