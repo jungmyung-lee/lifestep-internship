@@ -51,28 +51,8 @@ to deep learning- and machine-learning–based **basketball shooting form classi
 
 <p align="center">
   <img src="https://github.com/user-attachments/assets/a51361d9-8fc3-41cb-8a91-59bcaa245e32" width="360" />
-  <img src="https://github.com/user-attachments/assets/d93d9a85-94ef-4cfc-a4dd-201aa7e709cd" width="360" />
+  <img src="https://github.com/user-attachments/assets/d93d9a85-94ef-4cfc-a4dd-201aa7e709cd" width="500" />
 </p>
-
-<table align="center">
-  <tr>
-    <!-- 왼쪽 그림 -->
-    <td align="center" valign="middle">
-      <img 
-        src="https://github.com/user-attachments/assets/a51361d9-8fc3-41cb-8a91-59bcaa245e32"
-        width="420"
-      />
-    </td>
-
-    <!-- 오른쪽 그림 (조금 더 크게) -->
-    <td align="center" valign="middle">
-      <img 
-        src="https://github.com/user-attachments/assets/d93d9a85-94ef-4cfc-a4dd-201aa7e709cd"
-        width="480"
-      />
-    </td>
-  </tr>
-</table>
 
 
 
