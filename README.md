@@ -54,9 +54,17 @@ Flexor Digitorum Superficialis (FDS)
 , Extensor Carpi Radialis Longus (ECRL) 
 , Extensor Carpi Ulnaris (ECU) 
 , Pronator Teres (PT) 
+
 ![Flexor원본 복사본](https://github.com/user-attachments/assets/a51361d9-8fc3-41cb-8a91-59bcaa245e32)
 <img width="620" height="440" alt="Extensor쪽-복사본-2" src="https://github.com/user-attachments/assets/d93d9a85-94ef-4cfc-a4dd-201aa7e709cd" />
 
+*Image source: 
+
+(Left) ScienceDirect – Flexor Digitorum Superficialis Muscle*  
+https://www.sciencedirect.com/topics/veterinary-science-and-veterinary-medicine/flexor-digitorum-superficialis-muscle
+
+(Right) SlideServe – *Forearm Muscles Anatomy (Flexor & Extensor Groups)*  
+https://www.slideserve.com/chet/12-muscles-1-anconeus-2-brachioradialis-br
 
 
 ### Features of Muscles in EMG 8 Channels
