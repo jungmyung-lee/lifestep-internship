@@ -63,8 +63,10 @@ Flexor Digitorum Superficialis (FDS)
 (Left) ScienceDirect – Flexor Digitorum Superficialis Muscle*  
 https://www.sciencedirect.com/topics/veterinary-science-and-veterinary-medicine/flexor-digitorum-superficialis-muscle
 
-(Right) SlideServe – *Forearm Muscles Anatomy (Flexor & Extensor Groups)*  
+(Right) SlideServe – *12 muscles 1. Anconeus 2. Brachioradialis (BR)*  
 https://www.slideserve.com/chet/12-muscles-1-anconeus-2-brachioradialis-br
+
+### Output(Raw EMG 8 Channels of Muscles)
 
 
 ### Features of Muscles in EMG 8 Channels
