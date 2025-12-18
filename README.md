@@ -42,7 +42,8 @@ to deep learning- and machine-learning–based **basketball shooting form classi
 ## 4. Real-Time EMG-Based Prosthetic Hand Control (TD + CNN + TCN)
 
 ### Overview
-<img width="700" height="900" alt="outline_4" src="https://github.com/user-attachments/assets/e381f0c5-e681-44cc-837a-a7c65b6090ef" />
+<img width="1024" height="559" alt="image" src="https://github.com/user-attachments/assets/6e35b7fa-52cb-4d75-8e45-b242156b378d" />
+
 
 ### Input(Raw EMG 8 Channels of Muscles)
 Flexor Digitorum Superficialis (FDS) 
