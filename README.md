@@ -45,7 +45,6 @@ to deep learning- and machine-learning–based **basketball shooting form classi
 <img width="700" height="700" alt="artiphoria-A clean anatomical i" src="https://github.com/user-attachments/assets/f1370584-1357-42c1-a013-143ca66326c5" />
 
 ![Flexor 쪽](https://github.com/user-attachments/assets/7b4c428f-98b3-4aef-9374-3f71b4970ded)
-
 ![Extensor쪽](https://github.com/user-attachments/assets/d4a4a46d-7274-44c3-a008-7fc524ac4888)
 
 
