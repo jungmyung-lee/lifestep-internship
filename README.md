@@ -123,7 +123,7 @@ the same EMG–motion synchronization workflow was applied to cutting tasks to a
 
 ---
 
-<img width="918" height="1111" alt="outline_4" src="https://github.com/user-attachments/assets/e381f0c5-e681-44cc-837a-a7c65b6090ef" />
+<img width="800" height="1000" alt="outline_4" src="https://github.com/user-attachments/assets/e381f0c5-e681-44cc-837a-a7c65b6090ef" />
 
 
 
