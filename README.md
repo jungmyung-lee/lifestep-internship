@@ -46,7 +46,9 @@ to deep learning- and machine-learning–based **basketball shooting form classi
 
 ### Input(Raw EMG 8 Channels of Muscles)
 ![Flexor원본 복사본](https://github.com/user-attachments/assets/a51361d9-8fc3-41cb-8a91-59bcaa245e32)
-[Extensor쪽 복사본 2.tiff](https://github.com/user-attachments/files/24234124/Extensor.2.tiff)
+<img width="720" height="540" alt="Extensor쪽-복사본-2" src="https://github.com/user-attachments/assets/d93d9a85-94ef-4cfc-a4dd-201aa7e709cd" />
+
+
 
 ### Features of Muscles in EMG 8 Channels
 <img width="792" height="702" alt="Forearm Muscles_ A Concise Overview - visual selection" src="https://github.com/user-attachments/assets/987b4bc5-b222-42f9-ad0e-f2f54b0364b0" />
