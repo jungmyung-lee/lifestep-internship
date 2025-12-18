@@ -46,7 +46,7 @@ to deep learning- and machine-learning–based **basketball shooting form classi
 
 ### Input(Raw EMG 8 Channels of Muscles)
 ![Flexor원본 복사본](https://github.com/user-attachments/assets/a51361d9-8fc3-41cb-8a91-59bcaa245e32)
-<img width="720" height="540" alt="Extensor쪽-복사본-2" src="https://github.com/user-attachments/assets/d93d9a85-94ef-4cfc-a4dd-201aa7e709cd" />
+<img width="620" height="440" alt="Extensor쪽-복사본-2" src="https://github.com/user-attachments/assets/d93d9a85-94ef-4cfc-a4dd-201aa7e709cd" />
 
 
 <p align="center">
