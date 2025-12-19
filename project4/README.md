@@ -3,32 +3,35 @@
 
 ## Table of Contents
 
-- [Project Overview](#-project-overview)
+- [Project Overview](#project-overview
+- [Readme](#readme)
+- [Data Specification](#data-specification-data-sourced-from-lifestep-company)
 - [Research Basis](#research-basis)
 - [Model Purpose](#model-purpose)
 - [Overall System Pipeline](#overall-system-pipeline)
 
 - [EMG Input & Pre-processing](#emg-input--pre-processing)
 - [MVC-Based Robust Normalization](#mvc-based-robust-normalization)
-- [Windowing Strategy](#windowing-strategy-150-ms--10-ms-hop)
+- [Windowing Strategy (150 ms / 10 ms Hop)](#windowing-strategy-150-ms--10-ms-hop)
 - [Time-Domain (TD) Feature Extraction](#time-domain-td-feature-extraction)
 
-- [CNN Encoder](#-cnn-encoder)
+- [CNN Encoder](#cnn-encoder)
   - [Why 2 Layers](#why-exactly-2-cnn-layers)
   - [Why 16 → 32 Filters](#why-use-16--32-filters)
   - [Why Kernel Size = 3](#why-kernel-size--3)
   - [Why ReLU Activation](#why-relu-activation)
-  - [Why Compact Feature Representation](#why-output-a-compact-feature-representation-3248-dimensions)
+  - [Why Compact Feature Representation](#why-output-a-compact-feature-representation-32–48-dimensions)
 
-- [Temporal Convolutional Network (TCN)](#-temporal-convolutional-network-tcn)
+- [Temporal Convolutional Network (TCN)](#temporal-convolutional-network-tcn)
   - [Why TCN over LSTM](#why-use-a-tcn-instead-of-an-lstm)
-  - [Why 1–2 TCN Layers](#why-only-12-tcn-layers)
+  - [Why 1–2 TCN Layers](#why-only-1–2-tcn-layers)
   - [Why Hidden Channels = 32](#why-hidden-channels--32)
   - [Why Dilations = 1, 2](#why-dilations--1-and-2-only)
-  - [Why Kernel Size = 3 in TCN](#why-kernel-size--3-in-the-tcn)
+  - [Why Kernel Size = 3 in the TCN](#why-kernel-size--3-in-the-tcn)
 
-- [Loss Function](#-loss-function)
-- [Final Remark](#-final-remark)
+- [Loss Function](#loss-function)
+- [Final Remark](#final-remark)
+
 
 <img width="1024" height="559" alt="image" src="https://github.com/user-attachments/assets/82316845-b6c2-4d9f-ae7a-f704935a32bf" />
 
@@ -46,6 +49,17 @@ Unlike purely offline or high-compute research models, this project explicitly t
 
 **Project4 Presentation (PDF)**  
 ->[Open PDF](Project4_presentation.pdf)
+
+---
+
+
+### Data Specification (Data sourced from LifeStep Company)
+
+- **Measurement device (Input):**  
+  Wearable surface EMG sensors (8-channel forearm EMG)
+
+- **Training labels (Output):**  
+  17 Hand joint angles obtained from synchronized motion-capture data  
 
 ---
 
