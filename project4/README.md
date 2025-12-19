@@ -3,7 +3,7 @@
 
 ## Table of Contents
 
-- [Project Overview](#project-overview
+- [Project Overview](#project-overview)
 - [Readme](#readme)
 - [Data Specification](#data-specification-data-sourced-from-lifestep-company)
 - [Research Basis](#research-basis)
@@ -31,6 +31,8 @@
 
 - [Loss Function](#loss-function)
 - [Final Remark](#final-remark)
+- [References](#references)
+
 
 
 <img width="1024" height="559" alt="image" src="https://github.com/user-attachments/assets/82316845-b6c2-4d9f-ae7a-f704935a32bf" />
