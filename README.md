@@ -77,7 +77,7 @@ https://www.sciencedirect.com/topics/veterinary-science-and-veterinary-medicine/
 https://www.slideserve.com/chet/12-muscles-1-anconeus-2-brachioradialis-br  
 
 
-### Output(Raw EMG 8 Channels of Muscles)
+### Output(A single 17-dimensional vector representing continuous hand joint angles)
 
 <img width="1024" height="559" alt="image" src="https://github.com/user-attachments/assets/b24aeb65-1a98-42b3-aac2-5e4b5d48d79e" />
 
