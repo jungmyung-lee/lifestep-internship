@@ -1,8 +1,7 @@
 # Project4  
-# **Real-Time EMG Regression Pipeline**  
-### **TD + CNN + TCN **
+# **Real-Time EMG Regression Pipeline**(TD + CNN + TCN)  
 
-## 📑 Table of Contents
+## Table of Contents
 
 - [Project Overview](#-project-overview)
 - [Research Basis](#research-basis)
