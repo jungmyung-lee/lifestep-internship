@@ -45,7 +45,17 @@ to deep learning- and machine-learning–based **basketball shooting form classi
 <img width="1024" height="559" alt="image" src="https://github.com/user-attachments/assets/6e35b7fa-52cb-4d75-8e45-b242156b378d" />
 
 
-### Input(Raw EMG 8 Channels of Muscles)
+
+### Data Specification (Data sourced from LifeStep Company)
+
+- **Measurement device (Input):**  
+  Wearable surface EMG sensors (8-channel forearm EMG)
+
+- **Training labels (Output):**  
+  Hand joint angles obtained from synchronized motion-capture data  
+
+### Input(Raw EMG 8 Channels of Muscles)  
+  
 Flexor Digitorum Superficialis (FDS) 
 , Flexor Digitorum Profundus (FDP) 
 , Flexor Carpi Radialis (FCR) 
