@@ -30,6 +30,7 @@
 - [Loss Function](#-loss-function)
 - [Final Remark](#-final-remark)
 
+<img width="1024" height="559" alt="image" src="https://github.com/user-attachments/assets/82316845-b6c2-4d9f-ae7a-f704935a32bf" />
 
 
 ## Project Overview
