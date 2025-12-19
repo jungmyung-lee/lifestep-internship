@@ -60,10 +60,10 @@ Flexor Digitorum Superficialis (FDS)
 
 *Image source: 
 
-(Left) ScienceDirect – Flexor Digitorum Superficialis Muscle*  
+(Left) ScienceDirect – _Flexor Digitorum Superficialis Muscle* _ 
 https://www.sciencedirect.com/topics/veterinary-science-and-veterinary-medicine/flexor-digitorum-superficialis-muscle
 
-(Right) SlideServe – *12 muscles 1. Anconeus 2. Brachioradialis (BR)*  
+(Right) SlideServe – _*12 muscles 1. Anconeus 2. Brachioradialis (BR)*_  
 https://www.slideserve.com/chet/12-muscles-1-anconeus-2-brachioradialis-br  
 
 
