@@ -3,17 +3,17 @@ Author: Jungmyung Lee
 
 3D Motion-Capture Skeleton Animation Pipeline
 ---------------------------------------------
-This script loads a Qualisys-style 3D motion-capture file (squat.mat) and
-produces a full 3D skeleton animation using robust marker-label detection
-and automatic body-segment reconstruction.
+This script loads a Qualisys-style 3D motion-capture file (e.g., squat.mat)
+and generates a 3D animated visualization of raw marker positions over time.
 
 Main processing steps:
-1) Load labeled marker trajectories from a .mat mocap file
-2) Perform robust substring-based marker label matching
-3) Reconstruct major biomechanical segments (pelvis, torso, arms, legs, head)
-4) Apply 3D downsampling to improve animation efficiency
-5) Render a stable 3D visualization with fixed cubic axes
-6) Export the animated skeleton as an MP4 video file
+1) Load labeled 3D marker trajectories from a .mat motion-capture file
+2) Extract marker coordinates from the Qualisys/QTM data structure
+3) Identify markers that contain at least one valid 3D sample across the trial
+4) Apply temporal downsampling to reduce animation complexity
+5) Render a stable 3D marker-only animation with fixed cubic axes
+6) Export the animation as a lightweight animated GIF
+
 
 This pipeline is designed for biomechanics research and visualization of
 squat motion, gait trials, and general marker-based motion-capture data.
@@ -23,127 +23,113 @@ It is robust to missing markers, naming inconsistencies, and noisy trajectories.
 import numpy as np
 import scipy.io as sio
 import matplotlib.pyplot as plt
-from matplotlib.animation import FuncAnimation, FFMpegWriter
+from matplotlib.animation import FuncAnimation, PillowWriter
 
-# -- 1) Load .mat --
-try:
-    from google.colab import files
-    IN_COLAB = True
-except Exception:
-    IN_COLAB = False
-
-if IN_COLAB:
-    print("⬆️  Upload squat.mat")
-    uploaded = files.upload()
-    path = list(uploaded.keys())[0]
-else:
-    path = "/mnt/data/squat.mat"   # Adjust accordingly for local environment
-
+# =====================================================
+# 1) Load motion-capture file (Colab environment)
+# =====================================================
+# The file is assumed to already exist in the Colab /content directory.
+path = "/content/squat.mat"
 print("Loaded file:", path)
 
+# =====================================================
+# 2) Extract labeled marker trajectories from QTM structure
+# =====================================================
 def get_labeled_block(S):
-    # QTM-style structure: S.Trajectories.Labeled.{Labels, Data}
+    """
+    Locate and extract the Trajectories → Labeled → Data block
+    from a Qualisys/QTM-exported MATLAB structure.
+
+    Returns:
+        labels : list of marker names (strings)
+        data   : numpy array of shape [markers, 4, frames]
+                 containing (x, y, z, residual)
+    """
     if hasattr(S, "Trajectories"):
         T = S.Trajectories
         if hasattr(T, "Labeled") and hasattr(T.Labeled, "Data"):
             labels = T.Labeled.Labels
-            labels = list(labels) if isinstance(labels, (list, tuple, np.ndarray)) else [labels]
-            data = np.array(T.Labeled.Data)  # shape: [markers, 4, frames] (x,y,z,res)
+            labels = (
+                list(labels)
+                if isinstance(labels, (list, tuple, np.ndarray))
+                else [labels]
+            )
+            data = np.array(T.Labeled.Data)
             return [str(x) for x in labels], data
-    raise RuntimeError("No Labeled/Data block found in this .mat file.")
 
+    raise RuntimeError("No Trajectories → Labeled → Data block found.")
+
+# Load .mat file and extract the main data structure
 mat = sio.loadmat(path, squeeze_me=True, struct_as_record=False)
 user_keys = [k for k in mat.keys() if not k.startswith("__")]
 S = mat[user_keys[0]]
+
 labels, arr = get_labeled_block(S)
-
 markers, _, frames = arr.shape
-print(f"Markers: {markers}  Frames: {frames}")
+print(f"Markers: {markers} | Frames: {frames}")
 
-# -- 2) Downsample (¼ resolution) --
+# =====================================================
+# 3) Temporal downsampling for efficient animation
+# =====================================================
+# Using every N-th frame reduces rendering cost while
+# preserving overall motion patterns.
 step = 4
 frame_idx = np.arange(0, frames, step)
 print("Using frames:", len(frame_idx))
 
-# -- 3) Robust label index lookup (substring matching) --
-names = [str(s).strip().lower() for s in labels]
-
-def find_one(*candidates):
-    cands = [c.lower() for c in candidates]
-    for i, nm in enumerate(names):
-        if any(c in nm for c in cands):
-            return i
-    return None
-
-# Wide-label search: supports many naming variations
-RSH  = find_one("rshoulder", "r_shoulder", "r sho", "right shoulder", "rsho")
-LSH  = find_one("lshoulder", "l_shoulder", "l sho", "left shoulder",  "lsho")
-RELB = find_one("relbow", "r_elbow", "r elbow", "relb")
-LELB = find_one("lelbow", "l_elbow", "l elbow", "lelb")
-RWR  = find_one("rwrist", "r_wrist", "r wrist")
-LWR  = find_one("lwrist", "l_wrist", "l wrist")
-RASI = find_one("rasi", "r_as_is", "r asis", "rhip", "r hip", "right asis")
-LASI = find_one("lasi", "l_as_is", "l asis", "lhip", "l hip", "left asis")
-RPSI = find_one("rpsi", "right psi", "r psi", "rsacrum")
-LPSI = find_one("lpsi", "left psi",  "l psi", "lsacrum")
-RKNE = find_one("rknee", "r_knee", "r knee")
-LKNE = find_one("lknee", "l_knee", "l knee")
-RANK = find_one("rankle", "r_ankle", "r ankle")
-LANK = find_one("lankle", "l_ankle", "l ankle")
-RTOE = find_one("rtoe", "r_toe", "r toe", "rfoot", "r foot", "r met")
-LTOE = find_one("ltoe", "l_toe", "l toe", "lfoot", "l foot", "l met")
-HEAD = find_one("head", "tophead", "vertex")
-
-def add(a, b, edges):
-    if a is not None and b is not None:
-        edges.append((a, b))
-
-edges = []
-# pelvis / torso
-add(RASI, LASI, edges)
-add(RASI, RPSI, edges); add(LASI, LPSI, edges)
-# shoulders
-add(RSH, LSH, edges)
-# arms
-add(RSH, RELB, edges); add(RELB, RWR, edges)
-add(LSH, LELB, edges); add(LELB, LWR, edges)
-# head / neck
-add(RSH, HEAD, edges); add(LSH, HEAD, edges)
-# legs
-add(RASI, RKNE, edges); add(LASI, LKNE, edges)
-add(RKNE, RANK, edges); add(LKNE, LANK, edges)
-add(RANK, RTOE, edges); add(LANK, LTOE, edges)
-
-# Fallback: if label detection fails, draw simple chain
-if not edges:
-    edges = [(i, i+1) for i in range(min(10, markers-1))]
-
-print("Edges:", len(edges))
-
-# -- 4) Compute constant 3D axis limits (cubic box) --
+# =====================================================
+# 4) Compute fixed cubic axis limits (global scale)
+# =====================================================
+# Axis limits are computed once using all valid samples,
+# ensuring a stable camera view across the entire animation.
 xyz = []
 for i in range(markers):
     x, y, z, _ = arr[i]
-    m = np.isfinite(x) & np.isfinite(y) & np.isfinite(z)
-    if m.any():
-        xyz.append(np.vstack([x[m], y[m], z[m]]))
-xyz_all = np.hstack(xyz) if xyz else np.zeros((3,1))
+    mask = np.isfinite(x) & np.isfinite(y) & np.isfinite(z)
+    if mask.any():
+        xyz.append(np.vstack([x[mask], y[mask], z[mask]]))
+
+xyz_all = np.hstack(xyz)
 xmin, xmax = xyz_all[0].min(), xyz_all[0].max()
 ymin, ymax = xyz_all[1].min(), xyz_all[1].max()
 zmin, zmax = xyz_all[2].min(), xyz_all[2].max()
-cx, cy, cz = (xmin+xmax)/2, (ymin+ymax)/2, (zmin+zmax)/2
-r  = max(xmax-xmin, ymax-ymin, zmax-zmin) / 2
 
-# -- 5) Animation (markers + edges using original indices) --
+cx, cy, cz = (xmin + xmax) / 2, (ymin + ymax) / 2, (zmin + zmax) / 2
+r = max(xmax - xmin, ymax - ymin, zmax - zmin) / 2
+
+# =====================================================
+# 5) Animated marker visualization (no skeleton)
+# =====================================================
 fig = plt.figure(figsize=(7, 6))
 ax = fig.add_subplot(111, projection="3d")
-ax.set_xlim(cx-r, cx+r); ax.set_ylim(cy-r, cy+r); ax.set_zlim(cz-r, cz+r)
+ax.set_xlim(cx - r, cx + r)
+ax.set_ylim(cy - r, cy + r)
+ax.set_zlim(cz - r, cz + r)
 ax.view_init(elev=20, azim=-60)
 
-pts = ax.scatter([], [], [], s=12)
-lines = [ax.plot([], [], [], lw=2)[0] for _ in edges]
+# Scatter object that will be updated frame-by-frame
+pts = ax.scatter([], [], [], s=14)
+
+def init():
+    """
+    Initialize the animation by explicitly drawing
+    the first valid frame. This step is critical to
+    prevent empty GIF outputs in matplotlib.
+    """
+    f = frame_idx[0]
+    x = arr[:, 0, f].astype(float)
+    y = arr[:, 1, f].astype(float)
+    z = arr[:, 2, f].astype(float)
+
+    valid = np.isfinite(x) & np.isfinite(y) & np.isfinite(z)
+    pts._offsets3d = (x[valid], y[valid], z[valid])
+    return (pts,)
 
 def update(fi):
+    """
+    Update marker positions for the current animation frame.
+    Only markers with finite 3D coordinates are rendered.
+    """
     f = frame_idx[fi]
     x = arr[:, 0, f].astype(float)
     y = arr[:, 1, f].astype(float)
@@ -151,29 +137,26 @@ def update(fi):
 
     valid = np.isfinite(x) & np.isfinite(y) & np.isfinite(z)
     pts._offsets3d = (x[valid], y[valid], z[valid])
-
-    # Draw edges only if both markers are valid
-    for ln, (a, b) in zip(lines, edges):
-        if (0 <= a < markers and 0 <= b < markers and
-            valid[a] and valid[b]):
-            ln.set_data([x[a], x[b]], [y[a], y[b]])
-            ln.set_3d_properties([z[a], z[b]])
-        else:
-            ln.set_data([], []); ln.set_3d_properties([])
-
     ax.set_title(f"Frame {f}/{frames}")
-    return [pts] + lines
+    return (pts,)
 
-ani = FuncAnimation(fig, update, frames=len(frame_idx), interval=25, blit=False)
+ani = FuncAnimation(
+    fig,
+    update,
+    frames=len(frame_idx),
+    init_func=init,
+    interval=25,
+    blit=False
+)
 
-# -- 6) Save MP4 --
-out = "squat_motion.mp4"   # Colab: visible in the left Files panel
-writer = FFMpegWriter(fps=30, bitrate=1500)
-ani.save(out, writer=writer)
+# =====================================================
+# 6) Export animation as GIF
+# =====================================================
+# GIF output is chosen for easy embedding in README files
+# and lightweight sharing without video codecs.
+out = "/content/marker_motion.gif"
+writer = PillowWriter(fps=30)
+ani.save(out, writer=writer, dpi=120)
 plt.close(fig)
-print("Saved:", out)
 
-# (Optional download for Colab)
-# if IN_COLAB:
-#     from google.colab import files as _files
-#     _files.download(out)
+print("Saved:", out)
