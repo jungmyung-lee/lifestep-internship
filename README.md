@@ -42,7 +42,7 @@ to deep learning- and machine-learning–based **basketball shooting form classi
 ## 4. Real-Time EMG-Based Prosthetic Hand Control (TD + CNN + TCN)
 
 ### Overview
-<img width="1024" height="559" alt="image" src="https://github.com/user-attachments/assets/6e35b7fa-52cb-4d75-8e45-b242156b378d" />
+<img width="1024" height="559" alt="image" src="https://github.com/user-attachments/assets/dc879e80-de27-4032-b64c-bc1c4824df27" />
 
 
 
