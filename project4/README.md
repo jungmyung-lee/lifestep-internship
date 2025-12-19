@@ -161,6 +161,9 @@ These steps isolate the **physiologically relevant EMG frequency band** and stab
 
 ---
 
+<img width="1024" height="559" alt="image" src="https://github.com/user-attachments/assets/94186c2b-0ed7-4059-b08e-5cc3a1d1e0a2" />
+
+
 ## MVC-Based Robust Normalization
 
 Surface EMG amplitude is highly sensitive to:
@@ -188,6 +191,9 @@ x_norm(t) = x(t) / ref_gain
 
 ---
 
+<img width="1024" height="559" alt="image" src="https://github.com/user-attachments/assets/29bbe7fd-6263-47e9-b594-75c44f1541f0" />
+
+
 ## Windowing Strategy (150 ms / 10 ms Hop)
 
 - **Window length:** 150 ms (150 samples)  
@@ -201,6 +207,9 @@ x_norm(t) = x(t) / ref_gain
 This design balances **muscle activation pattern capture** and **real-time responsiveness**, making it suitable for continuous prosthetic control.
 
 ---
+
+<img width="1024" height="559" alt="image" src="https://github.com/user-attachments/assets/4c7b6bfd-2505-475b-89e2-55146a99bb91" />
+
 
 ## Time-Domain (TD) Feature Extraction
 
