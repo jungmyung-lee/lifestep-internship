@@ -75,19 +75,6 @@ In my experiments, this architecture provides:
 - compact feature representation suitable for prosthetic control
 """
 
-import os
-import math
-import random
-import numpy as np
-import scipy.io as sio
-import scipy.signal as signal
-
-
-import torch
-import torch.nn as nn
-from torch.utils.data import Dataset, DataLoader
-
-
 # -----------------------------
 # 0) Reproducibility
 # -----------------------------
@@ -154,6 +141,7 @@ def extract_emg_from_qtm_mat(path, min_channels=8, prefer_fs=1000):
     _, fs, nchan, data = best
     return data.astype(np.float32), int(round(fs))
 
+
 # -----------------------------
 # 1-1) Simple EMG preprocessing
 # -----------------------------
@@ -182,6 +170,46 @@ def simple_emg_preprocess(emg, fs, low=20.0, high=450.0, notch=60.0, q=30.0):
     x = signal.filtfilt(b_bp, a_bp, x, axis=1)
 
     return x.astype(np.float32)
+
+
+# -----------------------------
+# 1-2) MVC normalization utilities (MVC ADDED)
+# -----------------------------
+def compute_ref_gain_from_mvc(emg_mvc, method="rms", eps=1e-8):
+    """
+    Compute per-channel reference gain from a 100% MVC recording.
+
+    emg_mvc: [channels, samples] (raw EMG from MVC trial)
+    method:
+        - "rms": ref_gain[ch] = RMS of MVC segment for that channel
+        - "mav": ref_gain[ch] = MAV of MVC segment for that channel
+    returns:
+        ref_gain: [channels, 1] (broadcastable)
+    """
+    if emg_mvc.ndim != 2:
+        raise ValueError("emg_mvc must be [channels, samples]")
+
+    if method.lower() == "rms":
+        ref_gain = np.sqrt(np.mean(emg_mvc ** 2, axis=1, keepdims=True))
+    elif method.lower() == "mav":
+        ref_gain = np.mean(np.abs(emg_mvc), axis=1, keepdims=True)
+    else:
+        raise ValueError("method must be 'rms' or 'mav'")
+
+    ref_gain = np.maximum(ref_gain, eps).astype(np.float32)
+    return ref_gain
+
+
+def mvc_normalize_emg(emg, ref_gain, eps=1e-8):
+    """
+    Apply MVC normalization: x_norm = x / ref_gain
+    emg: [channels, samples]
+    ref_gain: [channels, 1] or [channels] or scalar
+    """
+    ref_gain = np.asarray(ref_gain)
+    if ref_gain.ndim == 1:
+        ref_gain = ref_gain[:, None]
+    return (emg / (ref_gain + eps)).astype(np.float32)
 
 
 # -----------------------------
@@ -386,7 +414,6 @@ class CNNBackbone(nn.Module):
 class TemporalBlock(nn.Module):
     def __init__(self, in_ch, out_ch, k=3, dilation=1):
         super().__init__()
-        # "same-ish" padding for short sequences
         pad = (k - 1) * dilation // 2
 
         self.conv1 = nn.Conv1d(in_ch, out_ch, k, dilation=dilation, padding=pad)
@@ -424,7 +451,6 @@ class TD_CNN_TCN_Regressor(nn.Module):
         self.fc = nn.Linear(32, out_dof)
 
     def forward(self, x):
-        # x: [B, C=8, T=15]
         x = self.cnn(x)
         x = self.tcn(x)
         x = self.pool(x).squeeze(-1)  # [B, 32]
@@ -506,7 +532,6 @@ def train_model(
                 print("Early stopping triggered.")
                 break
 
-    # Load best
     if os.path.exists(ckpt_path):
         state = torch.load(ckpt_path, map_location=device)
         model.load_state_dict(state["model_state"])
@@ -545,42 +570,30 @@ if __name__ == "__main__":
     # =============================
     # USER CONFIG (modify as needed)
     # =============================
-    qtm_mat_path = "/content/EMG_session01.mat"  # or local path
+    qtm_mat_path = "/content/EMG_session01.mat"  # main trial (normal movement)
 
-    # ---- Label options ----
-    # Preferred workflow:
-    # In my internship dataset, joint angles were exported as a clean external file
-    # (e.g., 'joint_angles.npy'). In practice, I normally load that file directly.
-    #
-    # Example:
-    # label_npy_path = "joint_angles.npy"  # TODO: replace with your actual label file
-    label_npy_path = None  # kept as None here to avoid hard-coding a private path
+    # Provide a dedicated 100% MVC trial to compute ref_gain
+    mvc_qtm_mat_path = "/content/EMG_MVC_session.mat"  # <-- change to your MVC trial file
+    mvc_ref_method = "rms"  # "rms" or "mav" (both are common in MVC ref-gain)
 
-    # Optional: if labels are stored in a separate .mat file with a known key.
-    label_mat_path = None  # e.g., "joint_angles.mat"
-    label_mat_key  = None  # e.g., "joint_angles"
+    label_npy_path = None
+    label_mat_path = None
+    label_mat_key  = None
 
-    # Experimental / fallback:
-    # If no explicit label file is provided, this helper tries to guess
-    # a numeric angle array directly from the QTM .mat by checking common names.
     label_key_candidates = [
         "angle", "angles", "joint_angle", "joint_angles",
         "knee_angle", "hip_angle", "ankle_angle",
         "KneeAngle", "HipAngle", "AnkleAngle"
     ]
 
-
-    # Sampling rates
     fs_emg_prefer = 1000
     fs_label = 1000
 
-    # Window params
     window_ms = 150
     hop_ms = 10
     n_segments = 3
     use_channels = 8
 
-    # Training params
     batch_size = 128
     epochs = 60
     patience = 10
@@ -588,9 +601,8 @@ if __name__ == "__main__":
     weight_decay = 0.0
     ckpt_path = "td_cnn_tcn_best.pt"
 
-
     # =============================
-    # 1) Load EMG
+    # 1) Load EMG (main trial)
     # =============================
     emg, fs_emg = extract_emg_from_qtm_mat(
         qtm_mat_path,
@@ -599,28 +611,50 @@ if __name__ == "__main__":
     )
     print("EMG:", emg.shape, "fs_emg =", fs_emg)
 
-    # Simple EMG preprocessing (DC removal + notch + band-pass)
+    # Preprocess main EMG
     emg = simple_emg_preprocess(emg, fs_emg)
 
+    # =============================
+    # 1-A) MVC ref_gain (MVC ADDED)
+    # =============================
+    if mvc_qtm_mat_path is None:
+        raise ValueError(
+            "MVC normalization requested, but mvc_qtm_mat_path is None.\n"
+            "Provide a 100% MVC trial .mat path to compute ref_gain."
+        )
+
+    emg_mvc, fs_mvc = extract_emg_from_qtm_mat(
+        mvc_qtm_mat_path,
+        min_channels=use_channels,
+        prefer_fs=fs_emg_prefer
+    )
+    if fs_mvc != fs_emg:
+        print(f"[WARN] MVC fs ({fs_mvc}) != main fs ({fs_emg}). Using each file's fs for filtering.")
+
+    # Preprocess MVC EMG in the same way
+    emg_mvc = simple_emg_preprocess(emg_mvc, fs_mvc)
+
+    # Compute ref_gain from MVC (per channel)
+    ref_gain = compute_ref_gain_from_mvc(emg_mvc[:use_channels], method=mvc_ref_method)
+    print("ref_gain shape:", ref_gain.shape, "| method:", mvc_ref_method)
+
+    # Apply MVC normalization to main EMG
+    emg = mvc_normalize_emg(emg, ref_gain)
 
     # =============================
     # 2) Load Labels
     # =============================
     y = None
 
-    # Preferred: load a clean external label file (my normal workflow).
     if label_npy_path is not None:
         y = load_labels_from_npy(label_npy_path)
         print("Loaded labels from npy:", y.shape)
 
-    # Alternative: load from a separate .mat with a known key.
     elif label_mat_path is not None and label_mat_key is not None:
         y = load_labels_from_mat(label_mat_path, label_mat_key)
         print("Loaded labels from mat:", y.shape, "key =", label_mat_key)
 
     else:
-        # Fallback for quick experiments:
-        # try to guess a joint-angle array directly from the same QTM .mat file.
         y_found, k_found = heuristic_find_label_in_mat(qtm_mat_path, label_key_candidates)
         if y_found is None:
             raise ValueError(
@@ -631,8 +665,6 @@ if __name__ == "__main__":
         y = y_found
         print("Heuristically found label key:", k_found, "shape:", y.shape)
 
-
-    # Ensure 2D
     if y.ndim == 1:
         y = y[:, None]
 
@@ -648,7 +680,7 @@ if __name__ == "__main__":
         window_ms=window_ms, hop_ms=hop_ms,
         n_segments=n_segments, use_channels=use_channels
     )
-    print("X:", X.shape, "Y:", Y.shape)  # X [N, 8, 15], Y [N, dof]
+    print("X:", X.shape, "Y:", Y.shape)
 
     # =============================
     # 4) Split
@@ -661,13 +693,8 @@ if __name__ == "__main__":
     X_test,  Y_test  = X[test_idx],  Y[test_idx]
 
     # =============================
-    # 5) Normalize (train-only)
+    # 5) Normalize features (train-only)
     # =============================
-
-    # TODO:
-    # For deployment, also serialize `norm.mean` and `norm.std`
-    # so that the same normalization can be applied on-device.
-
     norm = TDNormalizer()
     X_train = norm.fit_transform(X_train)
     X_val = norm.transform(X_val)
