@@ -207,9 +207,10 @@ the same EMG–motion synchronization workflow was applied to cutting tasks to a
 
 I developed a lightweight real-time regression model using:
 
-- Time-Domain (TD) features (MAV, WL, ZC, SSC, RMS)
-- 1D CNN layers for spatial pattern extraction
-- TCN layers with dilation for temporal modeling  
+- Pre-processing(**Band-pass filtering** (20–450Hz), **Notch filtering** (50 Hz), **Normalization**)
+- Time-Domain (TD) features (**MAV, WL, ZC, SSC, RMS**)
+- ****1D** CNN** layers for spatial pattern extraction
+- **TCN** layers with dilation for temporal modeling  
 
 The model processes **EMG signals as input** and performs inference every **0.01 seconds (100 Hz)**, enabling real-time operation.  
 The final output consists of **17 joint angles**, representing multi-DOF finger and wrist movements.
