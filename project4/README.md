@@ -325,7 +325,7 @@ A **32–48 dimensional bottleneck** preserves essential activation structure wh
 
 ---
 
-## ⏳ Temporal Convolutional Network (TCN)  
+## Temporal Convolutional Network (TCN)  
 ### Why 1–2 Layers, Hidden Channels = 32, Dilations = 1, 2, Kernel Size = 3
 
 The **Temporal Convolutional Network (TCN)** models temporal dependencies across consecutive EMG windows after spatial encoding by the CNN.
@@ -392,7 +392,7 @@ Dilations of **1 and 2** are sufficient to cover the required temporal context f
 
 ---
 
-## 📐 Loss Function  
+## Loss Function  
 ### Why Mean Squared Error (MSE)?
 
 The model is trained using **Mean Squared Error (MSE) loss**, defined as:
