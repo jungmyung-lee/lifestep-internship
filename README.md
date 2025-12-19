@@ -207,7 +207,7 @@ the same EMG–motion synchronization workflow was applied to cutting tasks to a
 
 I developed a lightweight real-time regression model using:
 
-- Pre-processing(**Band-pass filtering** (20–450Hz), **Notch filtering** (50 Hz), **Normalization**)
+- Pre-processing(**DC offset removal,** **Band-pass filtering** (20–450Hz), **Notch filtering** (50 Hz), **Normalization**)
 - Time-Domain (TD) features (**MAV, WL, ZC, SSC, RMS**)
 - ****1D** CNN** layers for spatial pattern extraction
 - **TCN** layers with dilation for temporal modeling  
