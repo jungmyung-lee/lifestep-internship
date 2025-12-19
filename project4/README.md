@@ -204,14 +204,15 @@ This design balances **muscle activation pattern capture** and **real-time respo
 
 ## Time-Domain (TD) Feature Extraction
 
-Each window is divided into **three 50 ms segments**.  
-For each segment, five **Hudgins Time-Domain (TD) features** are extracted:
+For each segment, a compact Time-Domain (TD) feature set is extracted based on the
+**classical Hudgins (1993) formulation**, with an additional RMS feature included to
+enhance signal energy representation:
 
-- **MAV** – amplitude  
-- **RMS** – signal energy  
-- **WL** – waveform complexity  
-- **ZC** – frequency-related information  
-- **SSC** – shape change information  
+- MAV – amplitude  
+- WL – waveform complexity  
+- ZC – frequency-related information  
+- SSC – shape change information  
+- RMS – signal energy (added beyond the original Hudgins set)
 
 ### Why this exact TD feature set?
 
