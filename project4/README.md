@@ -4,7 +4,7 @@
 ## Table of Contents
 
 - [Project Overview](#project-overview)
-- [Readme](#readme)
+- [Presentation Source](#presentation-source)
 - [Data Specification](#data-specification-data-sourced-from-lifestep-company)
 - [Research Basis](#research-basis)
 - [Model Purpose](#model-purpose)
@@ -47,7 +47,7 @@ Unlike purely offline or high-compute research models, this project explicitly t
 
 ---
 
-### Readme
+### Presentation Source
 
 **Project4 Presentation (PDF)**  
 ->[Open PDF](Project4_presentation.pdf)
