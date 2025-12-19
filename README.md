@@ -52,7 +52,7 @@ to deep learning- and machine-learning–based **basketball shooting form classi
   Wearable surface EMG sensors (8-channel forearm EMG)
 
 - **Training labels (Output):**  
-  Hand joint angles obtained from synchronized motion-capture data  
+  17 Hand joint angles obtained from synchronized motion-capture data  
 
 ### Input(Raw EMG 8 Channels of Muscles)  
   
