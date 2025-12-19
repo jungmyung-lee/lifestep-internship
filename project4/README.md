@@ -113,7 +113,25 @@ Each stage is deliberately designed to **preserve physiological meaning while mi
 ## EMG Input & Pre-processing
 
 - **Sampling rate:** 1000 Hz  
-- **Number of channels:** 8  
+- **Number of channels:** 8
+
+### Target Muscles (Electrode Placement)
+
+The eight EMG channels correspond to major forearm muscles involved in
+finger flexion, wrist motion, and forearm rotation:
+
+- **Flexor Digitorum Superficialis (FDS)** – finger flexion (superficial)
+- **Flexor Digitorum Profundus (FDP)** – finger flexion (deep)
+- **Flexor Carpi Radialis (FCR)** – wrist flexion and radial deviation
+- **Flexor Carpi Ulnaris (FCU)** – wrist flexion and ulnar deviation
+- **Extensor Digitorum (ED)** – finger extension
+- **Extensor Carpi Radialis Longus (ECRL)** – wrist extension (radial side)
+- **Extensor Carpi Ulnaris (ECU)** – wrist extension (ulnar side)
+- **Pronator Teres (PT)** – forearm pronation
+
+This muscle set provides balanced coverage of **grasp generation, hand opening,
+wrist stabilization, and forearm rotation**, which are critical for
+continuous joint-angle estimation and prosthetic hand control.
 
 ### Filtering steps
 
