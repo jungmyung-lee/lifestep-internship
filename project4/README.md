@@ -1,8 +1,8 @@
-# 📌 Project4  
+# Project4  
 # **Real-Time EMG Regression Pipeline**  
 ### **TD + CNN + TCN **
 
-## 🧠 Project Overview
+## Project Overview
 
 This repository documents **Project4**, a real-time EMG regression system developed during the **LifeStep Internship**.  
 The goal of this project is to design a **lightweight, low-latency, and robust pipeline** that converts **multi-channel surface EMG signals** into **continuous joint-angle estimates**, suitable for **embedded prosthetic hand control**.
@@ -150,7 +150,7 @@ For each segment, five **Hudgins Time-Domain (TD) features** are extracted:
 [Batch, Channels = 8, Time = 15]
 
 
-## 🧠 CNN Encoder  
+## CNN Encoder  
 ### Why 2 Layers, 16 → 32 Filters, Kernel Size = 3, ReLU
 
 A **two-layer 1D Convolutional Neural Network (CNN)** is used as a **feature encoder** that transforms TD-based EMG representations into a compact and informative latent feature space before temporal modeling.
@@ -375,7 +375,7 @@ MSE provides a **simple, stable, and physically meaningful objective** for real-
 
 ---
 
-## ✅ Final Remark
+## Final Remark
 
 This README intentionally documents **not only what components were used, but why each design choice was made**.  
 All architectural decisions and hyperparameters are selected based on **physiological EMG properties, real-time constraints, and embedded deployment considerations**.
