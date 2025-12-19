@@ -129,9 +129,22 @@ finger flexion, wrist motion, and forearm rotation:
 - **Extensor Carpi Ulnaris (ECU)** – wrist extension (ulnar side)
 - **Pronator Teres (PT)** – forearm pronation
 
-This muscle set provides balanced coverage of **grasp generation, hand opening,
+- This muscle set provides balanced coverage of **grasp generation, hand opening,
 wrist stabilization, and forearm rotation**, which are critical for
 continuous joint-angle estimation and prosthetic hand control.
+
+
+![Flexor원본 복사본](https://github.com/user-attachments/assets/a51361d9-8fc3-41cb-8a91-59bcaa245e32)
+<img width="620" height="440" alt="Extensor쪽-복사본-2" src="https://github.com/user-attachments/assets/d93d9a85-94ef-4cfc-a4dd-201aa7e709cd" />
+
+*Image source: 
+
+(Left) ScienceDirect – _Flexor Digitorum Superficialis Muscle* _ 
+https://www.sciencedirect.com/topics/veterinary-science-and-veterinary-medicine/flexor-digitorum-superficialis-muscle
+
+(Right) SlideServe – _*12 muscles 1. Anconeus 2. Brachioradialis (BR)*_  
+https://www.slideserve.com/chet/12-muscles-1-anconeus-2-brachioradialis-br 
+
 
 ### Filtering steps
 
