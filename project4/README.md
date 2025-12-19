@@ -2,6 +2,29 @@
 # **Real-Time EMG Regression Pipeline**  
 ### **TD + CNN + TCN **
 
+## 📑 Table of Contents
+
+- [Project Overview](#-project-overview)
+- [Research Basis](#research-basis)
+- [Model Purpose](#model-purpose)
+- [Overall System Pipeline](#overall-system-pipeline)
+- [EMG Input & Pre-processing](#emg-input--pre-processing)
+- [MVC-Based Robust Normalization](#mvc-based-robust-normalization)
+- [Windowing Strategy](#windowing-strategy-150-ms--10-ms-hop)
+- [Time-Domain (TD) Feature Extraction](#time-domain-td-feature-extraction)
+- [CNN Encoder](#-cnn-encoder)
+- [Why 2 Layers](#why-exactly-2-cnn-layers)
+- [Why 16 → 32 Filters](#why-use-16--32-filters)
+- [Why Kernel Size = 3](#why-kernel-size--3)
+- [Why ReLU](#why-relu-activation)
+- [Temporal Convolutional Network (TCN)](#-temporal-convolutional-network-tcn)
+- [Why TCN over LSTM](#why-use-a-tcn-instead-of-an-lstm)
+- [Why Hidden Channels = 32](#why-hidden-channels--32)
+- [Why Dilations = 1, 2](#why-dilations--1-and-2-only)
+- [Loss Function](#-loss-function)
+- [Final Remark](#-final-remark)
+
+
 ## Project Overview
 
 This repository documents **Project4**, a real-time EMG regression system developed during the **LifeStep Internship**.  
