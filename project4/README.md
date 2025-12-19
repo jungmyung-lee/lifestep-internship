@@ -238,7 +238,7 @@ enhance signal energy representation:
 [Batch, Channels = 8, Time = 15]
 
 
-## CNN Encoder  
+## CNN 
 ### Why 2 Layers, 16 → 32 Filters, Kernel Size = 3, ReLU
 
 A **two-layer 1D Convolutional Neural Network (CNN)** is used as a **feature encoder** that transforms TD-based EMG representations into a compact and informative latent feature space before temporal modeling.
