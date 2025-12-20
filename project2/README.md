@@ -132,6 +132,9 @@ under different parameter settings.
 
 ---
 
+<img width="408" height="308" alt="image" src="https://github.com/user-attachments/assets/d2fe5268-e0c3-48a4-9d00-997ba2707545" />
+<img width="996" height="361" alt="image" src="https://github.com/user-attachments/assets/6b47925e-caa9-41be-ab00-43c0fe728bf4" />
+
 ## Output
 
 The pipeline produces:
