@@ -7,7 +7,7 @@ ranging from **3D biomechanical visualization** and **EMG signal processing**
 to deep learning- and machine-learning–based **basketball shooting form classification** and **AI basketball coach systems.**
 
 1️⃣ 3D Motion Visualization & Skeleton Reconstruction  
-2️⃣ Joint-angle extraction (including other biomechanical variables)  
+2️⃣ Automatic Gait Cycle Detection 
 3️⃣ EMG preprocessing & Motion Synchronization  
 4️⃣ Real-Time EMG-Based Prosthetic Hand Control  
 5️⃣ Basketball Shooting Form Classification (GOOD / BAD)    
@@ -142,7 +142,10 @@ enabling visual inspection of human movement patterns before downstream biomecha
 Using **OpenSim inverse kinematics output files (`.mot`)**, I implemented scripts to:
 
 - Load and parse joint kinematic time-series data  
-- Analyze joint-angle variables, with a primary focus on **knee flexion–extension angles**
+- Analyze knee joint angle time-series data for gait cycle detection  
+- In the broader biomechanics pipeline, I also worked with additional  
+  joint-angle and kinematic variables **(e.g., hip and ankle angles,  
+  pelvis kinematics) for movement analysis**  
 - Automatically detect and segment gait cycles using biomechanics-based signal processing
 - Identify key movement phases from continuous joint-angle trajectories
 
