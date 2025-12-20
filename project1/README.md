@@ -70,13 +70,16 @@ The parsing logic is designed to tolerate:
 
 ---
 
-## Scripts(Include IMAGEs and Animation)
+## Scripts(Include Images & Animation)
 
 ### visualize_3d_marker_trajectory.py
 
 <img width="565" height="455" alt="image" src="https://github.com/user-attachments/assets/8e52c94f-2985-4d35-8eae-22800d75ef94" />
 
 **3D Marker Trajectory Inspection & Static Snapshot**
+
+**Input:** Qualisys/QTM `.mat` 
+**Output:** 3D plot 
 
 This script is intended for initial inspection of raw motion-capture data.
 
@@ -100,6 +103,9 @@ Typical use cases:
 
 **Marker-Based Skeleton Reconstruction (Static Frame)**
 
+**Input:** Qualisys/QTM `.mat` 
+**Output:** static snapshot  
+
 This script reconstructs a biomechanical stick-figure representation
 from labeled marker trajectories.
 
@@ -122,6 +128,9 @@ This script is primarily used to:
 ![cuttingmat](https://github.com/user-attachments/assets/22c562bd-aa93-4b08-9142-d170baec23f2)
 
 **3D Marker Animation Pipeline**
+
+**Input:** Qualisys/QTM `.mat` 
+**Output:**  GIF  
 
 This script generates a time-resolved 3D animation of labeled markers.
 
