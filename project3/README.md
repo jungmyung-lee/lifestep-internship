@@ -128,14 +128,13 @@ signal processing or analysis is performed.
 
 ### EMG Preprocessing Pipelines (Signal Preparation Stage)
 
-These scripts implement the **core EMG preprocessing stage**, transforming
-raw EMG signals into clean, analysis-ready activation profiles.
+These scripts implement the core EMG preprocessing stage, transforming raw
+EMG signals into clean, analysis-ready activation profiles.
 
 - **emg_single_preprocess.py**  
-  Applies the full EMG preprocessing pipeline to a single EMG channel. This
-  script is typically used early in the analysis to verify signal quality,
-  confirm filter behavior, and validate preprocessing parameters before
-  scaling to multiple channels.
+  Applies the full EMG preprocessing pipeline to a single EMG channel.
+  This script is typically used early in the analysis to verify signal quality,
+  confirm filter behavior, and validate preprocessing parameters.
 
 - **emg_multi_preprocess_compare.py**  
   Extends the preprocessing workflow to multiple EMG channels and visualizes
@@ -146,14 +145,14 @@ raw EMG signals into clean, analysis-ready activation profiles.
 
 ### EMG–Motion Synchronization and Visualization (Final Analysis Stage)
 
-These scripts represent the **final stage** of the pipeline, where processed
-EMG signals are synchronized with motion-capture data and visualized for
+These scripts represent the final stage of the pipeline, where processed EMG
+signals are synchronized with motion-capture data and visualized for
 biomechanical interpretation.
 
 - **emg_bar_trajectory_analysis.py**  
-  Extracts and analyzes barbell marker trajectories to identify movement
-  phases such as descent, bottom position, and ascent. This script provides
-  the motion context required for EMG synchronization.
+  Visualizes the vertical (Z-axis) trajectory of a barbell marker together
+  with preprocessed EMG signals, providing motion context for qualitative
+  inspection of muscle activation patterns relative to movement.
 
 - **emg_bar_sync_plot.py**  
   Synchronizes a single EMG envelope with the Z-axis trajectory of a barbell
@@ -162,8 +161,8 @@ biomechanical interpretation.
 
 - **emg_bar_full_and_slice_visualization.py**  
   Combines multi-channel EMG preprocessing results with barbell trajectories
-  and presents both full-duration and selected time-window views. This
-  script serves as the final output visualization, enabling detailed
+  and presents both full-duration and selected time-window visualizations.
+  This script serves as the final output visualization, enabling detailed
   inspection of muscle activation patterns across entire trials and specific
   movement segments.
 
