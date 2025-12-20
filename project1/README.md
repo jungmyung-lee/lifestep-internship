@@ -16,6 +16,7 @@
 
 ---
 
+![cuttingmat](https://github.com/user-attachments/assets/22c562bd-aa93-4b08-9142-d170baec23f2)
 <img width="547" height="448" alt="image" src="https://github.com/user-attachments/assets/d379ffc0-2f33-43f4-8d46-eccb9789f2b5" />
 <img width="540" height="449" alt="image" src="https://github.com/user-attachments/assets/1953b982-7220-4f05-8337-61ed03650d4d" />
 <img width="565" height="455" alt="image" src="https://github.com/user-attachments/assets/8e52c94f-2985-4d35-8eae-22800d75ef94" />
