@@ -177,6 +177,14 @@ This pipeline can be applied to:
 
 ---
 
+static skeleton.
+<img width="525" height="504" alt="image" src="https://github.com/user-attachments/assets/80e60c95-c7a8-4b82-a11b-7a71a58b7f83" />
+
+커팅 mat 3d marker trajectory
+<img width="567" height="460" alt="image" src="https://github.com/user-attachments/assets/7d681bac-2109-47a0-a884-13677e843456" />
+<img width="527" height="507" alt="image" src="https://github.com/user-attachments/assets/dc065049-6bf6-4cb8-9b25-006015a03345" />
+스쿼트 mat 3d marker trajectory
+
 ## Requirements
 
 - Python 3.8
