@@ -7,7 +7,7 @@ ranging from **3D biomechanical visualization** and **EMG signal processing**
 to deep learning- and machine-learning–based **basketball shooting form classification** and **AI basketball coach systems.**
 
 1️⃣ 3D Motion Visualization & Skeleton Reconstruction  
-2️⃣ Automatic Gait Cycle Detection 
+2️⃣ Automatic Gait Cycle Detection   
 3️⃣ EMG preprocessing & Motion Synchronization  
 4️⃣ Real-Time EMG-Based Prosthetic Hand Control  
 5️⃣ Basketball Shooting Form Classification (GOOD / BAD)    
