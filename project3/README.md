@@ -121,6 +121,9 @@ signal processing or analysis is performed.
   indices. This script is used for detailed inspection once the overall
   structure has been identified.
 
+  <img width="1094" height="359" alt="image" src="https://github.com/user-attachments/assets/76593f72-9a53-489b-962e-18e8902b3983" />
+
+
 ---
 
 ### EMG Preprocessing Pipelines (Signal Preparation Stage)
@@ -166,12 +169,22 @@ biomechanical interpretation.
 
 ---
 
-## Output
+## Final Output 
 
 The pipeline produces:
 - Preprocessed EMG signals with rectified and envelope representations  
 - Time-synchronized EMG–motion visualizations  
 - Full-range and windowed plots for detailed biomechanical analysis  
+
+<img width="1065" height="381" alt="image" src="https://github.com/user-attachments/assets/3f099fee-8dc6-4d48-8e01-8f858edbdfcb" />
+<img width="1064" height="367" alt="image" src="https://github.com/user-attachments/assets/05563495-b6f7-4c03-95de-c943e4e78e69" />
+<img width="1060" height="388" alt="image" src="https://github.com/user-attachments/assets/7f8903f2-2819-4e3e-9fe2-61d614daa5ae" />
+
+
+<img width="1076" height="384" alt="image" src="https://github.com/user-attachments/assets/796ca8d8-d627-48f6-861a-816966bdfa4d" />
+<img width="1068" height="546" alt="image" src="https://github.com/user-attachments/assets/799ce022-75d1-426d-b680-2a065aea3966" />
+<img width="1066" height="362" alt="image" src="https://github.com/user-attachments/assets/2bb1385a-2ecf-40b3-ac9a-5d15490db6be" />
+
 
 ---
 
