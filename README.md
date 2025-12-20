@@ -33,10 +33,9 @@ to deep learning- and machine-learning–based **basketball shooting form classi
 
 ### 3. EMG preprocessing & Motion Synchronization
 
-<img width="1333" height="553" alt="image" src="https://github.com/user-attachments/assets/11eca52d-4899-48cb-92c9-5cdaf817dd56" />
-<img width="1311" height="502" alt="image" src="https://github.com/user-attachments/assets/29089095-18b1-455c-9403-2072dba75b19" />
-<img width="1315" height="484" alt="image" src="https://github.com/user-attachments/assets/15c20aab-99d1-4b9c-9c16-c84bafeafc66" />
-<img width="1298" height="495" alt="image" src="https://github.com/user-attachments/assets/f7e61767-b803-46bb-8333-bee8784bcae4" />
+<img width="1065" height="381" alt="image" src="https://github.com/user-attachments/assets/3f099fee-8dc6-4d48-8e01-8f858edbdfcb" />
+<img width="1064" height="367" alt="image" src="https://github.com/user-attachments/assets/05563495-b6f7-4c03-95de-c943e4e78e69" />
+<img width="1060" height="388" alt="image" src="https://github.com/user-attachments/assets/7f8903f2-2819-4e3e-9fe2-61d614daa5ae" />
 
 
 ## 4. Real-Time EMG-Based Prosthetic Hand Control (TD + CNN + TCN)
