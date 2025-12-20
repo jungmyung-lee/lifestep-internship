@@ -37,12 +37,10 @@ of labeled 3D marker trajectories.
 The repository consists of three standalone Python scripts,
 each addressing a different stage of motion-capture data analysis:
 
-├── visualize_3d_marker_trajectory.py
-├── reconstruct_static_skeleton.py
-└── mocap_skeleton_3D_animation.py
+├── visualize_3d_marker_trajectory.py  
+├── reconstruct_static_skeleton.py  
+└── mocap_skeleton_3D_animation.py  
 
-yaml
-코드 복사
 
 Each script can be executed independently depending on the analysis objective.
 
