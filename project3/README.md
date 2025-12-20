@@ -11,7 +11,7 @@
   - [MATLAB Structure Exploration Tools (Initial Stage)](#matlab-structure-exploration-tools-initial-stage)
   - [EMG Preprocessing Pipelines (Signal Preparation Stage)](#emg-preprocessing-pipelines-signal-preparation-stage)
   - [EMG–Motion Synchronization and Visualization (Final Analysis Stage)](#emg–motion-synchronization-and-visualization-final-analysis-stage)
-- [Final Output](#finaloutput)
+- [Final Output](#final-output)
 - [Applications](#applications)
 - [Requirements](#requirements)
 
@@ -174,7 +174,7 @@ biomechanical interpretation.
 The pipeline produces:
 - Preprocessed EMG signals with rectified and envelope representations  
 - Time-synchronized EMG–motion visualizations  
-- Full-range and windowed plots for detailed biomechanical analysis  
+- Full-range and windowed plots for detailed biomechanical analysis   
 
 <img width="1065" height="381" alt="image" src="https://github.com/user-attachments/assets/3f099fee-8dc6-4d48-8e01-8f858edbdfcb" />
 <img width="1064" height="367" alt="image" src="https://github.com/user-attachments/assets/05563495-b6f7-4c03-95de-c943e4e78e69" />
