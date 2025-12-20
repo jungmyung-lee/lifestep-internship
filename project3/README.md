@@ -11,7 +11,7 @@
   - [MATLAB Structure Exploration Tools (Initial Stage)](#matlab-structure-exploration-tools-initial-stage)
   - [EMG Preprocessing Pipelines (Signal Preparation Stage)](#emg-preprocessing-pipelines-signal-preparation-stage)
   - [EMG–Motion Synchronization and Visualization (Final Analysis Stage)](#emg–motion-synchronization-and-visualization-final-analysis-stage)
-- [Output](#output)
+- [Final Output](#finaloutput)
 - [Applications](#applications)
 - [Requirements](#requirements)
 
