@@ -1,5 +1,5 @@
 # Project2  
-# Automatic Gait Cycle Detection from Knee Angle Time-Series
+# Automatic Gait Cycle Detection
 
 ## Table of Contents
 - [Overview](#overview)
