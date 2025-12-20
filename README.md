@@ -17,7 +17,7 @@ to deep learning- and machine-learning–based **basketball shooting form classi
 ---
 ## Image & GIF
 
-### 1.3D visualization 
+### 1.3D Motion Visualization & Skeleton Reconstruction  
 
 ## 3D Cutting Motion Visualization
 ![cuttingmat](https://github.com/user-attachments/assets/22c562bd-aa93-4b08-9142-d170baec23f2)
@@ -25,13 +25,13 @@ to deep learning- and machine-learning–based **basketball shooting form classi
 ## 3D Squat Motion Visualization
 ![squatmat](https://github.com/user-attachments/assets/8eea3af3-1ae2-4eb2-b616-00ae1106e36c)
 
-### 2. joint-angle extraction (including other biomechanical variables)
+### 2. Automatic Gait Cycle Detection
 
 <img width="408" height="308" alt="image" src="https://github.com/user-attachments/assets/d2fe5268-e0c3-48a4-9d00-997ba2707545" />
 <img width="996" height="361" alt="image" src="https://github.com/user-attachments/assets/6b47925e-caa9-41be-ab00-43c0fe728bf4" />
 
 
-### 3.EMG preprocessing
+### 3. EMG preprocessing & Motion Synchronization
 
 <img width="1333" height="553" alt="image" src="https://github.com/user-attachments/assets/11eca52d-4899-48cb-92c9-5cdaf817dd56" />
 <img width="1311" height="502" alt="image" src="https://github.com/user-attachments/assets/29089095-18b1-455c-9403-2072dba75b19" />
@@ -155,7 +155,7 @@ Using **OpenSim inverse kinematics output files (`.mot`)**, I implemented script
 ---
 
 
-## 3. EMG Signal Pre-processing & Motion Synchronization
+## 3. EMG preprocessing & Motion Synchronization
 
 This module performs full EMG preprocessing and synchronizes the processed signals with 3D marker-based motion data collected during squat and cutting tasks.
 
