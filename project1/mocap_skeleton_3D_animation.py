@@ -29,7 +29,7 @@ from matplotlib.animation import FuncAnimation, PillowWriter
 # 1) Load motion-capture file (Colab environment)
 # =====================================================
 # The file is assumed to already exist in the Colab /content directory.
-path = "/content/squat.mat"
+path = "/content/cutting.mat"
 print("Loaded file:", path)
 
 # =====================================================
@@ -66,16 +66,16 @@ S = mat[user_keys[0]]
 
 labels, arr = get_labeled_block(S)
 markers, _, frames = arr.shape
-print(f"Markers: {markers} | Frames: {frames}")
+print(f"Markers: {markers} | Original frames: {frames}")
 
 # =====================================================
 # 3) Temporal downsampling for efficient animation
 # =====================================================
 # Using every N-th frame reduces rendering cost while
 # preserving overall motion patterns.
-step = 4
+step = 1
 frame_idx = np.arange(0, frames, step)
-print("Using frames:", len(frame_idx))
+print(f"Animation frames (step={step}): {len(frame_idx)}")
 
 # =====================================================
 # 4) Compute fixed cubic axis limits (global scale)
@@ -137,7 +137,7 @@ def update(fi):
 
     valid = np.isfinite(x) & np.isfinite(y) & np.isfinite(z)
     pts._offsets3d = (x[valid], y[valid], z[valid])
-    ax.set_title(f"Frame {f}/{frames}")
+    ax.set_title(f"Frame {fi+1}/{len(frame_idx)}")
     return (pts,)
 
 ani = FuncAnimation(
@@ -145,7 +145,7 @@ ani = FuncAnimation(
     update,
     frames=len(frame_idx),
     init_func=init,
-    interval=25,
+    interval=40,
     blit=False
 )
 
@@ -155,7 +155,7 @@ ani = FuncAnimation(
 # GIF output is chosen for easy embedding in README files
 # and lightweight sharing without video codecs.
 out = "/content/marker_motion.gif"
-writer = PillowWriter(fps=30)
+writer = PillowWriter(fps=25)
 ani.save(out, writer=writer, dpi=120)
 plt.close(fig)
 
