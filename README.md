@@ -137,16 +137,14 @@ enabling visual inspection of human movement patterns before downstream biomecha
 
 ---
 
-## 2. Joint-angle extraction (including other biomechanical variables) 
+## 2. Automatic Gait Cycle Detection
 
-Using datasets such as **squat.mat** and **cutting.mat**, I implemented scripts to:
+Using **OpenSim inverse kinematics output files (`.mot`)**, I implemented scripts to:
 
-- Load and parse motion-capture data  
-- Extract joint variables including:  
-  - **Knee, hip, and ankle angles  **
-  - Pelvis kinematics  
-  - Additional biomechanical variables available in the .mat datasets **(e.g., GRF(Ground Reaction Force), marker trajectories, etc.)** 
-- Identify key movement phases (squat cycles, cutting phases)
+- Load and parse joint kinematic time-series data  
+- Analyze joint-angle variables, with a primary focus on **knee flexion–extension angles**
+- Automatically detect and segment gait cycles using biomechanics-based signal processing
+- Identify key movement phases from continuous joint-angle trajectories
 
 - 🔍 **Detailed Information**  
 👉 [Click here to view Project 2 detailed README](./project2/README.md)
