@@ -1,5 +1,5 @@
 # Project2  
-# Joint-angle extraction (including other biomechanical variables)
+# Automatic Gait Cycle Detection from Knee Angle Time-Series
 
 ## Table of Contents
 - [Overview](#overview)
