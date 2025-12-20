@@ -22,6 +22,8 @@ to deep learning- and machine-learning–based **basketball shooting form classi
 ## 3D Cutting Motion Visualization
 ![cuttingmat](https://github.com/user-attachments/assets/22c562bd-aa93-4b08-9142-d170baec23f2)
 
+<img width="547" height="448" alt="image" src="https://github.com/user-attachments/assets/d379ffc0-2f33-43f4-8d46-eccb9789f2b5" />
+
 ## 3D Squat Motion Visualization
 ![squatmat](https://github.com/user-attachments/assets/8eea3af3-1ae2-4eb2-b616-00ae1106e36c)
 
