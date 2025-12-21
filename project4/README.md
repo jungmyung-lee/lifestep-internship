@@ -587,7 +587,7 @@ The final output of this pipeline is a continuous, real-time joint-angle predict
 
 **Primary Output**  
 -Predicted variables:  
--17 continuous hand joint angles  
+-17 continuous hand joint angles (A **17-dimensional continuous joint-angle vector**) 
 
 **Output rate:**  
 -100 Hz (one prediction every 10 ms after initial window)  
