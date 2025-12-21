@@ -475,6 +475,41 @@ MSE provides a **simple, stable, and physically meaningful objective** for real-
 
 ---
 
+## Output  
+
+The final output of this pipeline is a continuous, real-time joint-angle prediction stream derived directly from surface EMG signals.  
+
+**Primary Output**  
+-Predicted variables:  
+-17 continuous hand joint angles  
+
+**Output rate:**  
+-100 Hz (one prediction every 10 ms after initial window)  
+-Latency characteristics:  
+
+**Initial delay: ~150 ms (window length)**  
+-Steady-state latency: ~10 ms per update  
+-The output is designed to be directly compatible with real-time prosthetic control loops, without requiring additional post-processing or smoothing.  
+
+---
+
+<img width="1024" height="559" alt="image" src="https://github.com/user-attachments/assets/b24aeb65-1a98-42b3-aac2-5e4b5d48d79e" />
+
+
+<div style="display: flex; gap: 16px; align-items: flex-start;">
+  <img 
+    src="https://github.com/user-attachments/assets/d713ca33-b9ff-4edd-a9d8-0212755719da" 
+    alt="Hand anatomy model"
+    width="400"
+  />
+  <img 
+    src="https://github.com/user-attachments/assets/d5cab7fa-3413-4a60-a790-70c4a76d2cb8" 
+    alt="Wrist anatomy diagram"
+    width="550"
+  />
+</div>
+
+
 ## Final Remark
 
 This README intentionally documents **not only what components were used, but why each design choice was made**.  
