@@ -450,9 +450,12 @@ Dilations of **1 and 2** are sufficient to cover the required temporal context f
 
 The model is trained using **Mean Squared Error (MSE) loss**, defined as:
 
-\[
-\mathcal{L}_{MSE} = \frac{1}{N} \sum_{i=1}^{N} (y_i - \hat{y}_i)^2
-\]
+$$
+\mathrm{MSE} = \frac{1}{n} \sum_{i=1}^{n} \left( y_i - \hat{y}_i \right)^2
+$$
+
+<img width="800" height="459" alt="image" src="https://github.com/user-attachments/assets/9ad048eb-9f02-4a17-a349-ca0f8e02b0f5" />
+
 
 ### Why MSE for EMG-based joint-angle regression?
 
