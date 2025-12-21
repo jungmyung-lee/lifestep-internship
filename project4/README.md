@@ -315,6 +315,9 @@ In this pipeline, the CNN acts as a **feature encoder**, compressing refined EMG
   - increased latency and power consumption
 - **16 → 32** represents a controlled and efficient expansion of representational capacity suitable for EMG and embedded deployment
 
+<img width="1024" height="559" alt="image" src="https://github.com/user-attachments/assets/f8f85bc0-69f0-4c8f-be54-258a0900154c" />
+
+
 ---
 
 ### Why kernel size = 3?
@@ -395,6 +398,9 @@ These properties make TCNs more suitable for **real-time prosthetic control** th
 
 Thus, **1–2 TCN layers** provide sufficient temporal modeling capacity without violating real-time constraints.
 
+<img width="1024" height="559" alt="image" src="https://github.com/user-attachments/assets/878e4983-0d3f-4d98-874e-9696521335a2" />
+
+
 ---
 
 ### Why hidden channels = 32?
@@ -408,6 +414,9 @@ Thus, **1–2 TCN layers** provide sufficient temporal modeling capacity without
   - increased latency and power consumption
 
 A hidden size of **32** offers the best balance between expressiveness and efficiency.
+
+<img width="1024" height="559" alt="image" src="https://github.com/user-attachments/assets/523fdde5-ec59-45a2-b21e-cf83ce88aa3b" />
+
 
 ---
 
@@ -430,6 +439,9 @@ Dilations of **1 and 2** are sufficient to cover the required temporal context f
   - activation rise and fall
 - Larger kernels increase computation without clear benefit
 - Longer temporal dependencies are already handled through dilation
+
+- <img width="1024" height="559" alt="image" src="https://github.com/user-attachments/assets/7e56d174-bce1-4cee-bb09-61d351a10e31" />
+
 
 ---
 
