@@ -440,8 +440,6 @@ Dilations of **1 and 2** are sufficient to cover the required temporal context f
 - Larger kernels increase computation without clear benefit
 - Longer temporal dependencies are already handled through dilation
 
-- <img width="1024" height="559" alt="image" src="https://github.com/user-attachments/assets/7e56d174-bce1-4cee-bb09-61d351a10e31" />
-
 
 ---
 
