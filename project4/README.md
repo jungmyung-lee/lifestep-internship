@@ -522,14 +522,16 @@ After temporal modeling with the TCN, a **fully connected (FC) linear layer** is
 
 **Operation:**
 
-\[
-\hat{\mathbf{y}} = \mathbf{W}\mathbf{h} + \mathbf{b}
-\]
+$$
+\hat{y} = W h + b
+$$
 
 where:
-- \(\mathbf{h} \in \mathbb{R}^{32}\) is the TCN output feature vector  
-- \(\mathbf{W} \in \mathbb{R}^{17 \times 32}\) and \(\mathbf{b} \in \mathbb{R}^{17}\) are learnable parameters  
-- \(\hat{\mathbf{y}}\) represents the predicted joint angles  
+- \( h \) is the TCN output feature vector (32-dimensional)  
+- \( W \) is a learnable weight matrix of shape \( 17 \times 32 \)  
+- \( b \) is a learnable bias vector of length 17  
+- \( \hat{y} \) represents the predicted joint angles  
+
 
 ---
 
