@@ -354,6 +354,9 @@ In this architecture:
   - ReLU naturally suppresses small negative noise
 - **Stable training behavior**
   - avoids vanishing gradients common in sigmoid or tanh
+ 
+  <img width="1024" height="559" alt="image" src="https://github.com/user-attachments/assets/99da76c3-b3b3-4550-a638-1c5ff6ec183b" />
+
 
 Overall, ReLU is a practical and robust activation function for **noisy EMG signals in real-time embedded systems**.
 
