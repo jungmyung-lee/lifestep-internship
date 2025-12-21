@@ -356,7 +356,7 @@ Overall, ReLU is a practical and robust activation function for **noisy EMG sign
 
 ---
 
-### Why output a compact feature representation (32–48 dimensions)?
+### Why output a compact feature representation (32 dimensions)?
 
 - **Too large (e.g., 128–256 dimensions):**
   - overwhelms the TCN
