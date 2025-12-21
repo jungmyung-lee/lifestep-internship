@@ -318,7 +318,7 @@ In this pipeline, the CNN acts as a **feature encoder**, compressing refined EMG
   - increased latency and power consumption
 - **16 → 32** represents a controlled and efficient expansion of representational capacity suitable for EMG and embedded deployment
 
-<img width="1024" height="559" alt="image" src="https://github.com/user-attachments/assets/f8f85bc0-69f0-4c8f-be54-258a0900154c" />
+
 
 
 ---
