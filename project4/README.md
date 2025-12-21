@@ -25,7 +25,7 @@
   - [Why This Exact TD Feature Set](#why-this-exact-td-feature-set)
   - [TD Final Feature Shape Before Entering the 1D CNN](#td-final-feature-shape-before-entering-the-1d-cnn)
 
-- [CNN Encoder](#cnn)
+- [CNN](#cnn)
   - [Why Use a CNN for EMG Signals](#why-use-a-cnn-for-emg-signals)
   - [Why Exactly 2 CNN Layers](#why-exactly-2-cnn-layers)
   - [Why Use 16 → 32 Filters](#why-use-16--32-filters)
@@ -286,7 +286,7 @@ Although CNNs are commonly associated with image processing, a **1D CNN operatin
   - electrode placements
   - minor signal distortions
 
-In this pipeline, the CNN acts as a **feature encoder**, compressing refined EMG + TD information into a **compact representation (approximately 32–48 dimensions)** that preserves muscle synergy information while suppressing noise.
+In this pipeline, the CNN acts as a **feature encoder**, compressing refined EMG + TD information into a **compact representation (32 dimensions)** that preserves muscle synergy information while suppressing noise.
 
 ---
 
