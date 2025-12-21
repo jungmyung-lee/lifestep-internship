@@ -11,27 +11,53 @@
 - [Overall System Pipeline](#overall-system-pipeline)
 
 - [EMG Input & Pre-processing](#emg-input--pre-processing)
-- [MVC-Based Robust Normalization](#mvc-based-robust-normalization)
-- [Windowing Strategy (150 ms / 10 ms Hop)](#windowing-strategy-150-ms--10-ms-hop)
-- [Time-Domain (TD) Feature Extraction](#time-domain-td-feature-extraction)
+  - [Target Muscles (Electrode Placement)](#target-muscles-electrode-placement)
+  - [Filtering Steps](#filtering-steps)
 
-- [CNN Encoder](#cnn-encoder)
-  - [Why 2 Layers](#why-exactly-2-cnn-layers)
-  - [Why 16 → 32 Filters](#why-use-16--32-filters)
+- [MVC-Based Robust Normalization](#mvc-based-robust-normalization)
+  - [Procedure](#procedure)
+  - [Why MVC Normalization Matters](#why-mvc-normalization-matters)
+
+- [Windowing Strategy (150 ms / 10 ms Hop)](#windowing-strategy-150-ms--10-ms-hop)
+  - [Interpretation](#interpretation)
+
+- [Time-Domain (TD) Feature Extraction](#time-domain-td-feature-extraction)
+  - [Why This Exact TD Feature Set](#why-this-exact-td-feature-set)
+  - [TD Final Feature Shape Before Entering the 1D CNN](#td-final-feature-shape-before-entering-the-1d-cnn)
+
+- [CNN Encoder](#cnn)
+  - [Why Use a CNN for EMG Signals](#why-use-a-cnn-for-emg-signals)
+  - [Why Exactly 2 CNN Layers](#why-exactly-2-cnn-layers)
+  - [Why Use 16 → 32 Filters](#why-use-16--32-filters)
   - [Why Kernel Size = 3](#why-kernel-size--3)
   - [Why ReLU Activation](#why-relu-activation)
-  - [Why Compact Feature Representation](#why-output-a-compact-feature-representation-32–48-dimensions)
+  - [Why Output a Compact Feature Representation (32 Dimensions)](#why-output-a-compact-feature-representation-32-dimensions)
 
 - [Temporal Convolutional Network (TCN)](#temporal-convolutional-network-tcn)
-  - [Why TCN over LSTM](#why-use-a-tcn-instead-of-an-lstm)
-  - [Why 1–2 TCN Layers](#why-only-1–2-tcn-layers)
+  - [Why Use a TCN Instead of an LSTM](#why-use-a-tcn-instead-of-an-lstm)
+  - [Why Only 1–2 TCN Layers](#why-only-1–2-tcn-layers)
   - [Why Hidden Channels = 32](#why-hidden-channels--32)
-  - [Why Dilations = 1, 2](#why-dilations--1-and-2-only)
+  - [Why Dilations = 1 and 2 Only](#why-dilations--1-and-2-only)
   - [Why Kernel Size = 3 in the TCN](#why-kernel-size--3-in-the-tcn)
 
 - [Loss Function](#loss-function)
+  - [Why Mean Squared Error (MSE)](#why-mean-squared-error-mse)
+  - [Why MSE for EMG-Based Joint-Angle Regression](#why-mse-for-emg-based-joint-angle-regression)
+  - [Why Not Other Loss Functions](#why-not-other-loss-functions)
+
+- [Fully Connected (FC) Regression Layer](#fully-connected-fc-regression-layer)
+  - [Why a Single Linear FC Layer](#why-a-single-linear-fc-layer)
+  - [FC Layer Definition](#fc-layer-definition)
+  - [Why a Linear FC Layer (No Activation)](#why-a-linear-fc-layer-no-activation)
+  - [Why Only One FC Layer](#why-only-one-fc-layer)
+  - [Training Behavior of the FC Layer](#training-behavior-of-the-fc-layer)
+  - [Role in the Overall Pipeline](#role-in-the-overall-pipeline)
+
+- [Output](#output)
+
 - [Final Remark](#final-remark)
 - [References](#references)
+
 
 
 
@@ -481,6 +507,77 @@ $$
 MSE provides a **simple, stable, and physically meaningful objective** for real-time prosthetic joint-angle regression.
 
 ---
+
+## Fully Connected (FC) Regression Layer  
+### Why a Single Linear FC Layer?
+
+After temporal modeling with the TCN, a **fully connected (FC) linear layer** is used to map the learned temporal features to **continuous joint-angle outputs**.
+
+---
+
+### FC Layer Definition
+
+- **Input dimension:** TCN hidden channels (32)  
+- **Output dimension:** 17 joint angles  
+
+**Operation:**
+
+\[
+\hat{\mathbf{y}} = \mathbf{W}\mathbf{h} + \mathbf{b}
+\]
+
+where:
+- \(\mathbf{h} \in \mathbb{R}^{32}\) is the TCN output feature vector  
+- \(\mathbf{W} \in \mathbb{R}^{17 \times 32}\) and \(\mathbf{b} \in \mathbb{R}^{17}\) are learnable parameters  
+- \(\hat{\mathbf{y}}\) represents the predicted joint angles  
+
+---
+
+### Why a Linear FC Layer (No Activation)?
+
+- Joint angles are **continuous physical quantities**
+- No saturation or bounding is desired at the model output
+- Linear mapping preserves **numerical stability**
+- Nonlinear activations (e.g., ReLU, tanh) can distort angle magnitudes
+- Standard practice in **regression-based control systems**
+- Ensures **smooth and interpretable outputs**
+
+---
+
+### Why Only One FC Layer?
+
+- The CNN and TCN already perform:
+  - nonlinear spatial feature extraction
+  - temporal dependency modeling
+- The FC layer acts purely as a **regression head**
+- Additional FC layers would:
+  - increase parameter count
+  - raise overfitting risk
+  - add unnecessary inference latency
+
+A **single linear FC layer** is sufficient and optimal for real-time prosthetic control.
+
+---
+
+### Training Behavior of the FC Layer
+
+- FC weights are initialized randomly
+- During training:
+  - predicted joint angles are compared with ground truth using **MSE loss**
+  - gradients backpropagate through:
+  
+    **FC → TCN → CNN → feature extraction**
+
+- Through this process, the FC layer learns:
+  - the relative contribution of each temporal feature
+  - a direct mapping from muscle activation patterns to joint kinematics
+
+---
+
+### Role in the Overall Pipeline
+
+The FC layer serves as the **final physical interpretation stage**, converting abstract temporal features into **directly usable joint-angle commands** for real-time prosthetic control.
+
 
 ## Output  
 
