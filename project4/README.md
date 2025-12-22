@@ -368,6 +368,9 @@ In this architecture:
 - Longer temporal dependencies are handled by the TCN  
 → kernel size **3** is the most natural and efficient choice
 
+<img width="1024" height="559" alt="image" src="https://github.com/user-attachments/assets/d7020d92-9a7f-49c9-8d44-154110100c60" />
+
+
 ---
 
 ### Why ReLU activation?
