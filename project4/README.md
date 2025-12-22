@@ -512,6 +512,9 @@ MSE provides a **simple, stable, and physically meaningful objective** for real-
 ---
 
 ## Fully Connected (FC) Regression Layer  
+
+<img width="1024" height="559" alt="image" src="https://github.com/user-attachments/assets/2ffaa514-bbec-4747-8768-6e9106021162" />
+
 ### Why a Single Linear FC Layer?
 
 After temporal modeling with the TCN, a **fully connected (FC) linear layer** is used to map the learned temporal features to **continuous joint-angle outputs**.
