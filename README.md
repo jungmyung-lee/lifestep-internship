@@ -116,10 +116,10 @@ https://musculoskeletalkey.com/structure-and-function-of-the-wrist/
 
 
 ## Basketball Shooting Form Classification (GOOD / BAD) User Interface
-![Cutting Motion](./13.gif)
+![Basketball Shooting Form Classification UI](https://raw.githubusercontent.com/jungmyung-lee/lifestep-internship/main/13.gif)
 
 ## AI Basketball Shooting Coach Program User Interface
-![Cutting Motion](./22.gif)
+![AI Basketball Shooting Coach UI](https://raw.githubusercontent.com/jungmyung-lee/lifestep-internship/main/22.gif)
 
 ---
 
