@@ -543,17 +543,14 @@ By integrating:
 
 - basketball coaching experience
 - biomechanical domain knowledge
-- pose estimation and machine learning
+- pose estimation, machine learning, and deep learning
 
 shooting motions were transformed into
 interpretable temporal representations.
 
-Experimental results suggest that,
-under limited data conditions,
-machine learning models leveraging **domain-informed feature representations**
-can exhibit **more stable generalization behavior**
-than deep temporal models whose representational capacity
-cannot be fully exploited.
+Experimental results suggest that, **under limited data conditions**,
+the **XGBoost machine learning model** can exhibit more stable performance
+than the **CNN + LSTM deep learning model**.
 
 This finding highlights the importance of
 **aligning model complexity with data regime**
