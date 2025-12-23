@@ -563,12 +563,18 @@ when designing motion analysis systems.
 
 ## Technologies Used
 
-- Python  
-- PyTorch  
-- YOLOv8-Pose  
-- OpenCV  
-- XGBoost  
-- scikit-learn  
+### Programming Languages and Libraries
+- Python
+- PyTorch
+- OpenCV
+- scikit-learn
+- XGBoost
+
+### Models and Architectures
+- Convolutional Neural Networks (1D CNN)
+- Long Short-Term Memory Networks (LSTM)
+- YOLOv8-Pose (2D human pose estimation)
+
 
 ---
 
