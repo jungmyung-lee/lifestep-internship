@@ -161,7 +161,8 @@ From pose keypoints, three interpretable time-series features are derived:
 
 - elbow joint angle trajectory  
 - normalized wrist vertical position (relative to torso length)  
-- reference baseline signal  
+- reference baseline signal (normalized hip vertical displacement)
+
 
 These features are intentionally selected to reflect
 key biomechanical aspects of basketball shooting mechanics.
