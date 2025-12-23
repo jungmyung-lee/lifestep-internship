@@ -33,7 +33,7 @@
 
 ---
 
-<img width="1024" height="559" alt="image" src="https://github.com/user-attachments/assets/6e623593-1bcb-4374-ba8a-15e8e033f886" />
+![Cutting Motion](./22.gif)
 
 
 ## Project Overview
@@ -148,6 +148,8 @@ Extracted signals are:
 This ensures temporal alignment while keeping the model architecture simple.
 
 ---
+
+<img width="1024" height="559" alt="image" src="https://github.com/user-attachments/assets/6e623593-1bcb-4374-ba8a-15e8e033f886" />
 
 ## Model: XGBoost Regression
 
