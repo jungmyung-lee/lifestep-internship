@@ -72,7 +72,11 @@ def video_to_feature(video_path, model):
 
     elbow_angles = []
     wrist_rel_y  = []
-    hip_dummy    = []
+    hip_y        = []
+    
+    hip0 = None
+    torso0 = None
+
 
     valid_frames = 0
 
@@ -108,7 +112,15 @@ def video_to_feature(video_path, model):
         wrist_rel_y.append((w[1] - h[1]) / shoulder_to_hip)
 
         # Reference signal (kept for alignment)
-        hip_dummy.append(0.0)
+                # ✅ Initialize hip reference (first valid frame)
+        if hip0 is None:
+            hip0 = h[1]
+            torso0 = shoulder_to_hip  # same normalization length
+
+        # ✅ Normalized hip vertical displacement (lower-body stability proxy)
+        hip_disp = (h[1] - hip0) / (torso0 + 1e-6)
+        hip_y.append(hip_disp)
+
 
         valid_frames += 1
 
@@ -122,9 +134,9 @@ def video_to_feature(video_path, model):
 
     elbow_r = resample_1d(elbow_angles, RESAMPLE_LEN)
     wrist_r = resample_1d(wrist_rel_y, RESAMPLE_LEN)
-    hip_r   = resample_1d(hip_dummy, RESAMPLE_LEN)
+    hip_r   = resample_1d(hip_y, RESAMPLE_LEN)
 
-    if elbow_r is None or wrist_r is None:
+    if elbow_r is None or wrist_r is None or hip_r is None:
         return None
 
     elbow_r = zscore(elbow_r)
