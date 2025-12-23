@@ -3,6 +3,8 @@
 
 ---
 
+![Cutting Motion](https://raw.githubusercontent.com/jungmyung-lee/lifestep-internship/main/13.gif)
+
 ## Table of Contents
 
 - [Project Overview](#project-overview)
