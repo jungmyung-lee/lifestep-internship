@@ -184,7 +184,7 @@ This enforces temporal alignment while preserving relative motion dynamics.
 
 ---
 
-<img width="1024" height="559" alt="image" src="https://github.com/user-attachments/assets/146a679e-9928-4f92-bd95-eb8927c53bd0" />
+<img width="1024" height="559" alt="image" src="https://github.com/user-attachments/assets/1a2eaa67-dcc8-4c4a-bd00-25ad191ea43d" />
 
 **The waveforms shown in this diagram are illustrative examples; the actual learned feature maps may exhibit different shapes depending on the data and training dynamics.**
 
