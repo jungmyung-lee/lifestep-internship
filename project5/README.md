@@ -4,28 +4,32 @@
 
 ## Table of Contents
 
-- Project Overview  
-- Motivation  
-- Dataset and Data Curation  
-- Input Data Specification  
-- Pose Estimation with YOLOv8-Pose  
-- Biomechanics-Informed Feature Design  
-- Temporal Normalization  
-- Model A: CNN + LSTM (Temporal Deep Learning Model)  
-  - Why Use a 1D CNN  
-  - CNN Architecture Design  
-  - Why Use an LSTM  
-  - Regularization and Training Strategy  
-- Model B: XGBoost (Feature-Based Machine Learning Model)  
-  - Why a Feature-Based Model  
-  - Feature Vector Design  
-  - XGBoost Architecture and Hyperparameters  
-- Evaluation Protocol  
-- Experimental Results  
-- Limitations and Reflections  
-- Conclusion  
-- Technologies Used  
-- Author  
+- [Project Overview](#project-overview)
+- [Motivation](#motivation)
+- [Dataset and Data Curation](#dataset-and-data-curation)
+- [Input Data Specification](#input-data-specification)
+- [Pose Estimation with YOLOv8-Pose](#pose-estimation-with-yolov8-pose)
+- [Biomechanics-Informed Feature Design](#biomechanics-informed-feature-design)
+- [Temporal Normalization](#temporal-normalization)
+
+- [Model A: CNN + LSTM (Temporal Deep Learning Model)](#model-a-cnn--lstm-temporal-deep-learning-model)
+  - [Why Use a 1D CNN](#why-use-a-1d-cnn)
+  - [CNN Architecture Design](#cnn-architecture-design)
+  - [Why Use an LSTM](#why-use-an-lstm)
+  - [Regularization and Training Strategy](#regularization-and-training-strategy)
+
+- [Model B: XGBoost (Feature-Based Machine Learning Model)](#model-b-xgboost-feature-based-machine-learning-model)
+  - [Why a Feature-Based Model](#why-a-feature-based-model)
+  - [Feature Vector Design](#feature-vector-design)
+  - [XGBoost Architecture and Hyperparameters](#xgboost-architecture-and-hyperparameters)
+
+- [Evaluation Protocol](#evaluation-protocol)
+- [Experimental Results](#experimental-results)
+- [Limitations and Reflections](#limitations-and-reflections)
+- [Conclusion](#conclusion)
+- [Technologies Used](#technologies-used)
+- [Author](#author)
+ 
 
 ---
 
