@@ -293,6 +293,14 @@ An LSTM is therefore used to model:
 
 ### LSTM Architecture Design
 
+```python
+nn.LSTM(
+    input_size=32,
+    hidden_size=64,
+    batch_first=True
+)
+```
+
 #### Hidden State Configuration
 
 - The CNN outputs a **32-dimensional feature vector** per time step
@@ -360,6 +368,18 @@ binary classification tasks where calibrated decision boundaries are required.
 
 This evaluation strategy provides a fair assessment
 of generalization behavior under limited data.
+
+#### Training Configuration Details
+
+- Optimizer: **Adam**
+- Learning rate: **1e-3**
+- Maximum epochs: **80**
+- Early stopping patience: **8 epochs**
+- Early stopping criterion: **validation loss**
+- Classification threshold: **probability > 0.5**
+
+These settings are chosen to balance learning capacity
+and overfitting risk under limited data conditions.
 
 ---
 
@@ -429,6 +449,21 @@ This allows XGBoost to:
 ---
 
 ### XGBoost Architecture and Hyperparameters
+
+```python
+from xgboost import XGBClassifier
+
+XGBClassifier(
+    n_estimators=400,
+    max_depth=3,
+    learning_rate=0.02,
+    subsample=0.9,
+    colsample_bytree=0.9,
+    objective="binary:logistic",
+    eval_metric="logloss",
+    random_state=42
+)
+```
 
 The XGBoost classifier is configured with the following principles:
 
