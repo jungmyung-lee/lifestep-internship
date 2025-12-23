@@ -485,9 +485,8 @@ the following strategy is used:
 - **Stratified 5-fold cross-validation**
   - Preserves class balance in each fold
 
-- **Early stopping based on validation loss**
-  - Prevents overfitting
-  - Stops training when generalization no longer improves
+- Early stopping based on a held-out validation split within each training fold
+- The test fold is used exclusively for final evaluation
 
 ---
 
