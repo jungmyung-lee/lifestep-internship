@@ -529,7 +529,8 @@ and focuses on learning **nonlinear decision boundaries** over structured inputs
 
 ---
 
-<img width="1024" height="559" alt="image" src="https://github.com/user-attachments/assets/fb54737f-9a63-4227-8b03-da2261b52efd" />
+<img width="1024" height="559" alt="image" src="https://github.com/user-attachments/assets/b224a9d5-ff06-430b-8304-87129abf290c" />
+
 
 **The waveforms shown in this diagram are illustrative examples; the actual learned feature maps may exhibit different shapes depending on the data and training dynamics.**
 
