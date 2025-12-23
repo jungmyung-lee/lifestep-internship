@@ -198,6 +198,7 @@ The architecture follows a two-stage design:
 
 ---
 
+
 ### Why Use a 1D CNN
 
 A 1D CNN operating along the **temporal axis**
@@ -211,6 +212,8 @@ Basketball shooting contains localized temporal patterns such as:
 
 The CNN acts as a **temporal feature encoder**,
 emphasizing motion structure while suppressing frame-level noise.
+
+<img width="1024" height="559" alt="image" src="https://github.com/user-attachments/assets/5fa2f294-6ad3-4f32-a1f8-2fd99ad5b4cd" />
 
 ---
 
