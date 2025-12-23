@@ -187,10 +187,11 @@ emphasizing motion structure while suppressing frame-level noise.
 
 ### CNN Architecture Design
 
-python
-nn.Conv1d(3, 32, kernel_size=5, padding=2)
-nn.ReLU()
-nn.MaxPool1d(2)
+```python
+nn.Conv1d(3, 32, kernel_size=5, padding=2)  
+nn.ReLU()  
+nn.MaxPool1d(2)  
+```
 
 #### Design Rationale
 
