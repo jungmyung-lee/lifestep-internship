@@ -395,6 +395,7 @@ and overfitting risk under limited data conditions.
 
 ---
 
+<img width="1024" height="559" alt="image" src="https://github.com/user-attachments/assets/fb54737f-9a63-4227-8b03-da2261b52efd" />
 
 
 ## Model B: XGBoost (Feature-Based Machine Learning Model)
