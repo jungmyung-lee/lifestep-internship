@@ -10,6 +10,7 @@
 - [Project Overview](#project-overview)
 - [Motivation](#motivation)
 - [Dataset and Data Curation](#dataset-and-data-curation)
+  - [Temporal Segmentation Strategy](#temporal-segmentation-strategy)
 - [Input Data Specification](#input-data-specification)
 - [Pose Estimation with YOLOv8-Pose](#pose-estimation-with-yolov8-pose)
 - [Biomechanics-Informed Feature Design](#biomechanics-informed-feature-design)
@@ -22,10 +23,25 @@
   - [Why Use an LSTM](#why-use-an-lstm)
   - [Regularization and Training Strategy](#regularization-and-training-strategy)
 
+- [Training Strategy and Optimization](#training-strategy-and-optimization)
+  - [Why This Loss Function](#why-this-loss-function)
+    - [Binary Cross-Entropy with Logits (BCEWithLogitsLoss)](#binary-cross-entropy-with-logits-bcewithlogitsloss)
+    - [Why BCEWithLogitsLoss](#why-bcewithlogitsloss)
+    - [Why Not Other Loss Functions](#why-not-other-loss-functions)
+  - [Why This Optimizer](#why-this-optimizer)
+    - [Why Adam](#why-adam)
+    - [Why Learning Rate = 1e-3](#why-learning-rate--1e-3)
+  - [Cross-Validation and Early Stopping](#cross-validation-and-early-stopping)
+  - [Dropout](#dropout)
+  - [Training Configuration Summary](#training-configuration-summary)
+
 - [Model B: XGBoost (Feature-Based Machine Learning Model)](#model-b-xgboost-feature-based-machine-learning-model)
   - [Why a Feature-Based Model](#why-a-feature-based-model)
   - [Feature Vector Design](#feature-vector-design)
+    - [Why Fixed-Length Vectors](#why-fixed-length-vectors)
+    - [Why Preserve Channel Separation](#why-preserve-channel-separation)
   - [XGBoost Architecture and Hyperparameters](#xgboost-architecture-and-hyperparameters)
+  - [Why XGBoost Performs Well in This Setting](#why-xgboost-performs-well-in-this-setting)
 
 - [Evaluation Protocol](#evaluation-protocol)
 - [Experimental Results](#experimental-results)
@@ -33,6 +49,7 @@
 - [Conclusion](#conclusion)
 - [Technologies Used](#technologies-used)
 - [Author](#author)
+
  
 
 ---
@@ -347,7 +364,119 @@ rather than a collection of independent frames.
 
 ### Regularization and Training Strategy
 
-#### Dropout
+---
+
+## Training Strategy and Optimization
+
+This section explains **how the CNN + LSTM model is trained**
+and **why specific optimization choices were made**,
+with a focus on **stability, generalization, and limited-data robustness**.
+
+---
+
+### Why This Loss Function?
+
+#### Binary Cross-Entropy with Logits (BCEWithLogitsLoss)
+
+The task is **binary sequence-level classification (GOOD / BAD)**.
+The model outputs a **single scalar logit** representing shooting form quality.
+
+Binary Cross-Entropy with logits is used:
+
+```python
+criterion = nn.BCEWithLogitsLoss()
+```
+
+### Why BCEWithLogitsLoss?
+
+The model is trained using **Binary Cross-Entropy with Logits Loss
+(`BCEWithLogitsLoss`)**.
+
+**Key reasons:**
+
+- Combines **sigmoid activation** and **binary cross-entropy** in a single operation  
+- Avoids numerical instability caused by separately applying sigmoid  
+- Strongly penalizes **confident but incorrect predictions**  
+- Produces **well-calibrated decision boundaries** for binary classification  
+
+This loss function is well suited for sequence-level binary classification
+where **stable probability estimates** are required.
+
+---
+
+### Why Not Other Loss Functions?
+
+- **Mean Squared Error (MSE)**  
+  - Treats classification as regression  
+  - Leads to poorly calibrated outputs and unstable decision thresholds  
+
+- **Hinge Loss**  
+  - Less stable under **small-sample regimes**  
+  - Sensitive to margin selection  
+
+- **Focal Loss**  
+  - Designed for heavy class imbalance  
+  - Introduces unnecessary complexity given the **balanced class distribution**
+
+Overall, **BCEWithLogitsLoss** provides a **simple, stable, and principled objective**
+for this problem setting.
+
+---
+
+### Why This Optimizer?
+
+The model is optimized using the **Adam optimizer**:
+
+```python
+optimizer = torch.optim.Adam(model.parameters(), lr=1e-3)
+```
+
+### Why Adam?
+
+The **Adam optimizer** is used for training the CNN + LSTM model.
+
+**Key reasons:**
+
+- Automatically adapts **learning rates per parameter**
+- Handles:
+  - heterogeneous feature scales
+  - noisy gradients from pose estimation
+- Well suited for **hybrid architectures (CNN + LSTM)**
+- Empirically stable in **small-to-medium dataset regimes**
+
+Overall, Adam offers a strong balance between **fast convergence**
+and **robust optimization** for temporal deep learning models.
+
+---
+
+### Why Learning Rate = 1e-3?
+
+- Provides **stable convergence** for the CNN–LSTM model
+- Larger learning rates caused **unstable validation loss**
+- Smaller learning rates:
+  - slowed convergence
+  - increased sensitivity to noise
+
+A learning rate of **1e-3** achieves a practical balance between
+**training speed** and **optimization stability**.
+
+---
+
+### Cross-Validation and Early Stopping
+
+To ensure reliable performance estimation under limited data,
+the following strategy is used:
+
+- **Stratified 5-fold cross-validation**
+  - Preserves class balance in each fold
+
+- **Early stopping based on validation loss**
+  - Prevents overfitting
+  - Stops training when generalization no longer improves
+
+---
+
+### Dropout
 
 A dropout rate of **0.4** is applied before the final classification layer.
 
@@ -360,40 +489,17 @@ Dropout encourages:
 - reduced reliance on any single temporal cue
 - improved generalization across folds
 
----
+### Training Configuration Summary
 
-#### Loss Function
+- **Optimizer:** Adam  
+- **Learning rate:** 1e-3  
+- **Maximum epochs:** 80  
+- **Early stopping patience:** 8 epochs  
+- **Classification threshold:** probability > 0.5  
 
-- **Binary Cross-Entropy with Logits** is used for training
-- The logits formulation improves **numerical stability**
+This training strategy prioritizes **generalization and stability**
+over aggressive optimization.
 
-This loss function is appropriate for
-binary classification tasks where calibrated decision boundaries are required.
-
----
-
-#### Cross-Validation and Early Stopping
-
-- **Stratified 5-fold cross-validation** is used
-- Class balance is preserved in each fold
-- **Early stopping** is applied based on validation loss
-
-This evaluation strategy provides a fair assessment
-of generalization behavior under limited data.
-
-#### Training Configuration Details
-
-- Optimizer: **Adam**
-- Learning rate: **1e-3**
-- Maximum epochs: **80**
-- Early stopping patience: **8 epochs**
-- Early stopping criterion: **validation loss**
-- Classification threshold: **probability > 0.5**
-
-These settings are chosen to balance learning capacity
-and overfitting risk under limited data conditions.
-
----
 
 <img width="1024" height="559" alt="image" src="https://github.com/user-attachments/assets/fb54737f-9a63-4227-8b03-da2261b52efd" />
 
