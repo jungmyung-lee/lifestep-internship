@@ -15,6 +15,7 @@
 - [Model A: CNN + LSTM (Temporal Deep Learning Model)](#model-a-cnn--lstm-temporal-deep-learning-model)
   - [Why Use a 1D CNN](#why-use-a-1d-cnn)
   - [CNN Architecture Design](#cnn-architecture-design)
+  - [Why Kernel Size = 5](#why-kernel-size--5)
   - [Why Use an LSTM](#why-use-an-lstm)
   - [Regularization and Training Strategy](#regularization-and-training-strategy)
 
