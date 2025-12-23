@@ -113,7 +113,7 @@ All labels were **manually annotated by the author**,
 who has **over four years of basketball coaching experience**.
 
 
-### Temporal Segmentation Strategy
+### Temporal Segmentation Strategy (Manual Segmentation)
 
 No traditional preprocessing (e.g., filtering or smoothing) was applied.
 Instead, data quality was ensured through **strict temporal segmentation**.
