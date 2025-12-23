@@ -26,6 +26,8 @@ import torch.nn as nn
 from ultralytics import YOLO
 from sklearn.model_selection import StratifiedKFold
 from sklearn.metrics import accuracy_score, f1_score, confusion_matrix
+from sklearn.model_selection import train_test_split
+
 
 
 # =====================================================
@@ -216,37 +218,57 @@ def train_kfold(X, y):
         optimizer = torch.optim.Adam(model.parameters(), lr=LR)
         criterion = nn.BCEWithLogitsLoss()
 
-        Xtr = torch.tensor(X[tr], dtype=torch.float32).to(DEVICE)
-        ytr = torch.tensor(y[tr], dtype=torch.float32).to(DEVICE)
-
+        # Train / Validation split inside training fold
+        X_train, X_val, y_train, y_val = train_test_split(
+            X[tr], y[tr],
+            test_size=0.2,
+            stratify=y[tr],
+            random_state=42
+        )
+        
+        Xtr = torch.tensor(X_train, dtype=torch.float32).to(DEVICE)
+        ytr = torch.tensor(y_train, dtype=torch.float32).to(DEVICE)
+        
+        Xval = torch.tensor(X_val, dtype=torch.float32).to(DEVICE)
+        yval = torch.tensor(y_val, dtype=torch.float32).to(DEVICE)
+        
         Xte = torch.tensor(X[te], dtype=torch.float32).to(DEVICE)
         yte = torch.tensor(y[te], dtype=torch.float32).to(DEVICE)
 
-        best_loss = float("inf")
-        patience_cnt = 0
 
-        # -------- Training loop --------
+        best_loss = float("inf")
+        best_state = None
+        patience_cnt = 0
+        
         for epoch in range(EPOCHS):
             model.train()
             optimizer.zero_grad()
-
+        
             logits = model(Xtr).view(-1)
             loss = criterion(logits, ytr)
             loss.backward()
             optimizer.step()
-
-            # Validation loss
+        
+            # Validation (NOT test)
             model.eval()
             with torch.no_grad():
-                val_loss = criterion(model(Xte).view(-1), yte)
-
+                val_loss = criterion(model(Xval).view(-1), yval).item()
+        
             if val_loss < best_loss:
                 best_loss = val_loss
                 patience_cnt = 0
+                best_state = {
+                    k: v.detach().cpu().clone()
+                    for k, v in model.state_dict().items()
+                }
             else:
                 patience_cnt += 1
                 if patience_cnt >= PATIENCE:
                     break
+
+        model.load_state_dict(best_state)
+        model.to(DEVICE)
+
 
         # -------- Evaluation --------
         model.eval()
