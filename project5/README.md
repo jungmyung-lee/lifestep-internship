@@ -477,6 +477,8 @@ the following strategy is used:
 ---
 
 ### Dropout
+Dropout is active **only during training**,  
+and automatically disabled during evaluation and inference.
 
 A dropout rate of **0.4** is applied before the final classification layer.
 
