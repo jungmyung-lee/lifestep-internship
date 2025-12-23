@@ -110,6 +110,8 @@ def video_to_feature(video_path, model):
     cap = cv2.VideoCapture(video_path)
 
     elbow, wrist_y, hip_y = [], [], []
+    hip0 = None
+    torso0 = None
 
     while True:
         ret, frame = cap.read()
@@ -133,8 +135,15 @@ def video_to_feature(video_path, model):
         shoulder_to_hip = np.linalg.norm(s - h)
         wrist_y.append((w[1] - h[1]) / (shoulder_to_hip + 1e-6))
 
-        # Hip is used as a reference baseline
-        hip_y.append(0.0)
+        # Initialize reference hip position (first valid frame)
+        if hip0 is None:
+            hip0 = h[1]
+            torso0 = np.linalg.norm(s - h) + 1e-6
+        
+        # Normalized hip vertical displacement (baseline signal)
+        hip_disp = (h[1] - hip0) / torso0
+        hip_y.append(hip_disp)
+
 
     cap.release()
 
