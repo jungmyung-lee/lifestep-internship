@@ -95,8 +95,6 @@ to formalize basketball shooting analysis as a **pose-based temporal classificat
 All labels were **manually annotated by the author**,
 who has **over four years of basketball coaching experience**.
 
-<img width="1024" height="559" alt="image" src="https://github.com/user-attachments/assets/c112b735-4351-436a-8993-e20097292f42" />
-
 
 ### Temporal Segmentation Strategy
 
@@ -167,6 +165,9 @@ To enable consistent modeling:
 This enforces temporal alignment while preserving relative motion dynamics.
 
 ---
+
+<img width="1024" height="559" alt="image" src="https://github.com/user-attachments/assets/146a679e-9928-4f92-bd95-eb8927c53bd0" />
+
 
 ## Model A: CNN + LSTM (Temporal Deep Learning Model)
 
@@ -393,6 +394,8 @@ These settings are chosen to balance learning capacity
 and overfitting risk under limited data conditions.
 
 ---
+
+
 
 ## Model B: XGBoost (Feature-Based Machine Learning Model)
 
