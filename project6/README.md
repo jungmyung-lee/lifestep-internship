@@ -281,6 +281,9 @@ The squared error objective penalizes **large prediction errors more strongly**,
 encouraging the model to reduce extreme mispredictions
 and produce **stable score estimates**.
 
+<img width="186" height="41" alt="image" src="https://github.com/user-attachments/assets/76898b99-eefa-4a80-a8f6-e8960fcb3324" />
+
+
 
 ---
 
