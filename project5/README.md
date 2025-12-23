@@ -215,7 +215,7 @@ Basketball shooting contains localized temporal patterns such as:
 The CNN acts as a **temporal feature encoder**,
 emphasizing motion structure while suppressing frame-level noise.
 
-<img width="1024" height="559" alt="image" src="https://github.com/user-attachments/assets/5fa2f294-6ad3-4f32-a1f8-2fd99ad5b4cd" />
+<img width="1024" height="559" alt="image" src="https://github.com/user-attachments/assets/3914d876-cff1-42e1-b938-a1051c01894b" />
 
 **The waveforms shown in this diagram are illustrative examples; the actual learned feature maps may exhibit different shapes depending on the data and training dynamics.**
 ---
