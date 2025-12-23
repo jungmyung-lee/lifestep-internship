@@ -1,6 +1,8 @@
 # AI Basketball Shooting Coach  
 ### Pose-Based Shooting Form Scoring with XGBoost Regression + SHAP
 
+![Cutting Motion](https://raw.githubusercontent.com/jungmyung-lee/lifestep-internship/main/22.gif)
+
 ---
 
 ## Table of Contents
@@ -32,8 +34,6 @@
 
 
 ---
-
-![Cutting Motion](./22.gif)
 
 
 ## Project Overview
