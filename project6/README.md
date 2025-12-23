@@ -270,7 +270,7 @@ approximately **±7 points** of the ground-truth labels.
 ## Comparison with Project 5
 
 ### Project 5
-- CNN + LSTM  
+- CNN + LSTM  vs XGBoost
 - Explicit temporal modeling  
 - Classification (GOOD / BAD)
 
