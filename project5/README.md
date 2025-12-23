@@ -187,7 +187,7 @@ emphasizing motion structure while suppressing frame-level noise.
 
 ### CNN Architecture Design
 
-```python
+python
 nn.Conv1d(3, 32, kernel_size=5, padding=2)
 nn.ReLU()
 nn.MaxPool1d(2)
@@ -289,5 +289,253 @@ An LSTM is therefore used to model:
 - **long-range temporal dependencies**
 - **phase transitions across the entire shooting motion**
 - **cumulative motion consistency**
+
+### LSTM Architecture Design
+
+#### Hidden State Configuration
+
+- The CNN outputs a **32-dimensional feature vector** per time step
+- The LSTM uses a **hidden size of 64**
+
+This expansion allows the model to:
+
+- store richer **temporal context**
+- encode **motion phase progression**
+- integrate information across the full shooting sequence
+
+Larger hidden sizes were intentionally avoided to reduce
+**overfitting risk** under limited data conditions.
+
+A hidden size of **64** provides sufficient expressive power
+without excessive model complexity.
+
+---
+
+#### Why Use Only the Final Hidden State
+
+The task is **sequence-level classification** (GOOD / BAD),
+not frame-level prediction.
+
+- The **final hidden state** summarizes the entire shooting motion
+- Intermediate hidden states are unnecessary once a global judgment is made
+
+Each shooting sequence is treated as a **single coherent motion unit**,
+rather than a collection of independent frames.
+
+---
+
+### Regularization and Training Strategy
+
+#### Dropout
+
+A dropout rate of **0.4** is applied before the final classification layer.
+
+- The dataset size is limited (**N = 107**)
+- Temporal deep models are prone to **overfitting** in such settings
+
+Dropout encourages:
+
+- robust feature utilization
+- reduced reliance on any single temporal cue
+- improved generalization across folds
+
+---
+
+#### Loss Function
+
+- **Binary Cross-Entropy with Logits** is used for training
+- The logits formulation improves **numerical stability**
+
+This loss function is appropriate for
+binary classification tasks where calibrated decision boundaries are required.
+
+---
+
+#### Cross-Validation and Early Stopping
+
+- **Stratified 5-fold cross-validation** is used
+- Class balance is preserved in each fold
+- **Early stopping** is applied based on validation loss
+
+This evaluation strategy provides a fair assessment
+of generalization behavior under limited data.
+
+---
+
+## Model B: XGBoost (Feature-Based Machine Learning Model)
+
+This model represents a **classical machine learning approach**
+that operates on **explicitly engineered, biomechanically interpretable features**.
+
+Unlike the CNN + LSTM model, which learns representations directly from sequences,
+XGBoost relies on **fixed-length feature vectors**
+and focuses on learning **nonlinear decision boundaries** over structured inputs.
+
+---
+
+### Why a Feature-Based Model
+
+The dataset size in this project is relatively small (**N = 107**),
+which places strong constraints on the effectiveness of deep temporal models.
+
+Tree-based ensemble methods such as XGBoost are known to:
+
+- perform well in **small-to-medium data regimes**
+- be robust to feature scaling and noise
+- capture nonlinear feature interactions without requiring large datasets
+
+XGBoost therefore serves as a **strong and realistic baseline**
+for this problem setting.
+
+---
+
+### Feature Vector Design
+
+Each shooting motion is flattened into a **240-dimensional feature vector**:
+
+- **elbow angle trajectory** (80)
+- **normalized wrist height** (80)
+- **reference baseline signal** (80)
+
+This fixed-length representation enables efficient tree-based learning
+while preserving temporal progression implicitly.
+
+---
+
+#### Why Fixed-Length Vectors
+
+- XGBoost requires **vectorized inputs**
+- Temporal alignment is enforced through:
+  - consistent motion start/end definition
+  - resampling to a fixed length
+
+Each shooting motion is represented as a **single point in feature space**,
+allowing robust comparison across samples.
+
+---
+
+#### Why Preserve Channel Separation
+
+Each biomechanical signal is kept as a **separate contiguous block**
+within the feature vector.
+
+This allows XGBoost to:
+
+- independently evaluate elbow- and wrist-related motion patterns
+- learn cross-channel interactions through tree splits
+- retain interpretability at the signal level
+
+---
+
+### XGBoost Architecture and Hyperparameters
+
+The XGBoost classifier is configured with the following principles:
+
+- **Shallow trees (max_depth = 3)** to enforce strong regularization
+- **Many estimators (n_estimators = 400)** to stabilize ensemble behavior
+- **Low learning rate (learning_rate = 0.02)** for gradual optimization
+- **Subsampling (subsample = 0.9, colsample_bytree = 0.9)** to reduce variance
+
+These choices prevent memorization,
+encourage smooth decision boundaries,
+and improve generalization under limited data.
+
+---
+
+### Why XGBoost Performs Well in This Setting
+
+XGBoost benefits from several factors in this project:
+
+- domain-informed feature design
+- explicit temporal alignment
+- low-dimensional but informative representations
+- built-in regularization mechanisms
+
+As a result, XGBoost exhibits **more stable generalization**
+than deeper temporal models whose representational capacity
+cannot be fully exploited with limited data.
+
+---
+
+## Evaluation Protocol
+
+- **Stratified 5-fold cross-validation**
+- Metrics:
+  - accuracy
+  - F1-score
+  - confusion matrix
+
+All models are evaluated using the same protocol
+to ensure fair comparison.
+
+---
+
+## Experimental Results
+
+| Model | Accuracy (mean ± std) | F1-score (mean ± std) |
+|------|----------------------|-----------------------|
+| CNN + LSTM | 0.66 ± 0.07 | 0.64 ± 0.08 |
+| XGBoost | 0.74 ± 0.04 | 0.73 ± 0.05 |
+
+XGBoost demonstrates **higher mean performance**
+and **lower variance** across folds.
+
+---
+
+## Limitations and Reflections
+
+- The dataset size is relatively small
+- Deep temporal models are sensitive to data scarcity
+- Feature design plays a critical role in model effectiveness
+
+In this project, **feature-based machine learning**
+proved more reliable than end-to-end temporal deep learning
+under constrained data conditions.
+
+---
+
+## Conclusion
+
+This project analyzed pose-based basketball shooting motions
+using real instructional class videos.
+
+By integrating:
+
+- basketball coaching experience
+- biomechanical domain knowledge
+- pose estimation and machine learning
+
+shooting motions were transformed into
+interpretable temporal representations.
+
+Experimental results suggest that,
+under limited data conditions,
+machine learning models leveraging **domain-informed feature representations**
+can exhibit **more stable generalization behavior**
+than deep temporal models whose representational capacity
+cannot be fully exploited.
+
+This finding highlights the importance of
+**aligning model complexity with data regime**
+when designing motion analysis systems.
+
+---
+
+## Technologies Used
+
+- Python  
+- PyTorch  
+- YOLOv8-Pose  
+- OpenCV  
+- XGBoost  
+- scikit-learn  
+
+---
+
+## Author
+
+**Jungmyung Lee**  
+Developed independently during the **LifeStep internship**  
+Over **four years of basketball coaching experience**
 
 
