@@ -501,7 +501,7 @@ cannot be fully exploited with limited data.
 ## Evaluation Protocol
 
 - **Stratified 5-fold cross-validation**
-- 
+
 - Metrics:
   - accuracy
   - F1-score
