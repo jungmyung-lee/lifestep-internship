@@ -265,7 +265,7 @@ of representational capacity.
 Max pooling serves multiple purposes:
 
 - reduces **temporal resolution** while preserving salient motion patterns
-- suppresses **frame-level noise** and pose estimation jitter
+- reduces **sensitivity to frame-level noise** and pose estimation jitter
 - shortens the sequence length passed to the LSTM
 
 This encourages the model to focus on **motion trends**
