@@ -463,6 +463,9 @@ This allows XGBoost to:
 
 ---
 
+<img width="1024" height="559" alt="image" src="https://github.com/user-attachments/assets/09f05dcd-5e8b-485d-bbf8-25b207668edf" />
+
+
 ### XGBoost Architecture and Hyperparameters
 
 ```python
