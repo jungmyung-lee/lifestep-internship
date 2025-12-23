@@ -33,6 +33,9 @@
 
 ---
 
+<img width="1024" height="559" alt="image" src="https://github.com/user-attachments/assets/6e623593-1bcb-4374-ba8a-15e8e033f886" />
+
+
 ## Project Overview
 
 This project implements an **AI Basketball Shooting Coach** that predicts a
