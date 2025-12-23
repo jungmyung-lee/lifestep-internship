@@ -582,7 +582,7 @@ within the feature vector.
 
 This allows XGBoost to:
 
-- independently evaluate elbow- and wrist-related motion patterns
+- independently evaluate elbow-, wrist-, and hip-related motion patterns
 - learn cross-channel interactions through tree splits
 - retain interpretability at the signal level
 
