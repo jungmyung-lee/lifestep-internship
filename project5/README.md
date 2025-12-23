@@ -506,9 +506,6 @@ This training strategy prioritizes **generalization and stability**
 over aggressive optimization.
 
 
-<img width="1024" height="559" alt="image" src="https://github.com/user-attachments/assets/fb54737f-9a63-4227-8b03-da2261b52efd" />
-
-
 ## Model B: XGBoost (Feature-Based Machine Learning Model)
 
 This model represents a **classical machine learning approach**
@@ -519,6 +516,8 @@ XGBoost relies on **fixed-length feature vectors**
 and focuses on learning **nonlinear decision boundaries** over structured inputs.
 
 ---
+
+<img width="1024" height="559" alt="image" src="https://github.com/user-attachments/assets/fb54737f-9a63-4227-8b03-da2261b52efd" />
 
 ### Why a Feature-Based Model
 
