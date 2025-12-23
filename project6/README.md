@@ -150,7 +150,7 @@ This ensures temporal alignment while keeping the model architecture simple.
 
 ---
 
-<img width="1024" height="559" alt="image" src="https://github.com/user-attachments/assets/6e623593-1bcb-4374-ba8a-15e8e033f886" />
+<img width="1024" height="559" alt="image" src="https://github.com/user-attachments/assets/52a874dd-84a6-4884-8df9-866cacc29e0d" />
 
 ## Model: XGBoost Regression
 
