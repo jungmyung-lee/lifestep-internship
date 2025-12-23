@@ -161,7 +161,7 @@ From pose keypoints, three interpretable time-series features are derived:
 
 - elbow joint angle trajectory  
 - normalized wrist vertical position (relative to torso length)  
-- reference baseline signal (normalized hip vertical displacement)
+- normalized hip vertical displacement (relative hip y-displacement, normalized by torso length)
 
 
 These features are intentionally selected to reflect
@@ -234,7 +234,7 @@ nn.MaxPool1d(2)
 - The input channels are already **semantically meaningful**:
   - **elbow joint angle**
   - **normalized wrist height**
-  - **reference baseline**
+  - **normalized hip vertical displacement**
 - Inter-joint relationships are embedded at the **feature design stage**
 - Avoiding spatial convolutions reduces **unnecessary model complexity**
 
@@ -556,7 +556,7 @@ Each shooting motion is flattened into a **240-dimensional feature vector**:
 
 - **elbow angle trajectory** (80)
 - **normalized wrist height** (80)
-- **reference baseline signal** (80)
+- **normalized hip vertical displacement** (80)
 
 This fixed-length representation enables efficient tree-based learning
 while preserving temporal progression implicitly.
