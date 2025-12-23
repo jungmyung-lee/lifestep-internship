@@ -95,6 +95,9 @@ to formalize basketball shooting analysis as a **pose-based temporal classificat
 All labels were **manually annotated by the author**,
 who has **over four years of basketball coaching experience**.
 
+<img width="1024" height="559" alt="image" src="https://github.com/user-attachments/assets/c112b735-4351-436a-8993-e20097292f42" />
+
+
 ### Temporal Segmentation Strategy
 
 No traditional preprocessing (e.g., filtering or smoothing) was applied.
