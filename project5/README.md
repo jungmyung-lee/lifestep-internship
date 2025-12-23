@@ -323,6 +323,9 @@ An LSTM is therefore used to model:
 - **phase transitions across the entire shooting motion**
 - **cumulative motion consistency**
 
+<img width="1024" height="559" alt="image" src="https://github.com/user-attachments/assets/929ff7b2-d838-43c5-9ad8-624d746a7c93" />
+
+
 ### LSTM Architecture Design
 
 ```python
