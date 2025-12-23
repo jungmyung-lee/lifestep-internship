@@ -10,7 +10,7 @@
 - [Project Overview](#project-overview)
 - [Motivation](#motivation)
 - [Dataset and Data Curation](#dataset-and-data-curation)
-  - [Temporal Segmentation Strategy](#temporal-segmentation-strategy)
+  - [Temporal Segmentation Strategy (Manual Segmentation)](#temporal-segmentation-strategy-manual-segmentation)
 - [Input Data Specification](#input-data-specification)
 - [Pose Estimation with YOLOv8-Pose](#pose-estimation-with-yolov8-pose)
 - [Biomechanics-Informed Feature Design](#biomechanics-informed-feature-design)
@@ -627,7 +627,7 @@ XGBoost benefits from several factors in this project:
 
 - domain-informed feature design
 - explicit temporal alignment
-- **compact but but informative representations**
+- **compact but informative representations**
 - built-in regularization mechanisms
 
 As a result, XGBoost exhibits **more stable generalization**
