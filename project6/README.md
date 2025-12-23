@@ -12,11 +12,14 @@
 - [Pose Estimation with YOLOv8-Pose](#pose-estimation-with-yolov8-pose)
 - [Biomechanics-Informed Feature Design](#biomechanics-informed-feature-design)
 - [Temporal Window Definition for Feature Extraction](#temporal-window-definition-for-feature-extraction)
+
 - [Model: XGBoost Regression](#model-xgboost-regression)
   - [Why Regression Instead of Classification](#why-regression-instead-of-classification)
   - [Feature Vector Construction](#feature-vector-construction)
   - [XGBoost Architecture and Hyperparameters](#xgboost-architecture-and-hyperparameters)
+  - [Key Design Choices (Detailed Rationale)](#key-design-choices-detailed-rationale)
   - [Why XGBoost Works Well in This Project](#why-xgboost-works-well-in-this-project)
+
 - [Training and Evaluation Protocol](#training-and-evaluation-protocol)
 - [Explainability with SHAP](#explainability-with-shap)
 - [AI Coach Feedback Design](#ai-coach-feedback-design)
@@ -26,6 +29,7 @@
 - [Conclusion](#conclusion)
 - [Technologies Used](#technologies-used)
 - [Author](#author)
+
 
 ---
 
@@ -183,14 +187,123 @@ XGBRegressor(
 )
 ```
 
-## Key Design Choices
+## Key Design Choices (Detailed Rationale)
 
-The XGBoost model is configured with the following design principles:
+### **max_depth = 4** (Shallow Trees)
 
-- **Shallow trees** to prevent memorization and overfitting  
-- **Many estimators** to improve ensemble stability  
-- **Low learning rate** for smooth and gradual optimization  
-- **Subsampling** to reduce variance and improve generalization  
+The dataset size is relatively small (**N = 107**), which makes deep trees prone to memorizing noise and sample-specific patterns.
+
+The input features consist of **time-resampled biomechanical signals**
+(elbow angle, wrist height, reference signal), flattened into fixed-length vectors.
+Excessively deep trees could overfit to highly localized conditions,
+such as values at specific time indices.
+
+A depth of **4** provides a practical balance:
+
+- Deep enough to capture meaningful **nonlinear interactions**
+  (e.g., combinations of elbow and wrist patterns across motion phases)
+- Shallow enough to limit unnecessary branching that increases overfitting risk
+
+
+---
+
+### **n_estimators = 400** (Many Boosting Rounds)
+
+Instead of relying on a few complex trees,
+the model uses **many shallow trees** that are incrementally combined,
+following the core boosting strategy.
+
+With a small dataset, large updates can destabilize training.
+Using more estimators allows the model to **refine predictions gradually**,
+which is particularly important for regression on a **continuous 0–100 score scale**.
+
+This design helps produce **smoother and more stable predictions**
+across cross-validation folds.
+
+
+---
+
+### **learning_rate = 0.03** (Low Learning Rate)
+
+A low learning rate ensures that each tree makes only a **small correction**
+to the current prediction.
+
+In small-data settings, higher learning rates (e.g., ≥ 0.1)
+can cause aggressive updates that overfit individual samples
+and lead to **high variance across folds**.
+
+The combination of a **low learning rate** with **many estimators**
+is a standard stabilization strategy for reliable generalization.
+
+
+---
+
+### **subsample = 0.9** (Row Sampling)
+
+Each tree is trained using a **random subset (90%)** of the training samples.
+
+This introduces controlled randomness across trees,
+reducing correlation within the ensemble and mitigating overfitting.
+Given the limited dataset size, a very low subsample ratio
+could result in excessive information loss.
+
+A value of **0.9** provides regularization benefits
+while preserving most of the available data.
+
+
+---
+
+### **colsample_bytree = 0.9** (Feature Sampling)
+
+Each tree randomly selects **90% of the available features**
+from the **240-dimensional input vector**.
+
+Because the features are temporally ordered,
+adjacent features tend to be **highly correlated**.
+Feature sampling discourages over-reliance on specific time indices
+and encourages learning **robust feature combinations**
+across different temporal regions.
+
+
+---
+
+### **objective = "reg:squarederror"** (Regression Loss)
+
+The task is formulated as a **continuous regression problem**
+predicting shooting-form scores on a **0–100 scale**.
+
+The squared error objective penalizes **large prediction errors more strongly**,
+encouraging the model to reduce extreme mispredictions
+and produce **stable score estimates**.
+
+
+---
+
+### **random_state = 42** (Reproducibility)
+
+With a small dataset, training results can vary
+depending on data splits and sampling.
+
+Fixing the random seed ensures **experimental reproducibility**
+and consistency between reported results
+(e.g., **MAE and R²**) and future model runs.
+
+
+---
+
+### **Relation to XGBoost in Project 5 (Classification Setting)**
+
+Compared to the XGBoost classifier used in **Project 5**,
+this project focuses on **continuous score regression**,
+which requires capturing more fine-grained variations in shooting form.
+
+For this reason, the tree depth is **slightly increased**
+while maintaining strong regularization
+through a **low learning rate** and **subsampling**.
+
+This design enables **stable learning under the same small-data regime**
+(**N = 107**) without sacrificing generalization.
+
 
 ---
 
