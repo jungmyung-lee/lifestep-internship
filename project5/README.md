@@ -488,7 +488,7 @@ XGBoost benefits from several factors in this project:
 
 - domain-informed feature design
 - explicit temporal alignment
-- low-dimensional but informative representations
+- **compact but but informative representations**
 - built-in regularization mechanisms
 
 As a result, XGBoost exhibits **more stable generalization**
@@ -500,9 +500,12 @@ cannot be fully exploited with limited data.
 ## Evaluation Protocol
 
 - **Stratified 5-fold cross-validation**
+- 
 - Metrics:
   - accuracy
   - F1-score
+
+- Analysis:
   - confusion matrix
 
 All models are evaluated using the same protocol
@@ -524,12 +527,12 @@ and **lower variance** across folds.
 
 ## Limitations and Reflections
 
-- The dataset size is relatively small
-- Deep temporal models are sensitive to data scarcity
+- The dataset size is **relatively small**
+- Deep temporal models are sensitive to **data scarcity**
 - Feature design plays a critical role in model effectiveness
 
 In this project, **feature-based machine learning**
-proved more reliable than end-to-end temporal deep learning
+proved more reliable than **end-to-end temporal deep learning**
 under constrained data conditions.
 
 ---
