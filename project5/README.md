@@ -588,7 +588,7 @@ This allows XGBoost to:
 
 ---
 
-<img width="53" height="47" alt="image" src="https://github.com/user-attachments/assets/2c9a4a33-8847-470e-8c3e-e51384df9447" />
+<img width="1024" height="559" alt="image" src="https://github.com/user-attachments/assets/cdc1d4cd-837c-4fbb-a837-4809af79461d" />
 
 
 ### XGBoost Architecture and Hyperparameters
