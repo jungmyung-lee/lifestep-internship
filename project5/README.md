@@ -286,6 +286,9 @@ Using significantly more filters would:
 Thus, **32 filters** represent a **controlled and sufficient expansion**
 of representational capacity.
 
+<img width="1024" height="559" alt="image" src="https://github.com/user-attachments/assets/4d243c36-12e0-4700-8d9e-abaf6744d84c" />
+
+
 ---
 
 #### Why Max Pooling
@@ -352,6 +355,9 @@ Larger hidden sizes were intentionally avoided to reduce
 
 A hidden size of **64** provides sufficient expressive power
 without excessive model complexity.
+
+<img width="1024" height="559" alt="image" src="https://github.com/user-attachments/assets/73fcaeaa-ecd6-46ed-8b5d-24d19bb6c0aa" />
+
 
 ---
 
