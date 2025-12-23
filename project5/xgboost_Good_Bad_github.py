@@ -82,7 +82,10 @@ def video_to_feature(video_path, model):
 
     elbow_angles = []
     wrist_rel_y  = []
-    hip_dummy    = []
+    hip_y        = []
+
+    hip0 = None
+    torso0 = None
 
     while True:
         ret, frame = cap.read()
@@ -99,15 +102,21 @@ def video_to_feature(video_path, model):
         w = kp[R_WRIST]
         h = kp[R_HIP]
 
-        # Joint angle
+        # Elbow joint angle
         elbow_angles.append(angle_2d(s, e, w))
 
-        # Camera-distance normalization (relative position)
+        # Wrist height (normalized)
         shoulder_to_hip = np.linalg.norm(s - h) + 1e-6
         wrist_rel_y.append((w[1] - h[1]) / shoulder_to_hip)
 
-        # Reference signal (zero baseline)
-        hip_dummy.append(0.0)
+        # Initialize hip reference
+        if hip0 is None:
+            hip0 = h[1]
+            torso0 = shoulder_to_hip
+
+        # Normalized hip vertical displacement (baseline)
+        hip_disp = (h[1] - hip0) / torso0
+        hip_y.append(hip_disp)
 
     cap.release()
 
@@ -116,9 +125,10 @@ def video_to_feature(video_path, model):
 
     elbow_r = zscore(resample_1d(elbow_angles, RESAMPLE_LEN))
     wrist_r = zscore(resample_1d(wrist_rel_y, RESAMPLE_LEN))
-    hip_r   = zscore(resample_1d(hip_dummy, RESAMPLE_LEN))
+    hip_r   = zscore(resample_1d(hip_y, RESAMPLE_LEN))
 
     return np.concatenate([elbow_r, wrist_r, hip_r])  # (240,)
+
 
 # =====================================================
 # 2️⃣ Dataset construction
