@@ -121,7 +121,8 @@ From pose keypoints, the following **interpretable time-series features** are ex
 
 - elbow joint angle trajectory  
 - wrist vertical position normalized by torso length  
-- reference baseline signal (for alignment)  
+- normalized hip vertical displacement (proxy for lower-body stability)  
+
 
 These features reflect biomechanically meaningful components of shooting mechanics,
 including elbow path consistency, release height, and lower-body stability.
@@ -172,7 +173,7 @@ Each shooting video is converted into a **240-dimensional feature vector**:
 
 - elbow angle trajectory (80)  
 - normalized wrist height (80)  
-- reference baseline signal (80)  
+- normalized hip vertical displacement (80)   
 
 The signals are concatenated after temporal resampling and normalization.
 
@@ -199,7 +200,7 @@ XGBRegressor(
 The dataset size is relatively small (**N = 107**), which makes deep trees prone to memorizing noise and sample-specific patterns.
 
 The input features consist of **time-resampled biomechanical signals**
-(elbow angle, wrist height, reference signal), flattened into fixed-length vectors.
+(elbow angle, wrist height, hip vertical displacement), flattened into fixed-length vectors.
 Excessively deep trees could overfit to highly localized conditions,
 such as values at specific time indices.
 
