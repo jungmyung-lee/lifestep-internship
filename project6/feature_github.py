@@ -111,8 +111,9 @@ def video_to_feature(video_path, model):
         shoulder_to_hip = np.linalg.norm(s - h) + 1e-6
         wrist_rel_y.append((w[1] - h[1]) / shoulder_to_hip)
 
-        # Reference signal (kept for alignment)
-                # ✅ Initialize hip reference (first valid frame)
+        # Normalized hip vertical displacement (lower-body stability feature)
+
+        # ✅ Initialize hip reference (first valid frame)
         if hip0 is None:
             hip0 = h[1]
             torso0 = shoulder_to_hip  # same normalization length
