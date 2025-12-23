@@ -397,14 +397,45 @@ and task formulation**.
 
 ---
 
-## Limitations
+## Limitations and Reflections
 
-- Limited dataset size  
-- Reliance on a single camera view  
-- No subject-specific calibration  
+### Limited Dataset Size
 
-Despite these constraints, the system demonstrates  
-the feasibility of **explainable, pose-based shooting analysis**.
+The dataset used in this project is relatively small (**N = 107**),
+which limits the coverage of diverse shooting-form variations.
+Under this constraint, the project prioritizes
+**domain-informed feature design and regularized model structures**
+over high-capacity deep architectures,
+emphasizing stability and interpretability.
+
+
+---
+
+### Subjectivity in Score Annotation
+
+The shooting-form scores in this project were
+**manually assigned by the author, who is an experienced basketball coach**.
+Basketball shooting evaluation is inherently subjective and can vary
+depending on a coach’s philosophy, instructional background,
+and emphasis on specific technical aspects.
+
+As a result, different coaches may assign different scores
+to the same shooting motion.
+For this reason, the current system should be considered
+an **early-stage beta version** that requires further refinement.
+
+
+---
+
+### Reflection
+
+Despite these limitations, the project demonstrates that
+coaching experience can be systematically translated into
+a quantitative and interpretable machine learning framework.
+Future improvements may include incorporating
+multi-coach annotations or more standardized evaluation criteria
+to further enhance objectivity and reliability.
+
 
 ---
 
