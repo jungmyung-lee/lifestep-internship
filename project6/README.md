@@ -25,7 +25,7 @@
 - [AI Coach Feedback Design](#ai-coach-feedback-design)
 - [Experimental Results](#experimental-results)
 - [Comparison with Project 5](#comparison-with-project-5)
-- [Limitations](#limitations)
+- [Limitations and Reflections](#limitations-and-reflections)
 - [Conclusion](#conclusion)
 - [Technologies Used](#technologies-used)
 - [Author](#author)
