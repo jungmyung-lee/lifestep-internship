@@ -184,7 +184,7 @@ This enforces temporal alignment while preserving relative motion dynamics.
 ---
 
 <img width="1024" height="559" alt="image" src="https://github.com/user-attachments/assets/146a679e-9928-4f92-bd95-eb8927c53bd0" />
-
+**The waveforms shown in this diagram are illustrative examples; the actual learned feature maps may exhibit different shapes depending on the data and training dynamics.**
 
 ## Model A: CNN + LSTM (Temporal Deep Learning Model)
 
@@ -215,6 +215,7 @@ emphasizing motion structure while suppressing frame-level noise.
 
 <img width="1024" height="559" alt="image" src="https://github.com/user-attachments/assets/5fa2f294-6ad3-4f32-a1f8-2fd99ad5b4cd" />
 
+**The waveforms shown in this diagram are illustrative examples; the actual learned feature maps may exhibit different shapes depending on the data and training dynamics.**
 ---
 
 ### CNN Architecture Design
@@ -287,7 +288,7 @@ Thus, **32 filters** represent a **controlled and sufficient expansion**
 of representational capacity.
 
 <img width="1024" height="559" alt="image" src="https://github.com/user-attachments/assets/4d243c36-12e0-4700-8d9e-abaf6744d84c" />
-
+**The waveforms shown in this diagram are illustrative examples; the actual learned feature maps may exhibit different shapes depending on the data and training dynamics.**
 
 ---
 
@@ -527,6 +528,7 @@ and focuses on learning **nonlinear decision boundaries** over structured inputs
 ---
 
 <img width="1024" height="559" alt="image" src="https://github.com/user-attachments/assets/fb54737f-9a63-4227-8b03-da2261b52efd" />
+**The waveforms shown in this diagram are illustrative examples; the actual learned feature maps may exhibit different shapes depending on the data and training dynamics.**
 
 ### Why a Feature-Based Model
 
