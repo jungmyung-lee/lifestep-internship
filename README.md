@@ -19,15 +19,15 @@ to deep learning- and machine-learning–based **basketball shooting form classi
 👉 [Open Project Page](./project1/README.md)
 
 2. **Automatic Gait Cycle Detection**  
-👉 [Open Project Page](./project2/README.md)
+👉 [Open Project Page](./project2/README.md)  
 
 3. **EMG Preprocessing & Motion–Motion Synchronization**  
 👉 [Open Project Page](./project3/README.md)
 
-4. **Real-Time EMG-Based Prosthetic Hand Control (TD + CNN + TCN)**  
+4. **Real-Time EMG-Based Prosthetic Hand Control (TD + CNN + TCN)**   
 👉 [Open Project Page](./project4/README.md)
 
-5. **Basketball Shooting Form Classification (CNN + LSTM vs XGBoost)**  
+5. **Basketball Shooting Form Classification (CNN + LSTM vs XGBoost)**   
 👉 [Open Project Page](./project5/README.md)
 
 6. **AI Basketball Shooting Coach (XGBoost Regression + SHAP)**  
