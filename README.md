@@ -130,9 +130,9 @@ https://musculoskeletalkey.com/structure-and-function-of-the-wrist/
 
 ### YOLOv8 Pose Estimation
 <p align="center">
-  <img src="./yolov8.gif" width="300">
-  <img src="./yolov8_2.gif" width="300">
-  <img src="./yolov8_3.gif" width="300">
+  <img src="./yolov8.gif" width="299">
+  <img src="./yolov8_2.gif" width="299">
+  <img src="./yolov8_3.gif" width="299">
 </p>
 
 
