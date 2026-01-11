@@ -62,39 +62,41 @@ to deep learning- and machine-learning–based **basketball shooting form classi
 ## 4. Real-Time EMG-Based Prosthetic Hand Control (TD + CNN + TCN)
 
 ### Overview
-<img width="1024" height="559" alt="image" src="https://github.com/user-attachments/assets/dc879e80-de27-4032-b64c-bc1c4824df27" />
+<img width="1024" height="559" alt="image" src="https://github.com/user-attachments/assets/a66080c0-22be-4bd6-80e9-f68bb9aad0c0" />
 
 
 
 ### Data Specification (Data sourced from LifeStep Company)
 
 - **Measurement device (Input):**  
-  Wearable surface EMG sensors (8-channel forearm EMG)
+  Wearable surface EMG sensors (**4-channel forearm EMG**)
 
 - **Training labels (Output):**  
-  17 Hand joint angles obtained from synchronized motion-capture data  
+  17 continuous hand joint angles obtained from synchronized motion-capture data
 
-### Input(Raw EMG 8 Channels of Muscles)  
-  
-Flexor Digitorum Superficialis (FDS) 
-, Flexor Digitorum Profundus (FDP) 
-, Flexor Carpi Radialis (FCR) 
-, Flexor Carpi Ulnaris (FCU) 
-, Extensor Digitorum (ED) 
-, Extensor Carpi Radialis Longus (ECRL) 
-, Extensor Carpi Ulnaris (ECU) 
-, Pronator Teres (PT) 
 
-![Flexor원본 복사본](https://github.com/user-attachments/assets/a51361d9-8fc3-41cb-8a91-59bcaa245e32)
-<img width="620" height="440" alt="Extensor쪽-복사본-2" src="https://github.com/user-attachments/assets/d93d9a85-94ef-4cfc-a4dd-201aa7e709cd" />
+### Input Definition (Raw EMG)
 
-*Image source: 
+Rather than targeting anatomically isolated individual muscles, the raw EMG input is defined using **four functional forearm regions**.  
+This design reflects the practical constraints of surface EMG acquisition, where high muscle density and cross-talk make reliable isolation of individual muscles difficult.
 
-(Left) ScienceDirect – _Flexor Digitorum Superficialis Muscle* _ 
-https://www.sciencedirect.com/topics/veterinary-science-and-veterinary-medicine/flexor-digitorum-superficialis-muscle
+Accordingly, the EMG input channels are organized as:
 
-(Right) SlideServe – _*12 muscles 1. Anconeus 2. Brachioradialis (BR)*_  
-https://www.slideserve.com/chet/12-muscles-1-anconeus-2-brachioradialis-br  
+- **Finger Flexion Group (Volar Forearm Region)**  
+  Aggregated EMG activation patterns dominated by finger flexion–related muscle activity, primarily associated with grasp generation.
+
+- **Finger Extension Group (Dorsal Forearm Region)**  
+  Functional activation patterns centered on finger extension, supporting hand opening and release.
+
+- **Radial Wrist Group**  
+  EMG patterns related to wrist stabilization and force modulation in the radial direction.
+
+- **Ulnar Wrist Group**  
+  Functional EMG activation patterns associated with ulnar-direction force modulation and wrist stabilization.
+
+This functional channel configuration provides robust coverage of **grasp generation, hand opening, wrist stabilization, and rotational intent**, which are critical for practical prosthetic hand control.
+
+<img width="2816" height="1536" alt="Forearm_EMG" src="https://github.com/user-attachments/assets/197100e4-cccd-4114-a91d-efc0f1c2b1b8" />  
 
 
 ### Output(A single 17-dimensional vector representing continuous hand joint angles)
