@@ -159,7 +159,8 @@ This design improves robustness against muscle cross-talk and electrode placemen
   Functional EMG patterns associated with ulnar-direction force modulation and wrist stabilization.
 
 
--This functional channel configuration provides balanced coverage of **grasp generation, hand opening, wrist stabilization, and forearm rotation**, which are critical for continuous joint-angle estimation and prosthetic hand control.
+This configuration provides robust coverage of **grasp generation, hand opening, wrist stabilization, and rotational intent** required for practical prosthetic control.
+
 
 
 ![Flexor원본 복사본](https://github.com/user-attachments/assets/a51361d9-8fc3-41cb-8a91-59bcaa245e32)
