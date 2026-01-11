@@ -21,7 +21,6 @@
   - [CNN Architecture Design](#cnn-architecture-design)
   - [Why Kernel Size = 5](#why-kernel-size--5)
   - [Why Use an LSTM](#why-use-an-lstm)
-  - [Regularization and Training Strategy](#regularization-and-training-strategy)
 
 - [Training Strategy and Optimization](#training-strategy-and-optimization)
   - [Why This Loss Function](#why-this-loss-function)
@@ -49,6 +48,7 @@
 - [Conclusion](#conclusion)
 - [Technologies Used](#technologies-used)
 - [Author](#author)
+
 
  
 
