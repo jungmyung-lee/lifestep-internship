@@ -11,10 +11,10 @@
 - [Overall System Pipeline](#overall-system-pipeline)
 
 - [EMG Input & Pre-processing](#emg-input--pre-processing)
-  - [Target Muscles (Electrode Placement)](#target-muscles-electrode-placement)
+  - [Functional EMG Channels (Electrode Placement)](#functional-emg-channels-electrode-placement)
   - [Filtering Steps](#filtering-steps)
 
-- [EMG Amplitude Normalization](#emg-amplitude-normalization)
+- [Session-Based EMG Amplitude Normalization](#session-based-emg-amplitude-normalization)
   - [Procedure](#procedure)
   - [Why Session-Based Normalization Matters](#why-session-based-normalization-matters)
 
