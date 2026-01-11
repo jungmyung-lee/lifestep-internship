@@ -109,8 +109,26 @@ to formalize basketball shooting analysis as a **pose-based temporal classificat
   - **GOOD**: mechanically stable and efficient shooting form  
   - **BAD**: unstable or inefficient shooting form  
 
-All labels were **manually annotated by the author**,
+All labels were **manually annotated by the author**,  
 who has **over four years of basketball coaching experience**.
+
+### Dataset Characteristics and Assumptions
+
+The dataset was collected in a **controlled instructional environment**
+rather than an unconstrained real-game setting.
+
+Key characteristics include:
+
+- All videos were recorded using a **single fixed camera**
+- The camera view was restricted to a **sagittal (side) view**
+- Recording conditions (court, lighting, background) were largely consistent
+- Each shooting video was collected from a **distinct individual**,  
+  minimizing subject-specific bias and intra-subject correlation
+
+As a result, the dataset represents a **low-variance, domain-specific motion setting**.  
+The reported model performance should therefore be interpreted  
+in the context of these controlled data conditions.
+
 
 
 ### Temporal Segmentation Strategy (Manual Segmentation)
@@ -666,13 +684,51 @@ and **lower variance** across folds.
 
 ## Limitations and Reflections
 
-- The dataset size is **relatively small**
-- Deep temporal models are sensitive to **data scarcity**
-- Feature design plays a critical role in model effectiveness
+This project has several important limitations
+that directly affect how the experimental results should be interpreted.
 
-In this project, **feature-based machine learning**
-proved more reliable than **end-to-end temporal deep learning**
-under constrained data conditions.
+- The dataset size is **relatively small** (N = 107)
+- The data was collected under **controlled recording conditions**
+- Training and test sets were constructed using **subject-independent samples**,  
+  minimizing data leakage and subject-specific bias; however,  
+  the overall dataset size remains limited, restricting distributional diversity
+- All motions were captured from a **single sagittal (side) viewpoint**
+
+When only a single sagittal view is used,
+the spatial complexity of motion is inherently constrained.
+As a result, **model accuracy may be overestimated**
+compared to data captured from **multiple camera viewpoints (two or more)**.
+Therefore, the proposed model cannot be assumed to exhibit
+strong generalization performance in real-world multi-view settings.
+
+In addition, the **GOOD / BAD labels** in this dataset were assigned
+based on the **subjective judgment of a single basketball coach**.
+While this criterion may be meaningful from a practical coaching perspective,
+the lack of validated **inter-rater agreement**
+introduces limitations in label objectivity and consistency.
+
+Under these conditions, relatively stable accuracy and F1-scores
+are not unexpected and do not necessarily indicate
+strong real-world generalization.
+
+If the dataset were expanded to include:
+- multiple camera angles (multi-view data),
+- an increased number of samples while maintaining subject-independent evaluation,
+- more diverse recording environments and skill levels,
+- label validation by multiple coaches or evaluators,
+
+overall model performance would likely decrease initially,
+but would provide a more realistic and reliable estimate
+of generalization capability.
+
+In this limited-data regime,
+**XGBoost** demonstrated more robust and stable performance
+than **CNN + LSTM**.
+
+This result highlights the importance of
+selecting model complexity that aligns with data conditions and scale,
+rather than maximizing architectural sophistication.
+
 
 ---
 
