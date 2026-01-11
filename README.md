@@ -94,7 +94,7 @@ Accordingly, the EMG input channels are organized as:
 - **Ulnar Wrist Group**  
   Functional EMG activation patterns associated with ulnar-direction force modulation and wrist stabilization.
 
-This functional channel configuration provides robust coverage of **grasp generation, hand opening, wrist stabilization, and rotational intent**, which are critical for practical prosthetic hand control.
+This functional channel configuration provides robust coverage of **grasp generation, hand opening, wrist stabilization, and rotation**, which are critical for practical prosthetic hand control.
 
 <img width="2816" height="1536" alt="Forearm_EMG" src="https://github.com/user-attachments/assets/197100e4-cccd-4114-a91d-efc0f1c2b1b8" />  
 
@@ -230,7 +230,7 @@ the same EMG–motion synchronization workflow was applied to cutting tasks to a
 
 I developed a lightweight real-time regression model using:
 
-- Pre-processing(**DC offset removal,** **Band-pass filtering** (20–450Hz), **Notch filtering** (60 Hz), **MVC Normalization**)
+- Pre-processing(**DC offset removal,** **Band-pass filtering** (20–450Hz), **Notch filtering** (60 Hz), **Session-Based EMG Amplitude Normalization**)
 - Time-Domain (TD) features (**MAV, WL, ZC, SSC, RMS**)
 - ****1D** CNN** layers for spatial pattern extraction
 - **TCN** layers with dilation for temporal modeling  
