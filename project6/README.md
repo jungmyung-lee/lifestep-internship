@@ -10,7 +10,6 @@
 - [Project Overview](#project-overview)
 - [Motivation](#motivation)
 - [Dataset and Data Curation](#dataset-and-data-curation)
-- [Input Data Specification](#input-data-specification)
 - [Pose Estimation with YOLOv8-Pose](#pose-estimation-with-yolov8-pose)
 - [Biomechanics-Informed Feature Design](#biomechanics-informed-feature-design)
 - [Temporal Window Definition for Feature Extraction](#temporal-window-definition-for-feature-extraction)
@@ -76,27 +75,44 @@ the system intentionally emphasizes **domain-aligned feature design and explaina
 
 - Data source: real basketball class session videos  
 - Total samples: **107 shooting videos**  
-- Labels: continuous shooting-form scores (0–100)  
-- Annotation: manually scored by the author based on coaching experience  
+- Labels: **continuous shooting-form scores (0–100)**  
+- Annotation: manually scored by the author based on basketball coaching experience  
 
-All videos originate from the same instructional environment and camera setup,
-ensuring consistency across samples.
+All labels were **manually assigned by the author**,  
+who has **over four years of basketball coaching experience**.
 
----
 
-## Input Data Specification
+### Data Characteristics and Recording Setup
 
-- Input format: MP4 video files  
-- Visual representation: RGB frames (as used by YOLOv8-Pose)  
-- Camera setup:
-  - single fixed camera  
-  - sagittal plane (side view)  
-- Subjects:
-  - youth and amateur players  
-  - real instructional class environment  
+The dataset was collected in a **controlled instructional environment**,  
+rather than an unconstrained real-game setting.
+
+Key characteristics include:
+
+- Input format: **MP4 video files**
+- Visual representation: **RGB frames** (as used by YOLOv8-Pose)
+- All videos were recorded using a **single fixed camera**
+- The camera view was restricted to a **sagittal (side) view**
+- No multi-view or multi-angle recordings were used
+- Recording conditions (court, lighting, background) were largely consistent
+
+### Subjects and Sample Definition
+
+- Participants consist of **youth and amateur basketball players**
+- Each shooting video corresponds to **one complete shooting motion**
+  performed by a **single individual**
+- No repeated shots from the same individual are included,
+  minimizing subject-specific bias and intra-subject correlation
 
 In each frame, **only the player performing the shot is used**
-to construct a consistent pose time series.
+to construct a consistent pose-based time series,
+ensuring temporal and spatial coherence across the sequence.
+
+As a result, the dataset represents a **low-variance, domain-specific motion setting**.  
+The reported model performance should therefore be interpreted  
+in the context of these controlled data conditions,
+rather than as a measure of unconstrained real-world generalization.
+
 
 ---
 
@@ -408,14 +424,21 @@ and task formulation**.
 
 ## Limitations and Reflections
 
-### Limited Dataset Size
+### Limited Dataset Size and Controlled Data Conditions
 
-The dataset used in this project is relatively small (**N = 107**),
-which limits the coverage of diverse shooting-form variations.
-Under this constraint, the project prioritizes
-**domain-informed feature design and regularized model structures**
-over high-capacity deep architectures,
-emphasizing stability and interpretability.
+The dataset used in this project is relatively small (**N = 107**) and was collected
+in a **controlled instructional environment** with a single fixed camera
+and a sagittal (side) view.
+
+While this setup ensures consistency and low noise in pose extraction,
+it limits viewpoint diversity and environmental variability.
+As a result, the reported regression performance
+(e.g., MAE and R²) should not be interpreted as
+direct indicators of unconstrained real-world generalization.
+
+Under broader and more diverse recording conditions,
+model performance is expected to decrease initially,
+but would provide a more realistic estimate of robustness.
 
 
 ---
@@ -423,27 +446,42 @@ emphasizing stability and interpretability.
 ### Subjectivity in Score Annotation
 
 The shooting-form scores in this project were
-**manually assigned by the author, who is an experienced basketball coach**.
-Basketball shooting evaluation is inherently subjective and can vary
-depending on a coach’s philosophy, instructional background,
-and emphasis on specific technical aspects.
+**manually assigned by the author**, who has
+**over four years of basketball coaching experience**.
 
-As a result, different coaches may assign different scores
+Basketball shooting evaluation is inherently subjective
+and may vary across coaches depending on
+instructional philosophy, evaluation criteria,
+and emphasis on specific biomechanical components.
+
+Consequently, the model learns to approximate
+a **specific coaching perspective**
+rather than an objective or universal ground truth.
+Different coaches may assign different scores
 to the same shooting motion.
-For this reason, the current system should be considered
-an **early-stage beta version** that requires further refinement.
+
+For this reason, the current system should be viewed as
+an **early-stage decision-support tool**
+rather than a definitive or standardized evaluator.
 
 
 ---
 
-### Reflection
+### Reflection and Future Directions
 
-Despite these limitations, the project demonstrates that
-coaching experience can be systematically translated into
-a quantitative and interpretable machine learning framework.
-Future improvements may include incorporating
-multi-coach annotations or more standardized evaluation criteria
-to further enhance objectivity and reliability.
+Despite these limitations, this project demonstrates that
+coaching knowledge can be systematically translated into
+a **quantitative, interpretable regression framework**
+using pose-based features and explainable machine learning.
+
+Future improvements may include:
+
+- incorporating **multi-coach score annotations**
+- establishing more standardized scoring criteria
+- expanding the dataset with more diverse viewpoints and players
+
+These extensions would help improve both
+the objectivity and generalization of the scoring system.
 
 
 ---
