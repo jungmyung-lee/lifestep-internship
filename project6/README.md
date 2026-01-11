@@ -71,6 +71,8 @@ the system intentionally emphasizes **domain-aligned feature design and explaina
 
 ---
 
+<img width="1024" height="559" alt="image" src="https://github.com/user-attachments/assets/2bf9f4bf-b358-4799-bdc2-7dac22653a8c" />
+
 ## Dataset and Data Curation
 
 - Data source: real basketball class session videos  
