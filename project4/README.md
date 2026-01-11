@@ -14,9 +14,9 @@
   - [Target Muscles (Electrode Placement)](#target-muscles-electrode-placement)
   - [Filtering Steps](#filtering-steps)
 
-- [MVC-Based Robust Normalization](#mvc-based-robust-normalization)
+- [EMG Amplitude Normalization](#emg-amplitude-normalization)
   - [Procedure](#procedure)
-  - [Why MVC Normalization Matters](#why-mvc-normalization-matters)
+  - [Why Session-Based Normalization Matters](#why-session-based-normalization-matters)
 
 - [Windowing Strategy (150 ms / 10 ms Hop)](#windowing-strategy-150-ms--10-ms-hop)
   - [Interpretation](#interpretation)
@@ -122,7 +122,7 @@ The predicted angles are intended to be **directly usable in prosthetic control 
 The complete pipeline is structured as:
 Raw EMG
 → Pre-processing
-→ MVC-based Normalization
+→ session-based Normalization
 → Windowing (150 ms / 10 ms hop)
 → Segmentation (3 segments)
 → TD Feature Extraction
@@ -192,7 +192,7 @@ These steps isolate the **physiologically relevant EMG frequency band** and stab
 <img width="1024" height="559" alt="image" src="https://github.com/user-attachments/assets/94186c2b-0ed7-4059-b08e-5cc3a1d1e0a2" />
 
 
-## MVC-Based Robust Normalization
+## Session-Based EMG Amplitude Normalization
 
 Surface EMG amplitude is highly sensitive to:
 
@@ -201,17 +201,17 @@ Surface EMG amplitude is highly sensitive to:
 - session variability  
 - skin impedance  
 
-To mitigate this, **MVC-based normalization** is applied.
+To mitigate this, **session-based amplitude normalization** is applied.
 
 ### Procedure
 
-1. Record a dedicated **100% MVC trial**
+1. Record a short, standardized **calibration-based reference contraction** at the beginning of each session
 2. Compute a **per-channel reference gain (`ref_gain`)** using **RMS or MAV**
 3. Normalize all EMG samples as:  
 x_norm(t) = x(t) / ref_gain
 
 
-### Why MVC normalization matters
+### Why Session-Based Normalization Matters
 
 - Aligns signal scale across users and sessions  
 - Prevents the model from learning amplitude bias  
