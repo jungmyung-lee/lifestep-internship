@@ -178,7 +178,7 @@ These steps isolate the **physiologically relevant EMG frequency band** and stab
 
 ---
 
-<img width="1024" height="559" alt="image" src="https://github.com/user-attachments/assets/94186c2b-0ed7-4059-b08e-5cc3a1d1e0a2" />
+<img width="1024" height="559" alt="image" src="https://github.com/user-attachments/assets/3ab56287-c34a-44ac-af5a-6b1019079d04" />
 
 
 ## Session-Based EMG Amplitude Normalization
