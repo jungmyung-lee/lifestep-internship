@@ -6,14 +6,15 @@
 - [Project Structure](#project-structure)
 - [Data Format (Qualisys / QTM)](#data-format-qualisys--qtm)
 - [Scripts](#scripts)
-  - [visualize_3d_marker_trajectory.py](#visualize_3d_marker_trajectorypy)
-  - [reconstruct_static_skeleton.py](#reconstruct_static_skeletonpy)
-  - [mocap_skeleton_3d_animation.py](#mocap_skeleton_3d_animationpy)
+  - [3D Marker Trajectory Visualization](#3d-marker-trajectory-visualization)
+  - [Static Skeleton Reconstruction](#static-skeleton-reconstruction)
+  - [3D Marker Animation](#3d-marker-animation)
 - [Execution Order](#execution-order)
 - [Key Design Decisions](#key-design-decisions)
 - [Output Examples](#output-examples)
 - [Applications](#applications)
 - [Requirements](#requirements)
+
 
 ---
 
