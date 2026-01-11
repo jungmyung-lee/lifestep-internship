@@ -5,7 +5,7 @@
 - [Overview](#overview)
 - [Input Data](#input-data)
 - [Methodology](#methodology)
-- [Hilbert Transform–Based Phase Analysis (Optional)](#hilbert-transformbased-phase-analysis-optional)
+- [Hilbert Transform-Based Phase Analysis (Optional)](#hilbert-transform-based-phase-analysis-optional)
 - [Interactive Visualization](#interactive-visualization)
 - [Output](#output)
 - [Applications](#applications)
