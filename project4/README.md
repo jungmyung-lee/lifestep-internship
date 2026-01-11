@@ -84,7 +84,7 @@ Unlike purely offline or high-compute research models, this project explicitly t
 ### Data Specification (Data sourced from LifeStep Company)
 
 - **Measurement device (Input):**  
-  Wearable surface EMG sensors (8-channel forearm EMG)
+  Wearable surface EMG sensors (4-channel forearm EMG)
 
 - **Training labels (Output):**  
   17 Hand joint angles obtained from synchronized motion-capture data  
@@ -139,7 +139,7 @@ Each stage is deliberately designed to **preserve physiological meaning while mi
 ## EMG Input & Pre-processing
 
 - **Sampling rate:** 1000 Hz  
-- **Number of channels:** 8
+- **Number of channels:** 4
 
 ### Functional EMG Channels (Electrode Placement)
 
@@ -264,7 +264,7 @@ enhance signal energy representation:
 
 - **3 segments × 5 features = 15 features per channel**
 - CNN input tensor shape:
-[Batch, Channels = 8, Time = 15]
+[Batch, Channels = 4, Time = 15]
 
 
 ## CNN 
@@ -331,7 +331,7 @@ In this pipeline, the CNN acts as a **feature encoder**, compressing refined EMG
   - frequency-emphasized waveforms
   - sharp vs. smooth MUAP shapes
   - patterns repeated across channels
-- With 8 EMG channels, **16 filters (~2× the channel count)** provide adequate diversity without overfitting noise
+- With 4 EMG channels, **16 filters (~2× the channel count)** provide adequate diversity without overfitting noise
 
 #### Second CNN layer (32 filters)
 - Learns **combinational patterns**, including:
