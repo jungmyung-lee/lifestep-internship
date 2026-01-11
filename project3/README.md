@@ -5,15 +5,16 @@
 - [Overview](#overview)
 - [Data Characteristics](#data-characteristics)
 - [EMG Preprocessing Pipeline](#emg-preprocessing-pipeline)
-- [EMG–Motion Synchronization](#emg–motion-synchronization)
+- [EMG-Motion Synchronization](#emg-motion-synchronization)
 - [Cutting Movement Analysis](#cutting-movement-analysis)
 - [Scripts Overview](#scripts-overview)
   - [MATLAB Structure Exploration Tools (Initial Stage)](#matlab-structure-exploration-tools-initial-stage)
   - [EMG Preprocessing Pipelines (Signal Preparation Stage)](#emg-preprocessing-pipelines-signal-preparation-stage)
-  - [EMG–Motion Synchronization and Visualization (Final Analysis Stage)](#emg–motion-synchronization-and-visualization-final-analysis-stage)
+  - [EMG-Motion Synchronization and Visualization (Final Analysis Stage)](#emg-motion-synchronization-and-visualization-final-analysis-stage)
 - [Final Output](#final-output)
 - [Applications](#applications)
 - [Requirements](#requirements)
+
 
 ---
 
