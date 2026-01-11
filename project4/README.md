@@ -141,23 +141,25 @@ Each stage is deliberately designed to **preserve physiological meaning while mi
 - **Sampling rate:** 1000 Hz  
 - **Number of channels:** 8
 
-### Target Muscles (Electrode Placement)
+### Functional EMG Channels (Electrode Placement)
 
-The eight EMG channels correspond to major forearm muscles involved in
-finger flexion, wrist motion, and forearm rotation:
+The EMG input channels are defined as **functional forearm regions** rather than anatomically isolated individual muscles.  
+This design improves robustness against muscle cross-talk and electrode placement variability in surface EMG–based prosthetic control.
 
-- **Flexor Digitorum Superficialis (FDS)** – finger flexion (superficial)
-- **Flexor Digitorum Profundus (FDP)** – finger flexion (deep)
-- **Flexor Carpi Radialis (FCR)** – wrist flexion and radial deviation
-- **Flexor Carpi Ulnaris (FCU)** – wrist flexion and ulnar deviation
-- **Extensor Digitorum (ED)** – finger extension
-- **Extensor Carpi Radialis Longus (ECRL)** – wrist extension (radial side)
-- **Extensor Carpi Ulnaris (ECU)** – wrist extension (ulnar side)
-- **Pronator Teres (PT)** – forearm pronation
+- **Finger Flexion Group (Volar Forearm Region)**  
+  Functional EMG patterns reflecting aggregated finger flexion–dominant muscle activation associated with grasp generation.
 
-- This muscle set provides balanced coverage of **grasp generation, hand opening,
-wrist stabilization, and forearm rotation**, which are critical for
-continuous joint-angle estimation and prosthetic hand control.
+- **Finger Extension Group (Dorsal Forearm Region)**  
+  Functional activation patterns centered on finger extension, associated with hand opening and release.
+
+- **Radial Wrist Group**  
+  EMG activation patterns related to wrist stabilization and force modulation in the radial direction.
+
+- **Ulnar Wrist Group**  
+  Functional EMG patterns associated with ulnar-direction force modulation and wrist stabilization.
+
+
+-This functional channel configuration provides balanced coverage of **grasp generation, hand opening, wrist stabilization, and forearm rotation**, which are critical for continuous joint-angle estimation and prosthetic hand control.
 
 
 ![Flexor원본 복사본](https://github.com/user-attachments/assets/a51361d9-8fc3-41cb-8a91-59bcaa245e32)
