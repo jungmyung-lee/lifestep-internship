@@ -226,7 +226,7 @@ This design balances **muscle activation pattern capture** and **real-time respo
 
 ---
 
-<img width="1024" height="559" alt="image" src="https://github.com/user-attachments/assets/4c7b6bfd-2505-475b-89e2-55146a99bb91" />
+<img width="1024" height="559" alt="image" src="https://github.com/user-attachments/assets/9c5e45e5-6ff8-4c65-ba37-6170bf89a859" />
 
 
 ## Time-Domain (TD) Feature Extraction
