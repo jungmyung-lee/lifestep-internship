@@ -26,6 +26,7 @@
   - [TD Final Feature Shape Before Entering the 1D CNN](#td-final-feature-shape-before-entering-the-1d-cnn)
 
 - [CNN](#cnn)
+  - [Why 2 Layers, 16 → 32 Filters, Kernel Size = 3, ReLU](#why-2-layers-16--32-filters-kernel-size--3-relu)
   - [Why Use a CNN for EMG Signals](#why-use-a-cnn-for-emg-signals)
   - [Why Exactly 2 CNN Layers](#why-exactly-2-cnn-layers)
   - [Why Use 16 → 32 Filters](#why-use-16--32-filters)
@@ -57,6 +58,7 @@
 
 - [Final Remark](#final-remark)
 - [References](#references)
+
 
 
 
