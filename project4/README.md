@@ -61,7 +61,8 @@
 
 
 
-<img width="1024" height="559" alt="image" src="https://github.com/user-attachments/assets/82316845-b6c2-4d9f-ae7a-f704935a32bf" />
+<img width="1024" height="559" alt="image" src="https://github.com/user-attachments/assets/a66080c0-22be-4bd6-80e9-f68bb9aad0c0" />
+
 
 
 ## Project Overview
