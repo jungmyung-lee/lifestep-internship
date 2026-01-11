@@ -161,14 +161,7 @@ This design improves robustness against muscle cross-talk and electrode placemen
 
 This configuration provides robust coverage of **grasp generation, hand opening, wrist stabilization, and rotational intent** required for practical prosthetic control.
 
-
-
-
-
-*Image source: 
-
-
-
+<img width="2816" height="1536" alt="Forearm_EMG" src="https://github.com/user-attachments/assets/197100e4-cccd-4114-a91d-efc0f1c2b1b8" />
 
 ### Filtering steps
 
